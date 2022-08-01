@@ -13,7 +13,7 @@
   export default Vue.extend({
     data() {
       return {
-        title: 'Hello',
+        title: 'Hello World',
       }
     },
     onLoad() {},
