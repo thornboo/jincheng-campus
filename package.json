@@ -97,10 +97,12 @@
     "@vue/cli-service": "~4.5.15",
     "babel-plugin-import": "^1.11.0",
     "cross-env": "^7.0.2",
+    "cz-customizable": "^6.9.1",
     "jest": "^25.4.0",
     "mini-types": "*",
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",
+    "prettier": "^2.7.1",
     "typescript": "^3.0.0",
     "vue-template-compiler": "^2.6.11"
   },
@@ -113,5 +115,10 @@
   },
   "uni-app": {
     "scripts": {}
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
   }
 }
