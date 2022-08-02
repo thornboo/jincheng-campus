@@ -8,40 +8,35 @@
 </template>
 
 <script lang="ts">
-  import Vue from 'vue'
+import Vue from 'vue'
 
-  export default Vue.extend({
-    data() {
-      return {
-        title: 'Hello World',
-      }
-    },
-    onLoad() {},
-    methods: {},
-  })
+export default Vue.extend({
+  data() {
+    return {
+      title: '金橙校园',
+    }
+  },
+  onLoad() {},
+  methods: {},
+})
 </script>
 
 <style>
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-  .logo {
-    height: 200rpx;
-    width: 200rpx;
-    margin: 200rpx auto 50rpx auto;
-  }
+.logo {
+  height: 200rpx;
+  width: 200rpx;
+  margin: 200rpx auto 50rpx auto;
+}
 
-  .text-area {
-    display: flex;
-    justify-content: center;
-  }
-
-  .title {
-    font-size: 36rpx;
-    color: #8f8f94;
-  }
+.title {
+  font-size: 36rpx;
+  color: #8f8f94;
+}
 </style>
