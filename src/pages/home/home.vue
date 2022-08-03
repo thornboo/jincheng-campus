@@ -1,24 +1,28 @@
 <template>
-  <view>
-    <view class="uni-padding-wrap uni-common-mt">
-      <view class="uni-title uni-common-mt">
-        flex-direction: row
-        <text>\n横向布局</text>
+  <view class="padding text-center">
+    <view class="padding-lr bg-white">
+      <view class="solid-bottom padding">
+        <text class="text-price">80.00</text>
       </view>
-      <view class="uni-flex uni-row">
-        <view class="flex-item uni-bg-red">A</view>
-        <view class="flex-item uni-bg-green">B</view>
-        <view class="flex-item uni-bg-blue">C</view>
+      <view class="padding">价格文本，利用伪元素添加"¥"符号</view>
+    </view>
+    <view class="padding-lr bg-white margin-top">
+      <view class="solid-bottom padding">
+        <text class="text-Abc">color Ui</text>
       </view>
-      <view class="uni-title uni-common-mt">
-        flex-direction: column
-        <text>\n纵向布局</text>
+      <view class="padding">英文单词首字母大写</view>
+    </view>
+    <view class="padding-lr bg-white margin-top">
+      <view class="solid-bottom padding">
+        <text class="text-ABC">color Ui</text>
       </view>
-      <view class="uni-flex uni-column">
-        <view class="flex-item flex-item-V uni-bg-red">A</view>
-        <view class="flex-item flex-item-V uni-bg-green">B</view>
-        <view class="flex-item flex-item-V uni-bg-blue">C</view>
+      <view class="padding">全部字母大写</view>
+    </view>
+    <view class="padding-lr bg-white margin-top">
+      <view class="solid-bottom padding">
+        <text class="text-abc">color Ui</text>
       </view>
+      <view class="padding">全部字母小写</view>
     </view>
   </view>
 </template>
