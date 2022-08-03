@@ -14,8 +14,11 @@ export default Vue.extend({
 })
 </script>
 
-<style>
-/*每个页面公共css */
+<style lang="scss">
+/* uView-ui */
+@import 'uview-ui/theme.scss';
+
+/* ColorUI */
 @import 'colorui/main.css';
 @import 'colorui/icon.css';
 </style>
