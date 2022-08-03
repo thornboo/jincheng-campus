@@ -3,10 +3,26 @@
     {
       "path": "pages/welcome/welcome",
       "style": {
-        "navigationBarTitleText": "uni-app"
+        "navigationBarTitleText": "",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/home/home",
+      "style": {
+        "navigationBarTitleText": "首页"
       }
     }
   ],
+  "condition": {
+    "current": 0,
+    "list": [
+      {
+        "name": "welcome",
+        "path": "pages/welcome/welcome"
+      }
+    ]
+  },
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",

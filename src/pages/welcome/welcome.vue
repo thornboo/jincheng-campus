@@ -1,9 +1,6 @@
 <template>
   <view class="content">
-    <image class="logo" src="../../static/logo.png"></image>
-    <view>
-      <text class="title">{{ title }}</text>
-    </view>
+    <image class="backImg" src="../../static/index.png"></image>
   </view>
 </template>
 
@@ -16,27 +13,33 @@ export default Vue.extend({
       title: '金橙校园',
     }
   },
-  onLoad() {},
+  onLoad() {
+    // 引导页延时2秒进入首页
+    setTimeout(function() {
+      wx.redirectTo({
+        url: '/pages/home/home',
+      })
+    }, 2000)
+  },
   methods: {},
 })
 </script>
 
 <style>
+page {
+  height: 100%;
+}
 .content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  width: 100%;
+  height: 100%;
 }
 
-.logo {
-  height: 200rpx;
-  width: 200rpx;
-  margin: 200rpx auto 50rpx auto;
-}
-
-.title {
-  font-size: 36rpx;
-  color: #8f8f94;
+.backImg {
+  width: 100vw;
+  height: 100%;
 }
 </style>
