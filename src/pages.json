@@ -12,7 +12,8 @@
       "path": "pages/home/home",
       "style": {
         "navigationBarTitleText": "首页"
-      }
+      },
+      "needLogin": true
     },
     {
       "path": "pages/campusWall/campusWall",
@@ -85,5 +86,12 @@
         "text": "我的"
       }
     ]
+  },
+
+  "uniIdRouter说明": "自动跳转相关配置，对页面访问权限路由进行控制",
+  "uniIdRouter": {
+    "loginPage": "pages/login/login",
+    "needLogin": ["pages/detail/.*"],
+    "resToLogin": true
   }
 }
