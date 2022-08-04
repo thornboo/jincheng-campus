@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title> <%= htmlWebpackPlugin.options.title %> </title>
+    <meta charset="UTF-8" />
     <script>
       var coverSupport =
         'CSS' in window &&
@@ -15,14 +13,12 @@
           '" />',
       )
     </script>
-    <link rel="stylesheet" href="<%= BASE_URL %>static/index.<%= VUE_APP_INDEX_CSS_HASH %>.css" />
+    <title></title>
+    <!--preload-links-->
+    <!--app-context-->
   </head>
-
   <body>
-    <noscript>
-      <strong>Please enable JavaScript to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
+    <div id="app"><!--app-html--></div>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
