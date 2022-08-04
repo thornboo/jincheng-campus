@@ -1,17 +1,97 @@
 {
+  "page-说明": "设置页面路径及窗口表现",
   "pages": [
-    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
-      "path": "pages/index/index",
+      "path": "pages/welcome/welcome",
       "style": {
-        "navigationBarTitleText": "uni-app"
+        "navigationBarTitleText": "",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/home/home",
+      "style": {
+        "navigationBarTitleText": "首页"
+      },
+      "needLogin": true
+    },
+    {
+      "path": "pages/campusWall/campusWall",
+      "style": {
+        "navigationBarTitleText": "校园墙"
+      }
+    },
+    {
+      "path": "pages/chat/chat",
+      "style": {
+        "navigationBarTitleText": "消息"
+      }
+    },
+    {
+      "path": "pages/mine/mine",
+      "style": {
+        "navigationBarTitleText": "我的"
       }
     }
   ],
+
+  "condition-说明": "启动模式配置",
+  "condition": {
+    "current": 0,
+    "list": [
+      {
+        "name": "welcome",
+        "path": "pages/welcome/welcome"
+      }
+    ]
+  },
+
+  "globalStyle说明": "设置默认页面的窗口表现",
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
+  },
+
+  "easycom说明": "组件自动引入规则",
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+    }
+  },
+
+  "tabBar说明": "设置底部 tab 的表现",
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/campusWall/campusWall",
+        "text": "校园墙"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+
+  "uniIdRouter说明": "自动跳转相关配置，对页面访问权限路由进行控制",
+  "uniIdRouter": {
+    "loginPage": "pages/login/login",
+    "needLogin": ["pages/detail/.*"],
+    "resToLogin": true
   }
 }
