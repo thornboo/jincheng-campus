@@ -49,11 +49,5 @@ onPageNotFound(() => {
 onThemeChange(() => {
   console.log('App Theme Change')
 })
-
-export default {
-  globalData: {
-    text: 'text',
-  },
-}
 </script>
 <style></style>
