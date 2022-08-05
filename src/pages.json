@@ -1,5 +1,5 @@
 {
-  "page-说明": "设置页面路径及窗口表现, pages数组中第一项表示应用启动页",
+  "page-说明（必填）": "设置页面路径及窗口表现, pages数组中第一项表示应用启动页",
   "pages": [
     {
       "path": "pages/welcome/welcome",
@@ -12,8 +12,7 @@
       "path": "pages/home/home",
       "style": {
         "navigationBarTitleText": "首页"
-      },
-      "needLogin": false
+      }
     },
     {
       "path": "pages/campusWall/campusWall",
@@ -35,18 +34,18 @@
     }
   ],
 
-  "condition-说明": "启动模式配置",
+  "condition-说明": "启动模式配置，仅开发期间生效，用于模拟直达页面的场景",
   "condition": {
     "current": 0,
     "list": [
       {
-        "name": "welcome",
+        "name": "金橙校园",
         "path": "pages/welcome/welcome"
       }
     ]
   },
 
-  "globalStyle说明": "设置默认页面的窗口表现",
+  "globalStyle说明": "设置默认页面的窗口表现，用于设置应用的状态栏、导航条、标题、窗口背景色",
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
@@ -54,15 +53,15 @@
     "backgroundColor": "#F8F8F8"
   },
 
-  "easycom说明": "组件自动引入规则",
+  "easycom说明": "组件自动引入规则，只要组件安装在项目的components目录下，就可以直接在页面中使用，打包后会自动剔除没有使用的组件",
   "easycom": {
     "autoscan": true,
     "custom": {
-      "^u-(.*)": ""
+      "^uni-(.*)": "@/components/uni-$1.vue"
     }
   },
 
-  "tabBar说明": "设置底部 tab 的表现",
+  "tabBar说明": "设置底部 tab 的表现，配置项指定一级导航栏",
   "tabBar": {
     "color": "#7A7E83",
     "selectedColor": "#3cc51f",
