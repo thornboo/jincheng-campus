@@ -49,6 +49,7 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3040820220424001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-3040820220424001",
     "axios": "^0.27.2",
+    "miniprogram-api-typings": "^3.5.0",
     "moment": "^2.29.4",
     "scss": "^0.2.4",
     "vue": "^3.2.37",

@@ -5,6 +5,12 @@
 </template>
 
 <script lang="ts" setup>
+// 延时2秒跳转首页
+setTimeout(function () {
+  wx.reLaunch({
+    url: '../home/home',
+  })
+}, 2000)
 </script>
 
 <style>
