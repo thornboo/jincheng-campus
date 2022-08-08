@@ -50,7 +50,11 @@
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "backgroundColor": "#F8F8F8",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+      "van-button": "/wxcomponents/vant/button/index"
+    }
   },
 
   "easycom说明": "组件自动引入规则，只要组件安装在项目的components目录下，就可以直接在页面中使用，打包后会自动剔除没有使用的组件",
