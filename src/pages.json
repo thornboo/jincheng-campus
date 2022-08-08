@@ -53,7 +53,14 @@
     "backgroundColor": "#F8F8F8",
     "enablePullDownRefresh": true,
     "usingComponents": {
-      "van-button": "/wxcomponents/vant/button/index"
+      "van-button": "/wxcomponents/vant/button/index",
+      "van-grid": "/wxcomponents/vant/grid/index",
+      "van-grid-item": "/wxcomponents/vant/grid-item/index",
+      "van-icon": "/wxcomponents/vant/icon/index",
+      "van-row": "/wxcomponents/vant/row/index",
+      "van-col": "/wxcomponents/vant/col/index",
+      "van-notice-bar": "/wxcomponents/vant/notice-bar/index",
+      "van-divider": "/wxcomponents/vant/divider/index"
     }
   },
 

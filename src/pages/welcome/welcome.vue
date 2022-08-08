@@ -10,7 +10,7 @@ setTimeout(function () {
   wx.reLaunch({
     url: '../home/home',
   })
-}, 2000)
+}, 100)
 </script>
 
 <style>
