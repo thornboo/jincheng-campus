@@ -3,7 +3,7 @@
     <swiper indicator-dots="true" autoplay="true" circular="true">
       <swiper-item>
         <view class="">
-          <img src="../../static/images/sample.png" alt="样式图片">
+          <img src="" alt="样式图片">
         </view>
       </swiper-item>
       <swiper-item>
@@ -34,7 +34,8 @@
   </view>
 </template>
 
-<script setup></script>
+<script setup>
+</script>
 <style>
 page {
   background-color: #e8e7e7;
