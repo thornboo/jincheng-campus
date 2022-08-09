@@ -52,6 +52,8 @@
     "fs-extra": "^10.1.0",
     "miniprogram-api-typings": "^3.5.0",
     "moment": "^2.29.4",
+    "sass": "^1.54.3",
+    "sass-loader": "^13.0.2",
     "scss": "^0.2.4",
     "vue": "^3.2.37",
     "vue-i18n": "^9.1.9",
