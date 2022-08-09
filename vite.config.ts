@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [uni()],
   resolve: {
     alias: {
-      '@': '/src',
+      '@': path.join(__dirname, './src'),
     },
   },
 })
