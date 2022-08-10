@@ -52,5 +52,4 @@ onThemeChange(() => {
 </script>
 <style lang="scss">
 @import 'wxcomponents/vant/common/index.wxss';
-@import './wxcomponents/vk-uview-ui/index.scss';
 </style>
