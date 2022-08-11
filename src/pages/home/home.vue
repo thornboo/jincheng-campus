@@ -1,6 +1,6 @@
 <template>
   <view class="swiper-container base-container">
-    <swiper autoplay="true" circular="true">
+    <swiper class="swiper" indicator-dots="true" indicator-color="red" autoplay="true" circular="true">
       <swiper-item>
         <view class="swiper-item-box"></view>
       </swiper-item>
@@ -21,14 +21,14 @@
     />
   </view>
 
-  <view class="grid-container base-container">
+  <view class="grid-container">
     <van-grid square column-num="4" gutter="10" clickable="true">
-      <van-grid-item icon-color="#fca626" icon="photo-o" text="失物招领" :badge="value[0]" />
-      <van-grid-item icon-color="#fca626" icon="photo-o" text="闲置交易" :badge="value[1]" />
-      <van-grid-item icon-color="#fca626" icon="photo-o" text="代取快递" :badge="value[2]" />
-      <van-grid-item icon-color="#fca626" icon="photo-o" text="校园活动" :badge="value[3]" />
-      <van-grid-item icon-color="#fca626" icon="photo-o" text="校园食堂" :badge="value[4]" />
-      <van-grid-item icon-color="#fca626" icon="photo-o" text="校园食堂" :badge="value[5]" />
+      <van-grid-item icon-color="#fca626" icon="photo-o" text="失物招领" :badge="10" />
+      <van-grid-item icon-color="#fca626" icon="photo-o" text="闲置交易" :badge="10" />
+      <van-grid-item icon-color="#fca626" icon="photo-o" text="代取快递" :badge="10" />
+      <van-grid-item icon-color="#fca626" icon="photo-o" text="校园活动" :badge="10" />
+      <van-grid-item icon-color="#fca626" icon="photo-o" text="校园食堂" :badge="10" />
+      <van-grid-item icon-color="#fca626" icon="photo-o" text="校园食堂" :badge="10" />
       <van-grid-item icon="photo-o" text="选项" />
       <van-grid-item icon="photo-o" text="选项" />
     </van-grid>
@@ -36,10 +36,10 @@
 </template>
 
 <script setup>
-const value = [14, 25, 32, 48, 55, 61]
 </script>
 
 <style lang="scss">
+$swiper-height: 200px; // swiper高度
 /**
   公共类
  */
@@ -59,15 +59,19 @@ page {
   轮播图
  */
 .swiper-container {
-  height: 200px;
+  height: $swiper-height;
   margin-top: 10px;
+}
+
+// 轮播图容器
+.swiper {
+  height: $swiper-height;
 }
 
 // 轮播图item
 .swiper-item-box {
-
-
-  height: 200px;
+  height: $swiper-height;
+  background-color: #ffb25f;
   border-radius: 10px;
 }
 
@@ -91,13 +95,4 @@ page {
 /**
   演示样式（可替换删除）
  */
-.A-view {
-  background-color: $uni-color-primary;
-  height: 200px;
-}
-
-.B-view {
-  background-color: $uni-color-success;
-  height: 200px;
-}
 </style>
