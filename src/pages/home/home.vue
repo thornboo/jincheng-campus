@@ -1,6 +1,12 @@
 <template>
   <view class="swiper-container base-container">
-    <swiper class="swiper" indicator-dots="true" indicator-color="red" autoplay="true" circular="true">
+    <swiper
+      class="swiper"
+      indicator-dots="true"
+      indicator-color="red"
+      autoplay="true"
+      circular="true"
+    >
       <swiper-item>
         <view class="swiper-item-box"></view>
       </swiper-item>
@@ -11,14 +17,11 @@
   </view>
 
   <view class="notice-container base-container">
-    <van-notice-bar
-      scrollable
-      background="#ecf9ff"
-      color="#1989fa"
-      left-icon="info-o"
-      custom-class="van-notice-bar"
-      text="程序还在开发中，敬请期待~"
-    />
+    <van-notice-bar left-icon="info-o" >
+      <swiper vertical="true" autoplay="true" class="notice-swiper">
+        <swiper-item v-for="item in notice_msg" :key="item">{{ item }}</swiper-item>
+      </swiper>
+    </van-notice-bar>
   </view>
 
   <view class="grid-container">
@@ -36,10 +39,12 @@
 </template>
 
 <script setup>
+const notice_msg = ['内容 1', '内容 2', '内容 3', '内容 4']
 </script>
 
 <style lang="scss">
 $swiper-height: 200px; // swiper高度
+$uni-border-radius: 20px; // 圆角度
 /**
   公共类
  */
@@ -72,7 +77,7 @@ page {
 .swiper-item-box {
   height: $swiper-height;
   background-color: #ffb25f;
-  border-radius: 10px;
+  border-radius: $uni-border-radius;
 }
 
 /**
@@ -81,11 +86,21 @@ page {
 .notice-container {
 }
 
+.van-notice-bar__content {
+  width: 100%;
+}
 // 通知栏-外部样式类
 .van-notice-bar {
-  border-radius: 10px !important;
+  border-radius: $uni-border-radius !important;
 }
 
+// 嵌入轮播图（实现纵向滚动）
+.notice-swiper {
+  width: 100%;
+  height: 24px;
+  line-height: 24px;
+  display: inline-block;
+}
 /**
   宫格
  */
@@ -95,4 +110,7 @@ page {
 /**
   演示样式（可替换删除）
  */
+.test {
+  width: 100%;
+}
 </style>
