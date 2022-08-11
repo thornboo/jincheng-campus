@@ -36,15 +36,20 @@
       <van-grid-item icon="photo-o" text="选项" />
     </van-grid>
   </view>
+
+  <view>
+    <Tabbar/>
+  </view>
 </template>
 
 <script setup>
+import Tabbar from '../../components/Tabbar'
 const notice_msg = ['内容 1', '内容 2', '内容 3', '内容 4']
 </script>
 
 <style lang="scss">
 $swiper-height: 200px; // swiper高度
-$uni-border-radius: 10px; // 圆角度
+$uni-border-radius: 5px; // 圆角度
 
 /**
   公共类

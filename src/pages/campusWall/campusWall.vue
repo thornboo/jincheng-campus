@@ -1,7 +1,17 @@
 <template>
-  <view> 正在开发中，敬请期待~ </view>
+  <view>
+    <Search/>
+    <Tabbar/>
+  </view>
 </template>
 
-<script setup></script>
+<script setup>
+import Search from '../../components/Search'
+import Tabbar from '../../components/Tabbar'
+</script>
 
-<style lang="scss"></style>
+<style lang="scss">
+page {
+  background-color: #8a8888;
+}
+</style>

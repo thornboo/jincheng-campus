@@ -60,7 +60,10 @@
       "van-row": "/wxcomponents/vant/row/index",
       "van-col": "/wxcomponents/vant/col/index",
       "van-notice-bar": "/wxcomponents/vant/notice-bar/index",
-      "van-divider": "/wxcomponents/vant/divider/index"
+      "van-divider": "/wxcomponents/vant/divider/index",
+      "van-search": "/wxcomponents/vant/search/index",
+      "van-tabbar": "/wxcomponents/vant/tabbar/index",
+      "van-tabbar-item" : "/wxcomponents/vant/tabbar-item/index"
     }
   },
 
@@ -70,32 +73,6 @@
     "custom": {
       "^uni-(.*)": "@/components/uni-$1.vue"
     }
-  },
-
-  "tabBar说明": "设置底部 tab 的表现，配置项指定一级导航栏",
-  "tabBar": {
-    "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
-    "borderStyle": "black",
-    "backgroundColor": "#ffffff",
-    "list": [
-      {
-        "pagePath": "pages/home/home",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/campusWall/campusWall",
-        "text": "校园墙"
-      },
-      {
-        "pagePath": "pages/chat/chat",
-        "text": "消息"
-      },
-      {
-        "pagePath": "pages/mine/mine",
-        "text": "我的"
-      }
-    ]
   },
 
   "uniIdRouter说明": "自动跳转相关配置，对页面访问权限路由进行控制",
