@@ -2,10 +2,10 @@
   <view class="swiper-container base-container">
     <swiper
       class="swiper"
-      indicator-dots="true"
+      :indicator-dots="true"
       indicator-color="red"
-      autoplay="true"
-      circular="true"
+      :autoplay="true"
+      :circular="true"
     >
       <swiper-item>
         <view class="swiper-item-box"></view>
@@ -17,15 +17,15 @@
   </view>
 
   <view class="notice-container base-container">
-    <van-notice-bar left-icon="info-o" >
-      <swiper vertical="true" autoplay="true" class="notice-swiper">
+    <van-notice-bar left-icon="info-o">
+      <swiper :vertical="true" :autoplay="true" class="notice-swiper">
         <swiper-item v-for="item in notice_msg" :key="item">{{ item }}</swiper-item>
       </swiper>
     </van-notice-bar>
   </view>
 
   <view class="grid-container">
-    <van-grid square column-num="4" gutter="10" clickable="true">
+    <van-grid :column-num="4" :gutter="10" :clickable="true" :border="false">
       <van-grid-item icon-color="#fca626" icon="photo-o" text="失物招领" :badge="10" />
       <van-grid-item icon-color="#fca626" icon="photo-o" text="闲置交易" :badge="10" />
       <van-grid-item icon-color="#fca626" icon="photo-o" text="代取快递" :badge="10" />
@@ -44,7 +44,8 @@ const notice_msg = ['内容 1', '内容 2', '内容 3', '内容 4']
 
 <style lang="scss">
 $swiper-height: 200px; // swiper高度
-$uni-border-radius: 20px; // 圆角度
+$uni-border-radius: 10px; // 圆角度
+
 /**
   公共类
  */
@@ -107,10 +108,13 @@ page {
 .grid-container {
 }
 
+.van-grid-item__content {
+  border-radius: $uni-border-radius;
+}
+
 /**
   演示样式（可替换删除）
  */
 .test {
-  width: 100%;
 }
 </style>
