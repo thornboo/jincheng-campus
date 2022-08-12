@@ -8,4 +8,6 @@ App.mpType = 'app'
 const app = new Vue({
 	...App
 })
+
+// //挂载 Vue 实例
 app.$mount()
