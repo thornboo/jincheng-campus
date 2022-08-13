@@ -20,7 +20,8 @@
 						url: '../home/index',
 					})
 				}, 100)
-			}
+			},
+			
 		},
 		computed() {}
 	}
