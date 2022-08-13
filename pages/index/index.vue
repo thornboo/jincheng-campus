@@ -17,7 +17,7 @@
 			hopRouting: function() {
 				setTimeout(function() {
 					wx.reLaunch({
-						url: '../home/home',
+						url: '../home/index',
 					})
 				}, 100)
 			}
