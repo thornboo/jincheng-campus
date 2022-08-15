@@ -37,5 +37,22 @@
 	// 组件自动引入规则，只要组件安装在components目录下，就可以直接在页面中使用，打包后会自动剔除未使用的组件
 	"easycom": {
 		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+	},
+
+	// Tabbar页面跳转
+	"tabBar": {
+		"list": [{
+				"pagePath": "pages/home/index",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/forum/index",
+				"text": "校园墙"
+			},
+			{
+				"pagePath": "pages/mine/index",
+				"text": "我的"
+			}
+		]
 	}
 }

@@ -1,7 +1,7 @@
 <template>
 	<view class="context">
 		<view class="grid-container base-container">
-			<u-grid :border="true" col="4" align="left" @click="click">
+			<u-grid :border="false" col="4" align="left" @click="click">
 				<u-grid-item v-for="(baseListItem,baseListIndex) in gridList" :key="baseListIndex">
 					<u-icon :customStyle="{paddingTop:20+'rpx'}" :name="baseListItem.name" :size="28"></u-icon>
 					<text class="grid-text">{{baseListItem.title}}</text>
@@ -13,6 +13,7 @@
 
 <script>
 	export default {
+		name: 'GridBar',
 		data() {
 			return {
 				gridList: [{
@@ -53,6 +54,15 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 	.context {}
+
+	.grid-container {
+		background-color: #fff;
+		border-radius: $uni-border-radius;
+	}
+
+	.grid-text {
+		font-size: 14px;
+	}
 </style>

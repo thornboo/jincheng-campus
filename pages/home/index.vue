@@ -9,6 +9,9 @@
 		<view>
 			<GridBar />
 		</view>
+		<view>
+			<TabBar />
+		</view>
 	</view>
 </template>
 
@@ -26,7 +29,10 @@
 		data() {
 			return {}
 		},
-		onLoad() {}
+		onLoad() {
+		uni.hideTabBar()
+		},
+		onShow() {}
 	}
 </script>
 
@@ -43,28 +49,8 @@
 		margin-right: 10px;
 	}
 
-	/**
-	 * 轮播图
-	 */
-	.swiper-container {}
-
-	/**
-	 * 通知栏
-	 */
-	.notice-container {}
-
+	// 通知栏外部样式
 	.u-notice-bar {
 		border-radius: 10px;
-	}
-
-	/**
-	 * 宫格图
-	 */
-	.grid-container {
-		background-color: aquamarine;
-	}
-
-	.grid-text {
-		font-size: 14px;
 	}
 </style>

@@ -10,6 +10,7 @@
 
 <script>
 	export default {
+		name: 'Swiper',
 		data() {
 			return {
 				swiperList: [{
