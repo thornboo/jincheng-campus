@@ -12,6 +12,11 @@
 			"navigationBarTitleText": "首页"
 		}
 	}, {
+		"path": "pages/forum/index",
+		"style": {
+			"navigationBarTitleText": "校园墙"
+		}
+	}, {
 		"path": "pages/mine/index",
 		"style": {
 			"navigationBarTitleText": "我的"
