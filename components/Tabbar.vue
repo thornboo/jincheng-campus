@@ -1,10 +1,12 @@
 <template>
-	<u-tabbar :value="index" @change="change" :fixed="true" :placeholder="true" :safeAreaInsetBottom="true">
-		<u-tabbar-item text="首页" icon="home" @click="click(0)"></u-tabbar-item>
-		<u-tabbar-item text="校园墙" icon="moments" @click="click(1)"></u-tabbar-item>
-		<u-tabbar-item text="消息" icon="chat" @click="click(2)"></u-tabbar-item>
-		<u-tabbar-item text="我的" icon="account" @click="click(3)"></u-tabbar-item>
-	</u-tabbar>
+	<view class="context">
+		<u-tabbar :value="index" @change="change" :fixed="true" :placeholder="true" :safeAreaInsetBottom="true">
+			<u-tabbar-item text="首页" icon="home" @click="click(0)"></u-tabbar-item>
+			<u-tabbar-item text="校园墙" icon="moments" @click="click(1)"></u-tabbar-item>
+			<u-tabbar-item text="消息" icon="chat" @click="click(2)"></u-tabbar-item>
+			<u-tabbar-item text="我的" icon="account" @click="click(3)"></u-tabbar-item>
+		</u-tabbar>
+	</view>
 </template>
 
 <script>

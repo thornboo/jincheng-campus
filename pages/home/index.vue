@@ -21,6 +21,7 @@
 	import GridBar from './components/GridBar.vue'
 
 	export default {
+		name: 'home',
 		components: {
 			Swiper,
 			NoticeBar,
@@ -30,7 +31,7 @@
 			return {}
 		},
 		onLoad() {
-		uni.hideTabBar()
+			uni.hideTabBar()
 		},
 		onShow() {}
 	}

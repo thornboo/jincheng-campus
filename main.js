@@ -4,7 +4,9 @@ import uView from '@/uni_modules/uview-ui'
 
 // 组件全局注册
 import TabBar from '@/components/Tabbar.vue'
+import Search from '@/components/Search.vue'
 Vue.component('TabBar', TabBar)
+Vue.component('Search', Search)
 
 Vue.use(uView)
 

@@ -1,6 +1,7 @@
 <template>
 	<view class="context">
 		<view>
+			<Search />
 			<TabBar />
 		</view>
 	</view>
@@ -8,7 +9,7 @@
 
 <script>
 	export default {
-		name: 'app',
+		name: 'forum',
 		data() {
 			return {}
 		},
@@ -21,5 +22,10 @@
 </script>
 
 <style lang="scss">
+	// 全局样式
+	page {
+		background-color: $uni-bg-color;
+	}
+
 	.context {}
 </style>
