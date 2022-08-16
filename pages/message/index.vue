@@ -1,23 +1,27 @@
 <template>
 	<view class="context">
-		<view>
-			<p>我的</p>
-		</view>
+
 		<view>
 			<TabBar />
 		</view>
+
 	</view>
 </template>
 
 <script>
 	export default {
+		name: 'app',
 		data() {
-			return {
-
-			}
+			return {}
 		},
-		// onLoad() {
-		// 	uni.hideTabBar()
-		// },
+		onLoad() {
+			uni.hideTabBar()
+		},
+		methods() {},
+		computed() {}
 	}
 </script>
+
+<style lang="scss">
+	.context {}
+</style>

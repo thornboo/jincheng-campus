@@ -1,10 +1,9 @@
 <template>
-	<u-tabbar v-model="index" @change="myChange()" :fixed="true" :placeholder="true"
-		:safeAreaInsetBottom="true">
-		<u-tabbar-item :name='0' text="首页" icon="home" @click="click(0)"></u-tabbar-item>
-		<u-tabbar-item :name='1' text="校园墙" icon="moments" @click="click(1)"></u-tabbar-item>
-		<u-tabbar-item :name='2' text="消息" icon="chat" @click="click(2)"></u-tabbar-item>
-		<u-tabbar-item :name='3' text="我的" icon="account" @click="click(3)"></u-tabbar-item>
+	<u-tabbar :value="index" @change="change" :fixed="true" :placeholder="true" :safeAreaInsetBottom="true">
+		<u-tabbar-item text="首页" icon="home" @click="click(0)"></u-tabbar-item>
+		<u-tabbar-item text="校园墙" icon="moments" @click="click(1)"></u-tabbar-item>
+		<u-tabbar-item text="消息" icon="chat" @click="click(2)"></u-tabbar-item>
+		<u-tabbar-item text="我的" icon="account" @click="click(3)"></u-tabbar-item>
 	</u-tabbar>
 </template>
 
@@ -17,22 +16,36 @@
 			}
 		},
 		methods: {
-			myChange(name) {
-				if (this.index == name) {
-					console.log("index：" + this.index)
-					console.log("name：" + name)
-					console.log('if')
-				} else {
-					console.log("index：" + this.index)
-					console.log("name：" + name)
-					console.log('else')
-				}
-			},
+			change(name) {},
+
 			click(index) {
-				this.index = index
-			},
-			test() {
-				console.log('test')
+				if (this.index == index) {
+					uni.startPullDownRefresh()
+					// 2秒后强制停止刷新
+					setTimeout(function() {
+						uni.stopPullDownRefresh()
+					}, 2000)
+				} else {
+					let pageUrl = 'pages/home/index'
+					switch (index) {
+						case 0:
+							pageUrl = "/pages/home/index"
+							break
+						case 1:
+							pageUrl = "/pages/forum/index"
+							break
+						case 2:
+							pageUrl = "/pages/message/index"
+							break
+						case 3:
+							pageUrl = "/pages/mine/index"
+							break
+					}
+					uni.switchTab({
+						url: pageUrl
+					});
+					this.index = index
+				}
 			}
 		}
 	}

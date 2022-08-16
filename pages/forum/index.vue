@@ -1,5 +1,9 @@
 <template>
-	<view class="context"></view>
+	<view class="context">
+		<view>
+			<TabBar />
+		</view>
+	</view>
 </template>
 
 <script>
@@ -8,7 +12,9 @@
 		data() {
 			return {}
 		},
-		onLoad() {},
+		onLoad() {
+			uni.hideTabBar()
+		},
 		methods() {},
 		computed() {}
 	}

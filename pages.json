@@ -9,12 +9,20 @@
 	}, {
 		"path": "pages/home/index",
 		"style": {
-			"navigationBarTitleText": "首页"
+			"navigationBarTitleText": "首页",
+			"enablePullDownRefresh": true
 		}
 	}, {
 		"path": "pages/forum/index",
 		"style": {
-			"navigationBarTitleText": "校园墙"
+			"navigationBarTitleText": "校园墙",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/message/index",
+		"style": {
+			"navigationBarTitleText": "消息",
+			"enablePullDownRefresh": true
 		}
 	}, {
 		"path": "pages/mine/index",
@@ -48,6 +56,10 @@
 			{
 				"pagePath": "pages/forum/index",
 				"text": "校园墙"
+			},
+			{
+				"pagePath": "pages/message/index",
+				"text": "消息"
 			},
 			{
 				"pagePath": "pages/mine/index",
