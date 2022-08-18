@@ -1,7 +1,14 @@
 <template>
 	<view class="context">
-		<view>
+		<view class="search-bar">
 			<Search />
+		</view>
+		
+		<view>
+			
+		</view>
+		
+		<view>
 			<CardWrap />
 			<CardWrap />
 			<CardWrap />
@@ -36,8 +43,12 @@
 <style lang="scss">
 	// 全局样式
 	page {
-		background-color: $uni-bg-color;
+		background-color: #F1F2F1;
 	}
 
 	.context {}
+	
+	.search-bar {
+		margin: 10px;
+	}
 </style>

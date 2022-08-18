@@ -3,7 +3,7 @@
 		<view class="grid-container base-container">
 			<u-grid :border="false" col="4" align="left" @click="click">
 				<u-grid-item v-for="(baseListItem,baseListIndex) in gridList" :key="baseListIndex">
-					<u-icon :customStyle="{paddingTop:20+'rpx'}" :name="baseListItem.name" :size="28"></u-icon>
+					<u-icon :customStyle="{paddingTop:20+'rpx'}" :name="baseListItem.name" :size="28" color="#00BB30"></u-icon>
 					<text class="grid-text">{{baseListItem.title}}</text>
 				</u-grid-item>
 			</u-grid>
@@ -58,7 +58,7 @@
 	.context {}
 
 	.grid-container {
-		background-color: #fff;
+		background-color: #FEFEFE;
 		border-radius: $uni-border-radius;
 	}
 

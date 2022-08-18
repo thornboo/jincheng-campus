@@ -54,4 +54,9 @@
 <style lang="scss">
 	/*每个页面公共css */
 	@import '@/uni_modules/uview-ui/index.scss';
+
+	@font-face {
+		font-family: PingFang;
+		src: url("@/static/font/PingFang Bold.ttf") format("truetype");
+	}
 </style>

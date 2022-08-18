@@ -1,6 +1,6 @@
 <template>
 	<view class="context">
-		<u-search v-model="inputSearch" placeholder="搜索" shape="square" :showAction="false"></u-search>
+		<u-search v-model="inputSearch" placeholder="搜索" shape="square" :showAction="false" bgColor="#dcdfdd"></u-search>
 	</view>
 </template>
 
@@ -19,7 +19,5 @@
 </script>
 
 <style lang="scss">
-	.context {
-		margin: 10px;
-	}
+	.context {}
 </style>

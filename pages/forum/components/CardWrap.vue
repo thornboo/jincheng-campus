@@ -4,14 +4,18 @@
 			<CardHead />
 		</view>
 
+		<view class="tag-bar">
+			<u-tag text="#失物招领" size="mini" type="warning" plain bgColor="#E5F7EA" color="#009E14"
+				borderColor="#E5F7EA"></u-tag>
+		</view>
+
 		<view class="card-body">
 			<CardBody />
 		</view>
 
 		<view class="card-mark">
-
+			<CardMark />
 		</view>
-
 	</view>
 </template>
 
@@ -37,29 +41,34 @@
 
 <style lang="scss">
 	.context {
-		background-color: azure;
-		height: 200px; // card高度
-		border-radius: 5px;
+		display: flex;
+		flex-direction: column;
+		border-radius: $uni-border-radius-card;
 		margin: 10px;
+		background-color: #FFFFFF;
 	}
 
 	// card头部信息
 	.card-head-info {
-		height: 50px;
-		background-color: #b3b3b3;
+		order: 0;
+		height: 40px;
 	}
 
 	// card中间主体
 	.card-body {
-		background-color: #9a9a9a;
-		margin-top: 5px;
-		margin-left: 45px; // 和头像宽度保持一致
-		// max-height: 300px;
+		order: 1;
+		margin-left: 10px;
+		margin-right: 10px;
 	}
 
 	//card尾部标注
 	.card-mark {
-		height: 50px;
-		background-color: #5b5b5b;
+		order: 2;
+		width: 100%;
+	}
+
+	.tag-bar {
+		width: 70px;
+		margin-left: 10px;
 	}
 </style>

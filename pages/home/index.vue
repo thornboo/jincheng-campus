@@ -40,7 +40,7 @@
 <style lang="scss">
 	// 全局样式
 	page {
-		background-color: $uni-bg-color;
+		background-color: #F1F1F1;
 	}
 
 	// base样式

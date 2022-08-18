@@ -1,7 +1,8 @@
 <template>
 	<view class="context">
 		<view class="notice-container base-container">
-			<u-notice-bar :text="noticeText" direction="column" mode="link" border></u-notice-bar>
+			<u-notice-bar :text="noticeText" direction="column" mode="link" border bgColor="#E5F7EA" color="#009E14">
+			</u-notice-bar>
 		</view>
 	</view>
 </template>

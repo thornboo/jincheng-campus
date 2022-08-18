@@ -1,6 +1,6 @@
 <template>
 	<view class="context">
-		<u-avatar :src="src" text="橙" fontSize="18" randomBgColor shape="circle"></u-avatar>
+		<u-avatar :src="src" text="橙" fontSize="18" size="30px" randomBgColor shape="circle"></u-avatar>
 	</view>
 </template>
 
