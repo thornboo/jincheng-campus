@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'PingFang';
+    src: url('@/static/font/PingFangSC-Bold.woff2') format('woff2'),
+        url('@/static/font/PingFangSC-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

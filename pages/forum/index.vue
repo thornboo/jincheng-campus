@@ -3,11 +3,11 @@
 		<view class="search-bar">
 			<Search />
 		</view>
-		
+
 		<view>
-			
+
 		</view>
-		
+
 		<view>
 			<CardWrap />
 			<CardWrap />
@@ -44,10 +44,18 @@
 	// 全局样式
 	page {
 		background-color: #F1F2F1;
+		font-family: 'PingFang SC';
 	}
 
-	.context {}
-	
+	@font-face {
+		font-family: 'PingFang';
+		src: url('~@/static/font/PingFang Bold.ttf') format('truetype');
+	}
+
+	.context {
+		font-family: PingFang;
+	}
+
 	.search-bar {
 		margin: 10px;
 	}
