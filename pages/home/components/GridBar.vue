@@ -30,11 +30,11 @@
 					},
 					{
 						name: 'photo',
-						title: '校园活动'
+						title: '资源分享'
 					},
 					{
 						name: 'photo',
-						title: '资源分享'
+						title: '校园活动'
 					},
 					{
 						name: 'photo',
@@ -42,7 +42,7 @@
 					},
 					{
 						name: 'photo',
-						title: '暂未开放'
+						title: '校园超市'
 					},
 					{
 						name: 'photo',

@@ -1,7 +1,7 @@
 <template>
 	<view class="context">
 		<view>
-			<p>我的</p>
+			<UserMessage />
 		</view>
 		<view>
 			<TabBar />
@@ -10,8 +10,12 @@
 </template>
 
 <script>
+	import UserMessage from "./components/UserMessage.vue"
 	export default {
 		name: "mine",
+		components: {
+			UserMessage
+		},
 		data() {
 			return {
 
