@@ -7,4 +7,4 @@
 # jincheng-campus
 
 ## UI component library
-- [Vant Weapp](https://vant-contrib.gitee.io/vant/v2/#/zh-CN) - Lightweight, reliable mobile Vue component library
+- [uView](https://www.uviewui.com/) - Is a fully NVUE-compatible UNI-App ecosystem framework, with a comprehensive set of components and convenient tools that will come right at your fingertips.
