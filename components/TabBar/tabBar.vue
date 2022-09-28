@@ -1,7 +1,14 @@
 <template>
 	<view class="context">
-		<u-tabbar :value="index" @change="change" :fixed="true" :placeholder="true" :safeAreaInsetBottom="true" activeColor="#00BB30">
-			<u-tabbar-item text="首页" icon="home" @click="click(0)"></u-tabbar-item>
+		<u-tabbar :value="index" @change="change" :fixed="true" :placeholder="true" :safeAreaInsetBottom="true"
+			activeColor="#ffce56">
+			<!-- <u-tabbar-item text="首页" icon="home" @click="click(0)"></u-tabbar-item> -->
+
+			<u-tabbar-item text="首页">
+				<image class="slot-icon" slot="active-icon" src="@/static/icons/home.png">
+				</image>
+			</u-tabbar-item>
+
 			<u-tabbar-item text="校园墙" icon="moments" @click="click(1)"></u-tabbar-item>
 			<u-tabbar-item text="消息" icon="chat" @click="click(2)"></u-tabbar-item>
 			<u-tabbar-item text="我的" icon="account" @click="click(3)"></u-tabbar-item>
@@ -54,4 +61,8 @@
 </script>
 
 <style lang="scss">
+	.slot-icon {
+		width: 24px;
+		height: 24px;
+	}
 </style>
