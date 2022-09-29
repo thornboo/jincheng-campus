@@ -51,7 +51,6 @@
 	"tabBar": {
 		"list": [{
 				"pagePath": "pages/home/index",
-				"iconPath": "static/icons/home.png",
 				"text": "首页"
 			},
 			{

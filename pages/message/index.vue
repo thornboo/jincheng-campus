@@ -2,6 +2,10 @@
 	<view class="context">
 
 		<view>
+			<msgClassify />
+		</view>
+
+		<view>
 			<TabBar />
 		</view>
 
@@ -9,8 +13,13 @@
 </template>
 
 <script>
+	import msgClassify from './components/msgClassify.vue'
+
 	export default {
 		name: 'message',
+		components: {
+			msgClassify
+		},
 		data() {
 			return {}
 		},
