@@ -28,7 +28,7 @@
 
 <script>
 	export default {
-		name: 'Tabbar',
+		name: 'TabBar',
 		data() {
 			return {
 				index: 0

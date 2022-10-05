@@ -21,8 +21,8 @@
 
 			}
 		},
-		// onLoad() {
-		// 	uni.hideTabBar()
-		// },
+		onLoad() {
+			uni.hideTabBar()
+		},
 	}
 </script>

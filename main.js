@@ -3,13 +3,14 @@ import Vue from 'vue'
 import uView from '@/uni_modules/uview-ui'
 
 // 组件全局注册
-import tabBar from '@/components/TabBar/tabBar.vue'
-import Search from '@/components/Search.vue'
-import Avatar from '@/components/Avatar.vue'
+import AvaTar from '@/components/AvaTar/index.vue'
+import Search from '@/components/Search/index.vue'
+import TabBar from '@/components/TabBar/index.vue'
 
-Vue.component('tabBar', tabBar)
+Vue.component('AvaTar', AvaTar)
 Vue.component('Search', Search)
-Vue.component('Avatar', Avatar)
+Vue.component('TabBar', TabBar)
+
 
 Vue.use(uView)
 

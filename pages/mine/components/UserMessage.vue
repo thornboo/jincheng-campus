@@ -2,7 +2,7 @@
 	<view class="context">
 		<view class="business-card">
 			<view class="avatar">
-				<Avatar />
+				<AvaTar />
 			</view>
 			<view class="username">摘星星</view>
 			<view class="card-label">南京航空航天大学金城学院</view>

@@ -6,7 +6,7 @@
 
 <script>
 	export default {
-		name: 'Avatar',
+		name: 'AvaTar',
 		data() {
 			return {
 				src: "@/static/images/headPortrait.jpg"

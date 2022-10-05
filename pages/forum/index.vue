@@ -9,6 +9,7 @@
 		</view>
 
 		<view>
+			<!-- 测试数据缓存 -->
 			<CardWrap />
 			<CardWrap />
 			<CardWrap />
@@ -23,7 +24,7 @@
 </template>
 
 <script>
-	import CardWrap from "./components/CardWrap.vue"
+	import CardWrap from './components/CardWrap.vue'
 	export default {
 		name: 'forum',
 		components: {

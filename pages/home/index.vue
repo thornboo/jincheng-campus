@@ -16,16 +16,16 @@
 </template>
 
 <script>
-	import Swiper from './components/Swiper.vue'
-	import NoticeBar from './components/NoticeBar.vue'
 	import GridBar from './components/GridBar.vue'
+	import NoticeBar from './components/NoticeBar.vue'
+	import Swiper from './components/Swiper.vue'
 
 	export default {
 		name: 'home',
 		components: {
-			Swiper,
+			GridBar,
 			NoticeBar,
-			GridBar
+			Swiper
 		},
 		data() {
 			return {}
