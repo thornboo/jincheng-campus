@@ -1,7 +1,7 @@
 <template>
 	<view class="context">
 		<view class="notice-container base-container">
-			<u-notice-bar :text="noticeText" direction="column" mode="link" border bgColor="#E5F7EA" color="#009E14">
+			<u-notice-bar :text="noticeText" direction="column" mode="link" border bgColor="#aeb1ae" color="#FFCE56">
 			</u-notice-bar>
 		</view>
 	</view>
@@ -12,7 +12,7 @@
 		name: 'NoticeBar',
 		data() {
 			return {
-				noticeText: ['谁念西风独自凉', '萧萧黄叶闭疏窗', '沉思往事立残阳'],
+				noticeText: ['社区发帖规范', '关于版本更新问题', '问题反馈入口'],
 			}
 		},
 		onLoad() {},

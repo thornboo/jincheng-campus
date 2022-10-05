@@ -15,7 +15,7 @@
 				<u-list @scrolltolower="scrolltolower">
 					<u-list-item v-for="(item, index) in indexList" :key="index">
 						<u-cell :title="`列表长度-${index + 1}`">
-							<u-avatar slot="icon" shape="square" size="35" :src="item.url"
+							<u-avatar slot="icon" shape="square" size="28" :src="item.url"
 								customStyle="margin: -3px 5px -3px 0"></u-avatar>
 						</u-cell>
 					</u-list-item>
@@ -32,19 +32,19 @@
 		data() {
 			return {
 				baseList: [{
-						name: 'photo',
+						name: '/static/icons/message-icon/Reply.png',
 						title: '回复我的'
 					},
 					{
-						name: 'photo',
+						name: '/static/icons/message-icon/Mention.png',
 						title: '@我'
 					},
 					{
-						name: 'photo',
+						name: '/static/icons/message-icon/Give-like.png',
 						title: '收到的赞'
 					},
 					{
-						name: 'photo',
+						name: '/static/icons/message-icon/Notice.png',
 						title: '系统通知'
 					},
 				],
@@ -104,4 +104,8 @@
 	}
 
 	.msg-list {}
+
+	.grid-text {
+		font-size: 12px;
+	}
 </style>

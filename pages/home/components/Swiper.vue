@@ -15,15 +15,15 @@
 			return {
 				swiperList: [{
 						image: require('@/static/test/swiper1.png'),
-						title: '谁念西风独自凉',
+						title: '出新版本啦',
 					},
 					{
 						image: require('@/static/test/swiper2.png'),
-						title: '萧萧黄叶闭疏窗'
+						title: '关于XX活动的公告'
 					},
 					{
 						image: require('@/static/test/swiper3.png'),
-						title: '沉思往事立残阳'
+						title: '欢迎同学们购买！'
 					}
 				],
 				radius: "10px",

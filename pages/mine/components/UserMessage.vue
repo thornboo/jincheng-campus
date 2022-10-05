@@ -34,16 +34,16 @@
 		data() {
 			return {
 				baseList: [{
-						name: 'photo',
+						name: '/static/icons/mine-icon/Dynamic.png',
 						title: '动态'
 					},
 					{
-						name: 'photo',
+						name: '/static/icons/mine-icon/Follow.png',
 						title: '关注'
 					},
 					{
-						name: 'photo',
-						title: '粉丝'
+						name: '/static/icons/mine-icon/Friends.png',
+						title: '好友',
 					}
 				]
 			}
