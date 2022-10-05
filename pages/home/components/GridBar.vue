@@ -3,7 +3,8 @@
 		<view class="grid-container base-container">
 			<u-grid :border="false" col="4" align="left" @click="click">
 				<u-grid-item v-for="(baseListItem,baseListIndex) in gridList" :key="baseListIndex">
-					<u-icon :customStyle="{paddingTop:20+'rpx'}" :name="baseListItem.name" :size="28" color="#00BB30"></u-icon>
+					<u-icon :customStyle="{paddingTop:20+'rpx'}" :name="baseListItem.name" :size="28" color="#00BB30">
+					</u-icon>
 					<text class="grid-text">{{baseListItem.title}}</text>
 				</u-grid-item>
 			</u-grid>
@@ -17,31 +18,31 @@
 		data() {
 			return {
 				gridList: [{
-						name: 'photo',
+						name: '/static/icons/home-grid/Lost-found-1.png',
 						title: '失物招领'
 					},
 					{
-						name: 'photo',
+						name: '/static/icons/home-grid/Idle-trading-1.png',
 						title: '闲置交易'
 					},
 					{
-						name: 'photo',
+						name: '/static/icons/home-grid/Courier-1.png',
 						title: '代取快递'
 					},
 					{
-						name: 'photo',
+						name: '/static/icons/home-grid/Resource-sharing-1.png',
 						title: '资源分享'
 					},
 					{
-						name: 'photo',
+						name: '/static/icons/home-grid/Campus-activities-2.png',
 						title: '校园活动'
 					},
 					{
-						name: 'photo',
+						name: '/static/icons/home-grid/Campus-canteen-1.png',
 						title: '校园食堂'
 					},
 					{
-						name: 'photo',
+						name: '/static/icons/home-grid/Campus-supermarket-1.png',
 						title: '校园超市'
 					},
 					{

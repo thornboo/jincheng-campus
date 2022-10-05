@@ -16,12 +16,37 @@
 			<u-tabbar-item text="我的" icon="account" @click="click(3)"></u-tabbar-item>
 		</u-tabbar> -->
 
-		<u-tabbar :value="index" @change="name => index = name" :fixed="true" :placeholder="true"
-			:safeAreaInsetBottom="true">
-			<u-tabbar-item text="首页" icon="home" @click="click(0)"></u-tabbar-item>
-			<u-tabbar-item text="校园墙" icon="moments" @click="click(1)"></u-tabbar-item>
-			<u-tabbar-item text="消息" icon="chat" @click="click(2)"></u-tabbar-item>
-			<u-tabbar-item text="我的" icon="account" @click="click(3)"></u-tabbar-item>
+		<u-tabbar :value="index" @change="name => index = name" :fixed="true" :placeholder="true" :border="true"
+			:safeAreaInsetBottom="true" activeColor="#ffce56">
+
+			<!-- <u-tabbar-item text="首页" icon="home" @click="click(0)"></u-tabbar-item> -->
+
+			<u-tabbar-item text="首页" @click="click(0)">
+				<image class="u-page__item__slot-icon" slot="active-icon"
+					src="@/static/icons/tab-bar/home-selected.png"></image>
+				<image class="u-page__item__slot-icon" slot="inactive-icon" src="@/static/icons/tab-bar/home.png">
+				</image>
+			</u-tabbar-item>
+
+			<u-tabbar-item text="校园墙" @click="click(1)">
+				<image class="u-page__item__slot-icon" slot="active-icon"
+					src="@/static/icons/tab-bar/friends-circle-selected.png"></image>
+				<image class="u-page__item__slot-icon" slot="inactive-icon"
+					src="@/static/icons/tab-bar/friends-circle.png"></image>
+			</u-tabbar-item>
+
+			<u-tabbar-item text="消息" @click="click(2)">
+				<image class="u-page__item__slot-icon" slot="active-icon"
+					src="@/static/icons/tab-bar/comment-selected.png"></image>
+				<image class="u-page__item__slot-icon" slot="inactive-icon" src="@/static/icons/tab-bar/comment.png">
+				</image>
+			</u-tabbar-item>
+			<u-tabbar-item text="我的" @click="click(3)">
+				<image class="u-page__item__slot-icon" slot="active-icon"
+					src="@/static/icons/tab-bar/user-selected.png"></image>
+				<image class="u-page__item__slot-icon" slot="inactive-icon" src="@/static/icons/tab-bar/user.png">
+				</image>
+			</u-tabbar-item>
 		</u-tabbar>
 	</view>
 </template>
@@ -61,7 +86,7 @@
 </script>
 
 <style lang="scss">
-	.slot-icon {
+	.u-page__item__slot-icon {
 		width: 24px;
 		height: 24px;
 	}
