@@ -1,18 +1,12 @@
 <template>
 	<view class="context">
-		<view>
-			<LostBar />
-		</view>
+		<view></view>
 	</view>
 </template>
 
 <script>
-	import LostBar from './components/LostBar.vue'
 	export default {
-		name: 'lost_found',
-		components: {
-			LostBar
-		},
+		name: 'lostbar',
 		data() {
 			return {}
 		},
@@ -23,5 +17,10 @@
 </script>
 
 <style lang="scss">
-	.context {}
+	.context {
+		background-color: #909090;
+		height: 150px;
+		border-radius: 10px;
+		margin: 5px;
+	}
 </style>
