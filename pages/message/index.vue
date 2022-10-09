@@ -2,7 +2,7 @@
 	<view class="context">
 
 		<view>
-			<msgClassify />
+			<MsgClassify />
 		</view>
 
 		<view>
@@ -13,12 +13,12 @@
 </template>
 
 <script>
-	import msgClassify from './components/msgClassify.vue'
+	import MsgClassify from './components/MsgClassify.vue'
 
 	export default {
 		name: 'message',
 		components: {
-			msgClassify
+			MsgClassify
 		},
 		data() {
 			return {}

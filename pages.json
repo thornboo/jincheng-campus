@@ -29,6 +29,41 @@
 		"style": {
 			"navigationBarTitleText": "我的"
 		}
+	}, {
+		"path": "pages/lost_found/index",
+		"style": {
+			"navigationBarTitleText": "失物招领"
+		}
+	}, {
+		"path": "pages/idle_trading/index",
+		"style": {
+			"navigationBarTitleText": "闲置交易"
+		}
+	}, {
+		"path": "pages/replace_expressage/index",
+		"style": {
+			"navigationBarTitleText": "代取快递"
+		}
+	}, {
+		"path": "pages/resource_sharing/index",
+		"style": {
+			"navigationBarTitleText": "资源分享"
+		}
+	}, {
+		"path": "pages/campus_activity/index",
+		"style": {
+			"navigationBarTitleText": "校园活动"
+		}
+	}, {
+		"path": "pages/campus_canteen/index",
+		"style": {
+			"navigationBarTitleText": "校园食堂"
+		}
+	}, {
+		"path": "pages/campus_supermarket/index",
+		"style": {
+			"navigationBarTitleText": "校园超市"
+		}
 	}],
 
 	// 设置默认页面的窗口表现，用于设置应用的状态栏、导航条、标题、窗口背景色

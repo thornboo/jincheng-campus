@@ -28,7 +28,7 @@
 
 <script>
 	export default {
-		name: 'msgClassify',
+		name: 'MsgClassify',
 		data() {
 			return {
 				baseList: [{
