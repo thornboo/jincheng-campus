@@ -54,7 +54,7 @@
 					},
 					{
 						name: 'photo',
-						title: '暂未开放'
+						title: '更多'
 					},
 				],
 			}
