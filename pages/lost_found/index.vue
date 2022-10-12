@@ -2,6 +2,10 @@
 	<view class="context">
 		<view>
 			<LostBar />
+			<LostBar />
+			<LostBar />
+			<LostBar />
+			<LostBar />
 		</view>
 	</view>
 </template>

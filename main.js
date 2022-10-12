@@ -6,11 +6,12 @@ import uView from '@/uni_modules/uview-ui'
 import AvaTar from '@/components/AvaTar/index.vue'
 import Search from '@/components/Search/index.vue'
 import TabBar from '@/components/TabBar/index.vue'
+import InteractBar from '@/components/InteractBar/index.vue'
 
 Vue.component('AvaTar', AvaTar)
 Vue.component('Search', Search)
 Vue.component('TabBar', TabBar)
-
+Vue.component('InteractBar', InteractBar)
 
 Vue.use(uView)
 
