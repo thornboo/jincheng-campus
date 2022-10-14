@@ -7,10 +7,7 @@
 		name: 'resource_sharing',
 		data() {
 			return {}
-		},
-		onLoad() {},
-		methods() {},
-		computed() {}
+		}
 	}
 </script>
 

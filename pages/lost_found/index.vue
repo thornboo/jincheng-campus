@@ -36,10 +36,7 @@
 		},
 		onPageScroll(e) {
 			this.scrollTop = e.scrollTop;
-		},
-		onLoad() {},
-		methods() {},
-		computed() {}
+		}
 	}
 </script>
 

@@ -1,6 +1,7 @@
 <template>
 	<view class="context">
-		<u-search v-model="inputSearch" placeholder="搜索" shape="square" :showAction="false" bgColor="#dcdfdd"></u-search>
+		<u-search v-model="inputSearch" placeholder="搜索" shape="square" :showAction="false" bgColor="#dcdfdd">
+		</u-search>
 	</view>
 </template>
 
@@ -11,10 +12,7 @@
 			return {
 				inputSearch: ""
 			}
-		},
-		onLoad() {},
-		methods() {},
-		computed() {}
+		}
 	}
 </script>
 

@@ -16,7 +16,6 @@
 		data() {
 			return {}
 		},
-		mounted() {},
 		methods: {
 			onClick(index) {
 				console.log(index);
@@ -32,8 +31,7 @@
 						break;
 				}
 			}
-		},
-		computed() {}
+		}
 	}
 </script>
 

@@ -47,10 +47,7 @@
 					}
 				]
 			}
-		},
-		onLoad() {},
-		methods() {},
-		computed() {}
+		}
 	}
 </script>
 

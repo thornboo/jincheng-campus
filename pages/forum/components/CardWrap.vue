@@ -32,10 +32,7 @@
 		},
 		data() {
 			return {}
-		},
-		onLoad() {},
-		methods() {},
-		computed() {}
+		}
 	}
 </script>
 

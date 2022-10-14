@@ -32,8 +32,7 @@
 		},
 		onLoad() {
 			uni.hideTabBar()
-		},
-		onShow() {}
+		}
 	}
 </script>
 

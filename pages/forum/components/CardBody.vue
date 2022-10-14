@@ -18,10 +18,7 @@
 				postText: "猫猫落泪，哈哈哈",
 				src: "https://cdn.uviewui.com/uview/album/1.jpg"
 			}
-		},
-		onLoad() {},
-		methods() {},
-		computed() {}
+		}
 	}
 </script>
 

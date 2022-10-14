@@ -22,10 +22,7 @@
 				nickName: "摘星星",
 				timeFrame: "2022年12月10日"
 			}
-		},
-		onLoad() {},
-		methods() {},
-		computed() {}
+		}
 	}
 </script>
 

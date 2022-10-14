@@ -7,10 +7,7 @@
 		name: 'replace_expressage',
 		data() {
 			return {}
-		},
-		onLoad() {},
-		methods() {},
-		computed() {}
+		}
 	}
 </script>
 

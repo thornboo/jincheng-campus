@@ -23,10 +23,7 @@
 				comments: "回复",
 				transpond: "转发"
 			}
-		},
-		onLoad() {},
-		methods() {},
-		computed() {}
+		}
 	}
 </script>
 

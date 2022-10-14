@@ -7,10 +7,7 @@
 		name: 'idle_trading',
 		data() {
 			return {}
-		},
-		onLoad() {},
-		methods() {},
-		computed() {}
+		}
 	}
 </script>
 

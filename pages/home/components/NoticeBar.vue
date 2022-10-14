@@ -14,10 +14,7 @@
 			return {
 				noticeText: ['社区发帖规范', '关于版本更新问题', '问题反馈入口'],
 			}
-		},
-		onLoad() {},
-		methods() {},
-		computed() {}
+		}
 	}
 </script>
 

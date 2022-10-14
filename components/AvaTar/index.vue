@@ -11,10 +11,7 @@
 			return {
 				src: "@/static/images/headPortrait.jpg"
 			}
-		},
-		onLoad() {},
-		methods() {},
-		computed() {}
+		}
 	}
 </script>
 

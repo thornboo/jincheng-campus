@@ -7,10 +7,7 @@
 		name: 'campus_canteen',
 		data() {
 			return {}
-		},
-		onLoad() {},
-		methods() {},
-		computed() {}
+		}
 	}
 </script>
 

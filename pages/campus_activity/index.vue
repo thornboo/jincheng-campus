@@ -7,10 +7,7 @@
 		name: 'campus_activity',
 		data() {
 			return {}
-		},
-		onLoad() {},
-		methods() {},
-		computed() {}
+		}
 	}
 </script>
 

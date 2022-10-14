@@ -50,9 +50,7 @@
 			if (this.transpond === 0) {
 				this.transpond = "转发"
 			}
-		},
-		methods() {},
-		computed() {}
+		}
 	}
 </script>
 

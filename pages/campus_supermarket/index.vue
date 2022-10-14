@@ -7,10 +7,7 @@
 		name: 'campus_supermarket',
 		data() {
 			return {}
-		},
-		onLoad() {},
-		methods() {},
-		computed() {}
+		}
 	}
 </script>
 
