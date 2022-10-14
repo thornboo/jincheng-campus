@@ -8,12 +8,14 @@ import Search from '@/components/Search/index.vue'
 import TabBar from '@/components/TabBar/index.vue'
 import InteractBar from '@/components/InteractBar/index.vue'
 import BackTop from '@/components/BackTop/index.vue'
+import ReleaseBtn from '@/components/ReleaseBtn/index.vue'
 
 Vue.component('AvaTar', AvaTar)
 Vue.component('Search', Search)
 Vue.component('TabBar', TabBar)
 Vue.component('InteractBar', InteractBar)
 Vue.component('BackTop', BackTop)
+Vue.component('ReleaseBtn', ReleaseBtn)
 
 Vue.use(uView)
 

@@ -1,9 +1,9 @@
 <template>
 	<view class="context">
-		<u-back-top :scroll-top="scrollTop" :mode="mode" :iconStyle="iconStyle" />
 		<view class="lost-search">
 			<Search />
 		</view>
+		<ReleaseBtn :jumpUrl="jumpUrl" />
 		<view>
 			<LostBar />
 			<LostBar />
@@ -28,7 +28,10 @@
 				iconStyle: {
 					fontSize: '32rpx',
 					color: '#2979ff'
-				}
+				},
+
+				// 后期填补上失物招领的页面路径
+				jumpUrl: ''
 			}
 		},
 		onPageScroll(e) {
