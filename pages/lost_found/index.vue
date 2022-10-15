@@ -31,7 +31,7 @@
 				},
 
 				// 后期填补上失物招领的页面路径
-				jumpUrl: ''
+				jumpUrl: '/pages/lost_found/components/LostForm'
 			}
 		},
 		onPageScroll(e) {

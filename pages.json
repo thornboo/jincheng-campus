@@ -64,6 +64,11 @@
 		"style": {
 			"navigationBarTitleText": "校园超市"
 		}
+	}, {
+		"path": "pages/lost_found/components/LostForm",
+		"style": {
+			"navigationBarTitleText": "失物招领发布"
+		}
 	}],
 
 	// 设置默认页面的窗口表现，用于设置应用的状态栏、导航条、标题、窗口背景色
