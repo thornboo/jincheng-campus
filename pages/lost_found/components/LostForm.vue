@@ -4,8 +4,7 @@
 
 			<u-form-item prop="lostInfo.text" borderBottom>
 				<u-textarea v-model="model.lostInfo.text" placeholder="请输入丢失物品的信息，包括丢失地点，丢失时间。" height="150px"
-					maxlength="-1" border="none">
-				</u-textarea>
+					maxlength="-1" border="none"></u-textarea>
 			</u-form-item>
 
 			<u-form-item>
@@ -15,8 +14,10 @@
 				</view>
 			</u-form-item>
 		</u-form>
-		<u-button type="primary" text="提交" customStyle="margin-top: 50px" @click="submit"></u-button>
-		<u-button type="error" text="重置" customStyle="margin-top: 10px" @click="reset"></u-button>
+		<u-button type="error" text="重置" customStyle="width: 80px; float: left; margin-left: 30px" @click="reset">
+		</u-button>
+		<u-button type="primary" text="发布" customStyle="width: 80px; float: right; margin-right: 30px" @click="submit">
+		</u-button>
 	</view>
 </template>
 
