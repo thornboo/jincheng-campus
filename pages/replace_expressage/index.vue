@@ -1,12 +1,23 @@
 <template>
-	<view class="context"></view>
+	<view class="context">
+		<ReleaseBtn :jumpUrl="jumpUrl" />
+		<view>
+			<ExpressageBar />
+		</view>
+	</view>
 </template>
 
 <script>
+	import ExpressageBar from './components/ExpressageBar.vue'
 	export default {
 		name: 'replace_expressage',
+		components: {
+			ExpressageBar
+		},
 		data() {
-			return {}
+			return {
+				jumpUrl: '/pages/replace_expressage/components/ExpressageForm'
+			}
 		}
 	}
 </script>
