@@ -30,6 +30,6 @@
 	.context {}
 
 	.search-vi {
-		margin: 5px;
+		// margin: 5px;
 	}
 </style>
