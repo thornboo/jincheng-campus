@@ -13,11 +13,11 @@ $uni-color-warning: #f0ad4e; // 警告
 $uni-color-error: #dd524d;   // 危险
 
 /* 文字基本颜色 */
-$uni-text-color:#333;                 // 基本色
-$uni-text-color-inverse:#fff;         // 反色
-$uni-text-color-grey:#999;            // 辅助灰色
-$uni-text-color-placeholder: #808080; // 辅助灰色
-$uni-text-color-disable:#c0c0c0;      // 禁止灰色
+$uni-text-color:#333;                  // 基本色
+$uni-text-color-inverse:#fff;          // 反色
+$uni-text-color-grey:#999;             // 辅助灰色
+$uni-text-color-placeholder: #808080;  // 辅助灰色
+$uni-text-color-disable:#c0c0c0;       // 禁止灰色
 
 /* 背景颜色 */
 $uni-bg-color:#c8c8c8;                 // 主色
@@ -26,27 +26,28 @@ $uni-bg-color-hover:#f1f1f1;           // 点击状态颜色
 $uni-bg-color-mask:rgba(0, 0, 0, 0.4); // 遮罩颜色
 
 /* 边框颜色 */
-$uni-border-color:#c8c7cc;
-$uni-border-radius: 10px;
+$uni-border-color:#c8c7cc;             // 边框颜色
 
 /* 尺寸变量 */
 
 /* 文字尺寸 */
-$uni-font-size-sm:12px;
-$uni-font-size-base:14px;
-$uni-font-size-lg:16;
+$uni-font-size-sm:12px;               // 缩小尺寸
+$uni-font-size-base:14px;             // 基本尺寸
+$uni-font-size-lg:16;                 // 放大尺寸
 
 /* 图片尺寸 */
-$uni-img-size-sm:20px;
-$uni-img-size-base:26px;
-$uni-img-size-lg:40px;
+$uni-img-size-sm:20px;                // 小图片
+$uni-img-size-base:26px;              // 基本大小
+$uni-img-size-lg:40px;                // 大图片
 
 /* Border Radius */
-$uni-border-radius-sm: 2px;
-$uni-border-radius-base: 3px;
-$uni-border-radius-lg: 6px;
-$uni-border-radius-circle: 50%;
-$uni-border-radius-card: 5px;
+$uni-border-radius-sm: 2px;          // 小曲度
+$uni-border-radius-base: 3px;        // 标准曲度
+$uni-border-radius-lg: 6px;          // 大曲度
+$uni-border-radius-circle: 50%;      // 圆形
+$uni-border-radius-card: 5px;        // 卡片曲度
+// 临时曲度（开发）
+$uni-border-radius: 10px;            // 圆角度
 
 /* 水平间距 */
 $uni-spacing-row-sm: 5px;
