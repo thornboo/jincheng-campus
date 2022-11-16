@@ -67,7 +67,22 @@
 	}, {
 		"path": "pages/lost_found/components/LostForm",
 		"style": {
-			"navigationBarTitleText": "失物招领发布"
+			"navigationBarTitleText": "失物发布"
+		}
+	}, {
+		"path": "pages/idle_trading/components/IdleForm",
+		"style": {
+			"navigationBarTitleText": "闲置发布"
+		}
+	}, {
+		"path": "pages/replace_expressage/components/ExpressageForm",
+		"style": {
+			"navigationBarTitleText": "代取发布"
+		}
+	}, {
+		"path": "pages/resource_sharing/components/ResourceForm",
+		"style": {
+			"navigationBarTitleText": "资源发布"
 		}
 	}],
 
