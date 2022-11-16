@@ -23,6 +23,7 @@
 				<image class="u-page__item__slot-icon" slot="inactive-icon" src="@/static/icons/tab-bar/comment.png">
 				</image>
 			</u-tabbar-item>
+
 			<u-tabbar-item text="我的" @click="click(3)">
 				<image class="u-page__item__slot-icon" slot="active-icon"
 					src="@/static/icons/tab-bar/user-selected.png"></image>
