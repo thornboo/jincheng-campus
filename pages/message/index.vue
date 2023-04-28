@@ -8,7 +8,7 @@
 		<view>
 			<TabBar />
 		</view>
-
+		<tabbar :current="2"></tabbar>
 	</view>
 </template>
 

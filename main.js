@@ -5,14 +5,14 @@ import uView from '@/uni_modules/uview-ui'
 // 组件全局注册
 import AvaTar from '@/components/AvaTar/index.vue'
 import Search from '@/components/Search/index.vue'
-import TabBar from '@/components/TabBar/index.vue'
+import tabbar from '@/components/TabBar/tabbar.vue'
 import InteractBar from '@/components/InteractBar/index.vue'
 import BackTop from '@/components/BackTop/index.vue'
 import ReleaseBtn from '@/components/ReleaseBtn/index.vue'
 
 Vue.component('AvaTar', AvaTar)
 Vue.component('Search', Search)
-Vue.component('TabBar', TabBar)
+Vue.component('tabbar', tabbar)
 Vue.component('InteractBar', InteractBar)
 Vue.component('BackTop', BackTop)
 Vue.component('ReleaseBtn', ReleaseBtn)

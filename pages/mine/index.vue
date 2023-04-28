@@ -6,6 +6,7 @@
 		<view>
 			<TabBar />
 		</view>
+		<tabbar :current="3"></tabbar>
 	</view>
 </template>
 

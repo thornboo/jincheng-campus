@@ -12,6 +12,7 @@
 		<view>
 			<TabBar />
 		</view>
+		<tabbar :current="0"></tabbar>
 	</view>
 </template>
 
