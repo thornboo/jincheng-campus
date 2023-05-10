@@ -1,3 +1,10 @@
+<!--
+ * @FileDescription: 点赞评论转发功能组件
+ * @Author: thornboo
+ * @Date: 
+ * @LastEditors: thornboo
+ * @LastEditTime: 2023-5-10
+-->
 <template>
 	<view class="context">
 		<u-icon name="thumb-up" index="1" size="26px" labelSize="14" labelPos="right" :label="endorse"
@@ -11,7 +18,7 @@
 
 <script>
 	export default {
-		name: 'InteractBar',
+		name: 'interact-bar',
 		props: ['endorse', 'comments', 'transpond'],
 		data() {
 			return {}

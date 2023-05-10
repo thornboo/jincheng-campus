@@ -1,3 +1,10 @@
+<!--
+ * @FileDescription: 发布按钮组件
+ * @Author: thornboo
+ * @Date: 
+ * @LastEditors: thornboo
+ * @LastEditTime: 2023-5-10
+-->
 <template>
 	<view class="context">
 		<view class="release-btn">
@@ -8,7 +15,7 @@
 
 <script>
 	export default {
-		name: 'ReleaseBtn',
+		name: 'release-btn',
 		props: ['jumpUrl'],
 		data() {
 			return {}

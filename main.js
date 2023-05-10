@@ -3,22 +3,24 @@ import Vue from 'vue'
 import uView from '@/uni_modules/uview-ui'
 
 // 组件全局注册
-import AvaTar from '@/components/AvaTar/index.vue'
-import Search from '@/components/Search/index.vue'
-import tabbar from '@/components/TabBar/tabbar.vue'
-import InteractBar from '@/components/InteractBar/index.vue'
-import BackTop from '@/components/BackTop/index.vue'
-import ReleaseBtn from '@/components/ReleaseBtn/index.vue'
+import avatar from '@/components/avatar/avatar.vue'
+import backTop from '@/components/back-top/back-top.vue'
+import InteractBar from '@/components/interact-bar/interact-bar.vue'
+import ReleaseBtn from '@/components/release-btn/release-btn.vue'
+import search from '@/components/search/search.vue'
+import tabbar from '@/components/tabBar/tabbar.vue'
 
-Vue.component('AvaTar', AvaTar)
-Vue.component('Search', Search)
+
+// Vue.component 的第一个参数为组件名
+Vue.component('avatar', avatar)
+Vue.component('back-top', backTop)
+Vue.component('interact-bar', InteractBar)
+Vue.component('release-btn', ReleaseBtn)
+Vue.component('search', search)
 Vue.component('tabbar', tabbar)
-Vue.component('InteractBar', InteractBar)
-Vue.component('BackTop', BackTop)
-Vue.component('ReleaseBtn', ReleaseBtn)
+
 
 Vue.use(uView)
-
 Vue.config.productionTip = false
 App.mpType = 'app'
 const app = new Vue({
