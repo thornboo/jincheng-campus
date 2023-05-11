@@ -1,7 +1,13 @@
+<!--
+ * @FileDescription: 失物招领发布表单
+ * @Author: thornboo
+ * @Date: 
+ * @LastEditors: thornboo
+ * @LastEditTime: 2023-5-10
+-->
 <template>
 	<view class="context">
 		<u-form labelPosition="left" :model="model" :rules="rules">
-
 			<u-form-item prop="lostInfo.text" borderBottom>
 				<u-textarea v-model="model.lostInfo.text" placeholder="请输入丢失物品的信息，包括丢失地点，丢失时间。" height="150px"
 					maxlength="-1" border="none"></u-textarea>
@@ -23,7 +29,7 @@
 
 <script>
 	export default {
-		name: 'LostForm',
+		name: 'lost_form',
 		data() {
 			return {
 				model: {

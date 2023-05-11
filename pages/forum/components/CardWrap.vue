@@ -1,7 +1,17 @@
 <template>
 	<view class="context">
 		<view class="card-head-info">
-			<CardHead />
+			<view class="avatar">
+				<avatar />
+			</view>
+
+			<view class="nick-name">
+				<p>{{nickName}}</p>
+			</view>
+
+			<view class="time-frame">
+				<p>{{ timeFrame }}</p>
+			</view>
 		</view>
 
 		<view class="tag-bar">
@@ -31,7 +41,10 @@
 			CardMark
 		},
 		data() {
-			return {}
+			return {
+				nickName: "摘星星",
+				timeFrame: "2022年12月10日"
+			}
 		}
 	}
 </script>

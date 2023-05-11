@@ -1,3 +1,10 @@
+<!--
+ * @FileDescription: 金刚区格子组件
+ * @Author: thornboo
+ * @Date: 
+ * @LastEditors: thornboo
+ * @LastEditTime: 2023-5-10
+-->
 <template>
 	<view class="context">
 		<view class="grid-container base-container">
@@ -14,13 +21,13 @@
 
 <script>
 	export default {
-		name: 'GridBar',
+		name: 'grid-bar',
 		data() {
 			return {
 				gridList: [{
 						name: '/static/icons/home-grid/Lost-found-1.png',
 						title: '失物招领',
-						url: '/pages/lost_found/index'
+						url: '/pages/lost_found/lost_found'
 					},
 					{
 						name: '/static/icons/home-grid/Idle-trading-1.png',

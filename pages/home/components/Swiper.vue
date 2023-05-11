@@ -1,3 +1,10 @@
+<!--
+ * @FileDescription: 首页轮播图组件
+ * @Author: thornboo
+ * @Date: 
+ * @LastEditors: thornboo
+ * @LastEditTime: 2023-5-10
+-->
 <template>
 	<view class="context">
 		<view class="swiper-container base-container">
@@ -10,7 +17,7 @@
 
 <script>
 	export default {
-		name: 'Swiper',
+		name: 'swiper',
 		data() {
 			return {
 				swiperList: [{

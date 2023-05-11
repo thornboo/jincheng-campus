@@ -7,35 +7,35 @@
 			"navigationStyle": "custom"
 		}
 	}, {
-		"path": "pages/home/index",
+		"path": "pages/home/home",
 		"style": {
 			"navigationBarTitleText": "首页",
 			"enablePullDownRefresh": true
 		}
 	}, {
-		"path": "pages/forum/index",
+		"path": "pages/forum/forum",
 		"style": {
 			"navigationBarTitleText": "校园墙",
 			"enablePullDownRefresh": true
 		}
 	}, {
-		"path": "pages/message/index",
+		"path": "pages/message/message",
 		"style": {
 			"navigationBarTitleText": "消息",
 			"enablePullDownRefresh": true
 		}
 	}, {
-		"path": "pages/mine/index",
+		"path": "pages/mine/mine",
 		"style": {
 			"navigationBarTitleText": "我的"
 		}
 	}, {
-		"path": "pages/lost_found/index",
+		"path": "pages/lost_found/lost_found",
 		"style": {
 			"navigationBarTitleText": "失物招领"
 		}
 	}, {
-		"path": "pages/idle_trading/index",
+		"path": "pages/idle_trading/idle_trading",
 		"style": {
 			"navigationBarTitleText": "闲置交易"
 		}
@@ -65,7 +65,7 @@
 			"navigationBarTitleText": "校园超市"
 		}
 	}, {
-		"path": "pages/lost_found/components/LostForm",
+		"path": "pages/lost_found/components/lost_form",
 		"style": {
 			"navigationBarTitleText": "失物发布"
 		}
@@ -105,19 +105,19 @@
 	// Tabbar页面跳转
 	"tabBar": {
 		"list": [{
-				"pagePath": "pages/home/index",
+				"pagePath": "pages/home/home",
 				"text": "首页"
 			},
 			{
-				"pagePath": "pages/forum/index",
+				"pagePath": "pages/forum/forum",
 				"text": "校园墙"
 			},
 			{
-				"pagePath": "pages/message/index",
+				"pagePath": "pages/message/message",
 				"text": "消息"
 			},
 			{
-				"pagePath": "pages/mine/index",
+				"pagePath": "pages/mine/mine",
 				"text": "我的"
 			}
 		]

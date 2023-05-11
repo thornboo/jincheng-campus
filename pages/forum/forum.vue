@@ -1,11 +1,17 @@
+<!--
+ * @FileDescription: “校园墙”页面
+ * @Author: thornboo
+ * @Date: 
+ * @LastEditors: thornboo
+ * @LastEditTime: 2023-5-10
+-->
 <template>
 	<view class="context">
 		<view class="search-bar">
-			<Search />
+			<search />
 		</view>
 
 		<view>
-
 		</view>
 
 		<view>
@@ -18,7 +24,7 @@
 			<CardWrap />
 		</view>
 		<view>
-			<TabBar />
+			<tabbar />
 		</view>
 		<tabbar :current="1"></tabbar>
 	</view>

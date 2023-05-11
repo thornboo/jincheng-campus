@@ -1,25 +1,32 @@
+<!--
+ * @FileDescription: 失物招领页面
+ * @Author: thornboo
+ * @Date: 
+ * @LastEditors: thornboo
+ * @LastEditTime: 2023-5-10
+-->
 <template>
 	<view class="context">
 		<view class="lost-search">
-			<Search />
+			<search />
 		</view>
-		<ReleaseBtn :jumpUrl="jumpUrl" />
+		<release-btn :jumpUrl="jumpUrl" />
 		<view>
-			<LostBar />
-			<LostBar />
-			<LostBar />
-			<LostBar />
-			<LostBar />
+			<lost-bar />
+			<lost-bar />
+			<lost-bar />
+			<lost-bar />
+			<lost-bar />
 		</view>
 	</view>
 </template>
 
 <script>
-	import LostBar from './components/LostBar.vue'
+	import LostBar from './components/lost-bar.vue'
 	export default {
 		name: 'lost_found',
 		components: {
-			LostBar
+			'lost-bar': LostBar
 		},
 		data() {
 			return {
@@ -31,7 +38,7 @@
 				},
 
 				// 后期填补上失物招领的页面路径
-				jumpUrl: '/pages/lost_found/components/LostForm'
+				jumpUrl: '/pages/lost_found/components/lost_form'
 			}
 		},
 		onPageScroll(e) {

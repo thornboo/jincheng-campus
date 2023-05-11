@@ -1,3 +1,10 @@
+<!--
+ * @FileDescription: 用户信息展示组件
+ * @Author: thornboo
+ * @Date: 
+ * @LastEditors: thornboo
+ * @LastEditTime: 2023-5-10
+-->
 <template>
 	<view class="context">
 		<view class="business-card">
@@ -30,7 +37,7 @@
 
 <script>
 	export default {
-		name: 'UserMessage',
+		name: 'user-message',
 		data() {
 			return {
 				baseList: [{

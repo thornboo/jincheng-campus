@@ -1,7 +1,7 @@
 <template>
 	<view class="context">
 		<view class="avatar">
-			<AvaTar />
+			<avatar />
 		</view>
 
 		<view class="nick-name">

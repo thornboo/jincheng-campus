@@ -1,7 +1,14 @@
+<!--
+ * @FileDescription: 搜索全局组件
+ * @Author: thornboo
+ * @Date: 
+ * @LastEditors: thornboo
+ * @LastEditTime: 2023-5-10
+-->
 <template>
 	<view class="context">
 		<view class="user-avatar">
-			<AvaTar />
+			<avatar />
 		</view>
 
 		<view class="user-name">
@@ -28,7 +35,7 @@
 
 <script>
 	export default {
-		name: 'lostbar',
+		name: 'lost-bar',
 		data() {
 			return {
 				userName: '摘星星',

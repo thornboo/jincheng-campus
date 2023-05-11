@@ -1,32 +1,39 @@
+<!--
+ * @FileDescription: “首页”页面
+ * @Author: thornboo
+ * @Date: 
+ * @LastEditors: thornboo
+ * @LastEditTime: 2023-5-10
+-->
 <template>
 	<view class="context">
 		<view>
-			<Swiper />
+			<swiper />
 		</view>
 		<view>
-			<NoticeBar />
+			<notice-bar />
 		</view>
 		<view>
-			<GridBar />
+			<grid-bar />
 		</view>
 		<view>
-			<TabBar />
+			<tabbar />
 		</view>
 		<tabbar :current="0"></tabbar>
 	</view>
 </template>
 
 <script>
-	import GridBar from './components/GridBar.vue'
-	import NoticeBar from './components/NoticeBar.vue'
-	import Swiper from './components/Swiper.vue'
+	import GridBar from './components/grid-bar.vue'
+	import NoticeBar from './components/notice-bar.vue'
+	import swiper from './components/swiper.vue'
 
 	export default {
 		name: 'home',
 		components: {
-			GridBar,
-			NoticeBar,
-			Swiper
+			'grid-bar': GridBar,
+			'notice-bar': NoticeBar,
+			swiper
 		},
 		data() {
 			return {}

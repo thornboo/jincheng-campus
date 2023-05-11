@@ -1,3 +1,10 @@
+<!--
+ * @FileDescription: 消息类别功能组件
+ * @Author: thornboo
+ * @Date: 
+ * @LastEditors: thornboo
+ * @LastEditTime: 2023-5-10
+-->
 <template>
 	<view class="context">
 
@@ -28,7 +35,7 @@
 
 <script>
 	export default {
-		name: 'MsgClassify',
+		name: 'msg-classify',
 		data() {
 			return {
 				baseList: [{
