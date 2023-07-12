@@ -84,6 +84,21 @@
 		"style": {
 			"navigationBarTitleText": "资源发布"
 		}
+	}, {
+		"path": "pages/home/swiperInfo/swiperInfo0",
+		"style": {
+			// "navigationBarTitleText": "轮播图0具体信息"
+		}
+	}, {
+		"path": "pages/home/swiperInfo/swiperInfo1",
+		"style": {
+			"navigationBarTitleText": "轮播图1具体信息"
+		}
+	}, {
+		"path": "pages/home/swiperInfo/swiperInfo2",
+		"style": {
+			"navigationBarTitleText": "轮播图2具体信息"
+		}
 	}],
 
 	// 设置默认页面的窗口表现，用于设置应用的状态栏、导航条、标题、窗口背景色

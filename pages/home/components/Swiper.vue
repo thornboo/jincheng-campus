@@ -9,8 +9,7 @@
 	<view class="context">
 		<view class="swiper-container">
 			<u-swiper :list="swiperList" autoplay="true" indicator="true" keyName="image" showTitle :radius="radius"
-			height="300rpx"
-				circular>
+				height="300rpx" circular @click="swiperClick">
 			</u-swiper>
 		</view>
 	</view>
@@ -21,6 +20,7 @@
 		name: 'swiper',
 		data() {
 			return {
+				// 轮播图数据(测试数据)
 				swiperList: [{
 						image: require('@/static/test/swiper1.png'),
 						title: '出新版本啦',
@@ -36,7 +36,22 @@
 				],
 				radius: "20rpx"
 			}
-		}
+		},
+		methods: {
+			// 点击swiper跳转触发
+			swiperClick(e) {
+				uni.navigateTo({
+					url: "swiperInfo/swiperInfo" + e,
+					success: (res) => {
+						console.log("success", res)
+					},
+					fail: (err) => {
+						console.log("fail", err)
+					}
+				})
+				return console.log(e)
+			}
+		},
 	}
 </script>
 
