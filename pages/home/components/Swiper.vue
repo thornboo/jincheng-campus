@@ -7,9 +7,10 @@
 -->
 <template>
 	<view class="context">
-		<view class="swiper-container base-container">
-			<u-swiper :list="swiperList" autoplay="true" indicator="true" keyName="image" showTitle height="150px"
-				:radius="radius" circular>
+		<view class="swiper-container">
+			<u-swiper :list="swiperList" autoplay="true" indicator="true" keyName="image" showTitle :radius="radius"
+			height="300rpx"
+				circular>
 			</u-swiper>
 		</view>
 	</view>
@@ -33,13 +34,13 @@
 						title: '欢迎同学们购买！'
 					}
 				],
-				radius: "10px",
+				radius: "20rpx"
 			}
 		}
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.content {}
 
 	.swiper-container {}

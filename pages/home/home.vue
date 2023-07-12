@@ -7,13 +7,13 @@
 -->
 <template>
 	<view class="context">
-		<view>
+		<view class="base-container">
 			<swiper />
 		</view>
-		<view>
+		<view class="base-container">
 			<notice-bar />
 		</view>
-		<view>
+		<view class="base-container">
 			<grid-bar />
 		</view>
 		<view>
@@ -47,18 +47,18 @@
 <style lang="scss">
 	// 全局样式
 	page {
-		background-color: #F1F1F1;
+		background-color: #dadada;
 	}
 
 	// base样式
 	.base-container {
-		margin-top: 10px;
-		margin-left: 10px;
-		margin-right: 10px;
+		margin-top: 10rpx;
+		margin-left: 10rpx;
+		margin-right: 10rpx;
 	}
 
 	// 通知栏外部样式
 	.u-notice-bar {
-		border-radius: 10px;
+		border-radius: 20rpx;
 	}
 </style>

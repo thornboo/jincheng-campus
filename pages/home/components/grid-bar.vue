@@ -7,7 +7,7 @@
 -->
 <template>
 	<view class="context">
-		<view class="grid-container base-container">
+		<view class="grid-container">
 			<u-grid :border="false" col="4" align="left">
 				<u-grid-item v-for="(listIcon, listTitle) in gridList" :key="listTitle" @click="urlClick(listIcon.url)">
 					<u-icon :customStyle="{paddingTop:20+'rpx'}" :name="listIcon.name" :size="28" color="#00BB30">
@@ -76,7 +76,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.context {}
 
 	.grid-container {

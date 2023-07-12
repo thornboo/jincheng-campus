@@ -7,7 +7,7 @@
 -->
 <template>
 	<view class="context">
-		<view class="notice-container base-container">
+		<view class="notice-container">
 			<u-notice-bar :text="noticeText" direction="column" mode="link" border bgColor="#aeb1ae" color="#FFCE56">
 			</u-notice-bar>
 		</view>
@@ -25,7 +25,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.context {}
 
 	.notice-container {}
