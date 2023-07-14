@@ -23,9 +23,6 @@
 			<CardWrap />
 			<CardWrap />
 		</view>
-		<view>
-			<tabbar />
-		</view>
 		<tabbar :current="1"></tabbar>
 	</view>
 </template>
@@ -63,6 +60,6 @@
 	}
 
 	.search-bar {
-		margin: 10px;
+		margin: 10rpx;
 	}
 </style>

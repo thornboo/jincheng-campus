@@ -1,12 +1,12 @@
 <template>
 	<view class="context">
-		轮播图的具体信息
+		轮播图详情页
 	</view>
 </template>
 
 <script>
 	export default {
-		name: 'swiper_details_2',
+		name: 'swiper-details',
 		data() {
 			return {}
 		},

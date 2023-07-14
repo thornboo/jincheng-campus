@@ -1,47 +1,121 @@
-<!--
- * @FileDescription: “首页”页面
- * @Author: thornboo
- * @Date: 
- * @LastEditors: thornboo
- * @LastEditTime: 2023-5-10
--->
 <template>
-	<view class="context">
-		<view class="base-container">
-			<swiper />
+	<view class="base-container">
+		<!-- 轮播图 -->
+		<view class="swiper-container">
+			<u-swiper :list="swiperList" autoplay="true" indicator="true" keyName="image" showTitle radius="20rpx"
+				height="300rpx" circular @click="swiperClick">
+			</u-swiper>
 		</view>
-		<view class="base-container">
-			<notice-bar />
+		<!-- 滚动通知栏 -->
+		<view class="notice-container">
+			<u-notice-bar :text="noticeText" direction="column" mode="link" border bgColor="#aeb1ae" color="#FFCE56">
+			</u-notice-bar>
 		</view>
-		<view class="base-container">
-			<grid-bar />
+		<!-- 中间金刚区 -->
+		<view class="grid-container">
+			<u-grid :border="false" col="4" align="left">
+				<u-grid-item v-for="(listIcon, listTitle) in gridList" :key="listTitle" @click="urlClick(listIcon.url)">
+					<u-icon :customStyle="{paddingTop:20+'rpx'}" :name="listIcon.name" :size="28" color="#00BB30">
+					</u-icon>
+					<text class="grid-text">{{listIcon.title}}</text>
+				</u-grid-item>
+			</u-grid>
 		</view>
+		<!-- 热门话题 -->
 		<view>
-			<hot-topic />
+			<u--text block size="32rpx" lineHeight="80rpx" color="#55ff00" align="center" text="XX个话题正在被参与>"
+				@click=""></u--text>
 		</view>
-		<view>
-			<tabbar />
-		</view>
+		<!-- tabbar跳转 -->
 		<tabbar :current="0"></tabbar>
 	</view>
 </template>
 
 <script>
-	import GridBar from './components/grid-bar.vue'
-	import NoticeBar from './components/notice-bar.vue'
-	import swiper from './components/swiper.vue'
-	import HotTopic from './components/swiper.vue'
-
 	export default {
 		name: 'home',
-		components: {
-			'grid-bar': GridBar,
-			'notice-bar': NoticeBar,
-			swiper,
-			'hot-topic': HotTopic,
-		},
+		components: {},
 		data() {
-			return {}
+			return {
+				// 轮播图数据(测试数据)
+				swiperList: [{
+						image: require('@/static/test/swiper1.png'),
+						title: '出新版本啦',
+					},
+					{
+						image: require('@/static/test/swiper2.png'),
+						title: '关于XX活动的公告'
+					},
+					{
+						image: require('@/static/test/swiper3.png'),
+						title: '欢迎同学们购买！'
+					}
+				],
+				// 滚动通知栏数据
+				noticeText: ['社区发帖规范', '关于版本更新问题', '问题反馈入口'],
+				// 金刚区数据
+				gridList: [{
+						name: '/static/icons/home-grid/Lost-found-1.png',
+						title: '失物招领',
+						url: '/pages/lost_found/lost_found'
+					},
+					{
+						name: '/static/icons/home-grid/Idle-trading-1.png',
+						title: '闲置交易',
+						url: '/pages/idle_trading/index'
+					},
+					{
+						name: '/static/icons/home-grid/Courier-1.png',
+						title: '代取快递',
+						url: '/pages/replace_expressage/index'
+					},
+					{
+						name: '/static/icons/home-grid/Resource-sharing-1.png',
+						title: '资源分享',
+						url: '/pages/resource_sharing/index'
+					},
+					{
+						name: '/static/icons/home-grid/Campus-activities-2.png',
+						title: '校园活动',
+						url: '/pages/campus_activity/index'
+					},
+					{
+						name: '/static/icons/home-grid/Campus-canteen-1.png',
+						title: '校园食堂',
+						url: '/pages/campus_canteen/index'
+					},
+					{
+						name: '/static/icons/home-grid/Campus-supermarket-1.png',
+						title: '校园超市',
+						url: '/pages/campus_supermarket/index'
+					},
+					{
+						name: 'photo',
+						title: '更多'
+					},
+				],
+			}
+		},
+		methods: {
+			// 轮播图详情页跳转
+			swiperClick(e) {
+				uni.navigateTo({
+					url: "swiper-details",
+					success: (res) => {
+						console.log("success", res)
+					},
+					fail: (err) => {
+						console.log("fail", err)
+					}
+				})
+				return console.log(e)
+			},
+			// grid跳转
+			urlClick(gridUrl) {
+				uni.navigateTo({
+					url: gridUrl
+				})
+			}
 		},
 		onLoad() {
 			uni.hideTabBar()
@@ -50,20 +124,29 @@
 </script>
 
 <style lang="scss">
-	// 全局样式
+	// base样式
 	page {
 		background-color: #dadada;
 	}
 
-	// base样式
 	.base-container {
 		margin-top: 10rpx;
 		margin-left: 10rpx;
 		margin-right: 10rpx;
 	}
 
-	// 通知栏外部样式
+	// 滚动通知栏样式
 	.u-notice-bar {
-		border-radius: 20rpx;
+		border-radius: $uni-border-radius-base;
+	}
+
+	// grid区域样式
+	.grid-container {
+		background-color: #FEFEFE;
+		border-radius: $uni-border-radius-base;
+	}
+
+	.grid-text {
+		font-size: $uni-font-size-base;
 	}
 </style>
