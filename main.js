@@ -1,6 +1,8 @@
 import App from './App'
 import Vue from 'vue'
 import uView from '@/uni_modules/uview-ui'
+import axios from 'axios'
+import Vuex from 'vuex'
 
 // 组件全局注册
 import avatar from '@/components/avatar/avatar.vue'
@@ -19,8 +21,8 @@ Vue.component('release-btn', ReleaseBtn)
 Vue.component('search', search)
 Vue.component('tabbar', tabbar)
 
-
 Vue.use(uView)
+Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 App.mpType = 'app'
 const app = new Vue({

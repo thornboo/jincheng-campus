@@ -85,17 +85,17 @@
 			"navigationBarTitleText": "资源发布"
 		}
 	}, {
-		"path": "pages/home/swiperInfo/swiperInfo0",
+		"path": "pages/home/swiper_details/swiper_details_0",
 		"style": {
 			// "navigationBarTitleText": "轮播图0具体信息"
 		}
 	}, {
-		"path": "pages/home/swiperInfo/swiperInfo1",
+		"path": "pages/home/swiper_details/swiper_details_1",
 		"style": {
 			"navigationBarTitleText": "轮播图1具体信息"
 		}
 	}, {
-		"path": "pages/home/swiperInfo/swiperInfo2",
+		"path": "pages/home/swiper_details/swiper_details_2",
 		"style": {
 			"navigationBarTitleText": "轮播图2具体信息"
 		}

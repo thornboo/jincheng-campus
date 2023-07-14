@@ -17,6 +17,9 @@
 			<grid-bar />
 		</view>
 		<view>
+			<hot-topic />
+		</view>
+		<view>
 			<tabbar />
 		</view>
 		<tabbar :current="0"></tabbar>
@@ -27,13 +30,15 @@
 	import GridBar from './components/grid-bar.vue'
 	import NoticeBar from './components/notice-bar.vue'
 	import swiper from './components/swiper.vue'
+	import HotTopic from './components/swiper.vue'
 
 	export default {
 		name: 'home',
 		components: {
 			'grid-bar': GridBar,
 			'notice-bar': NoticeBar,
-			swiper
+			swiper,
+			'hot-topic': HotTopic,
 		},
 		data() {
 			return {}

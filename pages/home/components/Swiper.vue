@@ -41,7 +41,7 @@
 			// 点击swiper跳转触发
 			swiperClick(e) {
 				uni.navigateTo({
-					url: "swiperInfo/swiperInfo" + e,
+					url: "swiper_details/swiper_details_" + e,
 					success: (res) => {
 						console.log("success", res)
 					},

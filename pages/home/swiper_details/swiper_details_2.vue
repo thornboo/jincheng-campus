@@ -6,7 +6,7 @@
 
 <script>
 	export default {
-		name: 'swiperInfo2',
+		name: 'swiper_details_2',
 		data() {
 			return {}
 		},

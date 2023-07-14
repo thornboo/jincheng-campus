@@ -6,7 +6,7 @@
 
 <script>
 	export default {
-		name: 'swiperInfo0',
+		name: 'swiper_details_0',
 		data() {
 			return {}
 		},
@@ -25,7 +25,7 @@
 		onLoad() {
 			// 导航条标题
 			uni.setNavigationBarTitle({
-				title: 'swiperInfo0_title'
+				title: 'swiper_details_0_title'
 			});
 		},
 		methods() {},
