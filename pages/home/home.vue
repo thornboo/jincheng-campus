@@ -32,25 +32,15 @@
 </template>
 
 <script>
+	import {
+		getSwiperData
+	} from '@/api/swiper/swiper.js'
 	export default {
 		name: 'home',
 		components: {},
 		data() {
 			return {
-				// 轮播图数据(测试数据)
-				swiperList: [{
-						image: require('@/static/test/swiper1.png'),
-						title: '出新版本啦',
-					},
-					{
-						image: require('@/static/test/swiper2.png'),
-						title: '关于XX活动的公告'
-					},
-					{
-						image: require('@/static/test/swiper3.png'),
-						title: '欢迎同学们购买！'
-					}
-				],
+				swiperList: [], //轮播图数据
 				// 滚动通知栏数据
 				noticeText: ['社区发帖规范', '关于版本更新问题', '问题反馈入口'],
 				// 金刚区数据
@@ -118,7 +108,24 @@
 			}
 		},
 		onLoad() {
-			uni.hideTabBar()
+			// 隐藏默认tabbar
+			uni.hideTabBar({
+				success: (res) => {
+					console.log("tabbar success", res)
+				},
+				fail: (err) => {
+					console.log("tabbar fail", err)
+				}
+			});
+			// 获取轮播图数据
+			getSwiperData().then((res) => {
+				for (let item in res.data) {
+					this.swiperList.push({
+						image: res.data[item].swiper_picture,
+						title: res.data[item].swiper_title,
+					});
+				};
+			})
 		}
 	}
 </script>

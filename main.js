@@ -1,15 +1,14 @@
 import App from './App'
 import Vue from 'vue'
 import uView from '@/uni_modules/uview-ui'
-import axios from './api/api.js'
 import Vuex from 'vuex'
+
 
 // 全局组件
 import GlobalComp from '@/components/index.js'
 Vue.use(GlobalComp)
 
 Vue.use(uView)
-Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 App.mpType = 'app'
 const app = new Vue({

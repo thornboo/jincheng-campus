@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="container">
 		<u-tabbar :value="current?current:0" @change="changeTab" :fixed="true" :safeAreaInsetBottom="true"
 			:border="true" :placeholder="true" activeColor="#EA8831">
 			<u-tabbar-item v-for="(item,index) in list" :key="index" :text="item.text">
@@ -59,7 +59,9 @@
 	}
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+	.container {}
+
 	.u-page__item__slot-icon {
 		width: 40rpx;
 		height: 40rpx;

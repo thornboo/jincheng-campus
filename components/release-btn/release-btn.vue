@@ -1,12 +1,5 @@
-<!--
- * @FileDescription: 发布按钮组件
- * @Author: thornboo
- * @Date: 
- * @LastEditors: thornboo
- * @LastEditTime: 2023-5-10
--->
 <template>
-	<view class="context">
+	<view class="container">
 		<view class="release-btn">
 			<u-icon name="edit-pen" size="24px" @click="clickUrl(jumpUrl)"></u-icon>
 		</view>
@@ -31,13 +24,13 @@
 </script>
 
 <style lang="scss">
-	.context {}
+	.container {}
 
 	.release-btn {
 		position: fixed;
-		width: 20px;
-		padding: 10px;
-		border-radius: 30px;
+		width: 40rpx;
+		padding: 20rpx;
+		border-radius: 60rpx;
 		background-color: #ffff00;
 		bottom: 10%;
 		left: 80%;
