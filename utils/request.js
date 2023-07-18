@@ -46,36 +46,3 @@ const request = (obj) => {
 }
 
 export default request;
-
-
-// export default class Request {
-// 	http(param) {
-// 		let url = param.url,
-// 			data = param.data || {},
-// 			header = {},
-// 			method = param.method;
-// 		let requestUrl = operate.baseURL = url;
-
-
-// 		return new Promise((resolve, reject) => {
-// 			// 请求
-// 			uni.request({
-// 				url: requestUrl,
-// 				data: data,
-// 				header: header,
-// 				method: method,
-// 				success: (res) => {
-// 					resolve(res)
-// 				},
-// 				fail: (e) => {
-// 					reject(err)
-// 				},
-// 				// 请求完成
-// 				complete() {
-// 					resolve();
-// 					return;
-// 				}
-// 			})
-// 		})
-// 	}
-// }

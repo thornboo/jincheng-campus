@@ -2,13 +2,13 @@
 	<view class="base-container">
 		<!-- 轮播图 -->
 		<view class="swiper-container">
-			<u-swiper :list="swiperList" autoplay="true" indicator="true" keyName="image" showTitle radius="20rpx"
-				height="300rpx" circular @click="swiperClick">
+			<u-swiper :list="swiperList" autoplay="true" indicator indicatorMode="line" circular radius="20rpx"
+				height="300rpx" @click="swiperClick">
 			</u-swiper>
 		</view>
 		<!-- 滚动通知栏 -->
 		<view class="notice-container">
-			<u-notice-bar :text="noticeText" direction="column" mode="link" border bgColor="#aeb1ae" color="#FFCE56">
+			<u-notice-bar :text="noticeData" direction="column" mode="link" border bgColor="#aeb1ae" color="#FFCE56">
 			</u-notice-bar>
 		</view>
 		<!-- 中间金刚区 -->
@@ -22,7 +22,7 @@
 			</u-grid>
 		</view>
 		<!-- 热门话题 -->
-		<view>
+		<view class="topic-container">
 			<u--text block size="32rpx" lineHeight="80rpx" color="#55ff00" align="center" text="XX个话题正在被参与>"
 				@click=""></u--text>
 		</view>
@@ -33,16 +33,16 @@
 
 <script>
 	import {
+		getNoticeData,
 		getSwiperData
-	} from '@/api/swiper/swiper.js'
+	} from '@/api/home_info.js'
 	export default {
 		name: 'home',
 		components: {},
 		data() {
 			return {
 				swiperList: [], //轮播图数据
-				// 滚动通知栏数据
-				noticeText: ['社区发帖规范', '关于版本更新问题', '问题反馈入口'],
+				noticeData: [], // 滚动通知栏数据
 				// 金刚区数据
 				gridList: [{
 						name: '/static/icons/home-grid/Lost-found-1.png',
@@ -100,7 +100,7 @@
 				})
 				return console.log(e)
 			},
-			// grid跳转
+			// 金刚区各分区跳转
 			urlClick(gridUrl) {
 				uni.navigateTo({
 					url: gridUrl
@@ -119,12 +119,11 @@
 			});
 			// 获取轮播图数据
 			getSwiperData().then((res) => {
-				for (let item in res.data) {
-					this.swiperList.push({
-						image: res.data[item].swiper_picture,
-						title: res.data[item].swiper_title,
-					});
-				};
+				this.swiperList = [...res.data.swiperData]
+			});
+			// 获取滚动通知栏数据
+			getNoticeData().then((res) => {
+				this.noticeData = [...res.data.noticeData]
 			})
 		}
 	}
@@ -133,27 +132,38 @@
 <style lang="scss">
 	// base样式
 	page {
-		background-color: #dadada;
+		background-color: $uni-text-color-grey;
 	}
 
 	.base-container {
-		margin-top: 10rpx;
-		margin-left: 10rpx;
-		margin-right: 10rpx;
+		margin-left: $uni-base-spacing;
+		margin-right: $uni-base-spacing;
+	}
+
+	// 轮播图样式
+	.swiper-container {
+		margin-top: $uni-base-spacing;
 	}
 
 	// 滚动通知栏样式
 	.u-notice-bar {
+		margin-top: $uni-base-spacing;
 		border-radius: $uni-border-radius-base;
 	}
 
 	// grid区域样式
 	.grid-container {
+		margin-top: $uni-base-spacing;
 		background-color: #FEFEFE;
 		border-radius: $uni-border-radius-base;
 	}
 
 	.grid-text {
 		font-size: $uni-font-size-base;
+	}
+
+	// 热门话题
+	.topic-container {
+		margin-top: $uni-base-spacing;
 	}
 </style>
