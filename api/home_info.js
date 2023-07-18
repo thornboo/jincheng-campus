@@ -9,7 +9,7 @@ export function getSwiperData(query) {
 	})
 }
 
-// 滚筒通知栏信息
+// 滚动通知栏信息
 export function getNoticeData(query) {
 	return Request({
 		url: '/notice',

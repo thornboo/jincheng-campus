@@ -6,47 +6,32 @@
 	export default {
 		// 当uni-app 初始化完成时触发（全局只触发一次）
 		onLaunch: function() {
-			uni.hideTabBar()
-			console.log('App Launch')
+			uni.hideTabBar();
 		},
 
 		// 当 uni-app 启动，或从后台进入前台显示
-		onShow: function() {
-			console.log('App Show')
-		},
+		onShow: function() {},
 
 		// 当 uni-app 从前台进入后台
-		onHide: function() {
-			console.log('App Hide')
-		},
+		onHide: function() {},
 
 		// 当 uni-app 报错时触发
-		onError: function() {
-			console.log('App Error')
-		},
+		onError: function() {},
 		// 对 nvue 页面发送的数据进行监听
-		onUniNViewMessage: function() {
-			console.log('Uni NView Message')
-		},
+		onUniNViewMessage: function() {},
 
 		// 对未处理的 Promise 拒绝事件监听函数
-		onUnhandledRejection: function() {
-			console.log('Unhandled Rejection')
-		},
+		onUnhandledRejection: function() {},
 
 		// 页面不存在监听函数
-		onPageNotFound: function() {
-			console.log('Page Not Found')
-		},
+		onPageNotFound: function() {},
 
 		// 监听系统主题变化
-		onThemeChange: function() {
-			console.log('Theme Change')
-		},
+		onThemeChange: function() {},
 
 		// 全局变量机制
 		globalData: {
-			text: 'text'
+			default_font_size: '17rpx'
 		}
 	}
 </script>

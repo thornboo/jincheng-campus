@@ -15,7 +15,7 @@
 		<view class="grid-container">
 			<u-grid :border="false" col="4" align="left">
 				<u-grid-item v-for="(listIcon, listTitle) in gridList" :key="listTitle" @click="urlClick(listIcon.url)">
-					<u-icon :customStyle="{paddingTop:20+'rpx'}" :name="listIcon.name" :size="28" color="#00BB30">
+					<u-icon :customStyle="{paddingTop:20+'rpx'}" :name="listIcon.name" size="28rpx" color="#00BB30">
 					</u-icon>
 					<text class="grid-text">{{listIcon.title}}</text>
 				</u-grid-item>
@@ -41,6 +41,7 @@
 		components: {},
 		data() {
 			return {
+				font_size: '28rpx', // 字体大小
 				swiperList: [], //轮播图数据
 				noticeData: [], // 滚动通知栏数据
 				// 金刚区数据
@@ -108,6 +109,12 @@
 			}
 		},
 		onLoad() {
+			// 获取用户默认字体大小，保存到全局变量：default_font_size
+			uni.getSystemInfo({
+				success: (res) => {
+					getApp().globalData.default_font_size = res.fontSizeSetting;
+				}
+			});
 			// 隐藏默认tabbar
 			uni.hideTabBar({
 				success: (res) => {
@@ -154,7 +161,7 @@
 	// grid区域样式
 	.grid-container {
 		margin-top: $uni-base-spacing;
-		background-color: #FEFEFE;
+		background-color: $uni-text-color-inverse;
 		border-radius: $uni-border-radius-base;
 	}
 

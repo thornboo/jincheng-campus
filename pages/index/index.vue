@@ -1,10 +1,3 @@
-<!--
- * @FileDescription: 小程序启动页（logo）
- * @Author: thornboo
- * @Date: 
- * @LastEditors: thornboo
- * @LastEditTime: 2023-5-10
--->
 <template>
 	<view class="content">
 		<image class='backImg' src="@/static/images/index.png"></image>
