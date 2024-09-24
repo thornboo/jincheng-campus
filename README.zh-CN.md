@@ -1,15 +1,24 @@
 <div>
     <div align='center'>
-        <img src="src/static/images/logo.png" alt="logo">
+        <img src="../master/static/images/logo.png" alt="logo">
     </div>
 </div>
 
 # 金橙校园
 
 ## 所用UI组件库
-- [ColorUI](https://github.com/weilanwl/ColorUI) - 鲜亮的高饱和色彩，专注视觉的小程序组件库。
-- [Vant Weapp](https://vant-contrib.gitee.io/vant/v2/#/zh-CN) - 轻量、可靠的移动端 Vue 组件库。
-- [uView](https://www.uviewui.com/components/intro.html) - 多平台快速开发的UI框架。
-- [uni-app内置组件](https://uniapp.dcloud.net.cn/component) - uni-app提供的原生扩展组件。
+- [uView](https://www.uviewui.com/) - 是全面兼容nvue的uni-app生态框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水。
 
 ## 技术栈
+
+
+## 主要功能
+ 目前1.0版本的主要功能有：
+ - 失物招领
+ - 闲置交易
+ - 代取快递
+ - 校园活动
+ - 校园食堂
+ - 校园超市
+ - 金橙树洞
+ - 校园墙

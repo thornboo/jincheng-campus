@@ -1,0 +1,130 @@
+{
+	// 设置页面路径及窗口表现, pages数组中第一项表示应用启动页,pages数组中第一项表示应用启动页
+	"pages": [{
+		"path": "pages/index/index",
+		"style": {
+			"navigationBarTitleText": "金橙校园",
+			"navigationStyle": "custom"
+		}
+	}, {
+		"path": "pages/home/home",
+		"style": {
+			"navigationBarTitleText": "首页",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/forum/forum",
+		"style": {
+			"navigationBarTitleText": "校园墙",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/message/message",
+		"style": {
+			"navigationBarTitleText": "消息",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/mine/mine",
+		"style": {
+			"navigationBarTitleText": "我的"
+		}
+	}, {
+		"path": "pages/lost_found/lost_found",
+		"style": {
+			"navigationBarTitleText": "失物招领"
+		}
+	}, {
+		"path": "pages/idle_trading/idle_trading",
+		"style": {
+			"navigationBarTitleText": "闲置交易"
+		}
+	}, {
+		"path": "pages/replace_expressage/index",
+		"style": {
+			"navigationBarTitleText": "代取快递"
+		}
+	}, {
+		"path": "pages/resource_sharing/index",
+		"style": {
+			"navigationBarTitleText": "资源分享"
+		}
+	}, {
+		"path": "pages/campus_activity/index",
+		"style": {
+			"navigationBarTitleText": "校园活动"
+		}
+	}, {
+		"path": "pages/campus_canteen/index",
+		"style": {
+			"navigationBarTitleText": "校园食堂"
+		}
+	}, {
+		"path": "pages/campus_supermarket/index",
+		"style": {
+			"navigationBarTitleText": "校园超市"
+		}
+	}, {
+		"path": "pages/lost_found/components/lost_form",
+		"style": {
+			"navigationBarTitleText": "失物发布"
+		}
+	}, {
+		"path": "pages/idle_trading/components/IdleForm",
+		"style": {
+			"navigationBarTitleText": "闲置发布"
+		}
+	}, {
+		"path": "pages/replace_expressage/components/ExpressageForm",
+		"style": {
+			"navigationBarTitleText": "代取发布"
+		}
+	}, {
+		"path": "pages/resource_sharing/components/ResourceForm",
+		"style": {
+			"navigationBarTitleText": "资源发布"
+		}
+	}, {
+		"path": "pages/home/swiper-details",
+		"style": {
+			"navigationBarTitleText": "轮播图具体信息"
+		}
+	}],
+
+	// 设置默认页面的窗口表现，用于设置应用的状态栏、导航条、标题、窗口背景色
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+
+	// 自动跳转相关配置，对页面访问权限路由进行控制
+	"uniIdRouter": {},
+
+	// 组件自动引入规则，只要组件安装在components目录下，就可以直接在页面中使用，打包后会自动剔除未使用的组件
+	"easycom": {
+		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+	},
+
+	// Tabbar页面跳转
+	"tabBar": {
+		"list": [{
+				"pagePath": "pages/home/home",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/forum/forum",
+				"text": "校园墙"
+			},
+			{
+				"pagePath": "pages/message/message",
+				"text": "消息"
+			},
+			{
+				"pagePath": "pages/mine/mine",
+				"text": "我的"
+			}
+		]
+	}
+}

@@ -1,14 +1,14 @@
 <div>
     <div align='center'>
-        <img src="src/static/images/logo.png" alt="logo">
+        <img src="../master/static/images/logo.png" alt="logo">
     </div>
 </div>
 
-# jincheng-campus
+# 金橙校园
 
-## UI component library
+## UI组件库
+- [uView2.0](https://www.uviewui.com/)
 
-- [ColorUI](https://github.com/weilanwl/ColorUI) - Bright high saturation color, focus on visual small program component library。
-- [Vant Weapp](https://vant-contrib.gitee.io/vant/v2/#/zh-CN) - Lightweight, reliable mobile Vue component library。
-- [uView](https://www.uviewui.com/components/intro.html) - A UI framework for rapid development across multiple platforms。
-- [uni-app 内置组件](https://uniapp.dcloud.net.cn/component) - Native extension components provided by Uni-App。
+## 技术框架
+- [vue2](https://v2.cn.vuejs.org/)
+- [uni-app](https://zh.uniapp.dcloud.io/)
