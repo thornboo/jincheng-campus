@@ -3,3 +3,13 @@
  * 一般用于配置 vite 的编译选项
  * 仅vue 3项目生效
  */
+import { defineConfig } from 'vite';
+import path from 'path';
+
+export default defineConfig({
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, '')
+        }
+    }
+});
