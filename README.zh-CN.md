@@ -10,6 +10,13 @@
 - [uView](https://www.uviewui.com/) - 是全面兼容nvue的uni-app生态框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水。
 
 ## 技术栈
+- node版本：
+- npm版本：
+- Vue版本：
+
+## 启动
+`npm install`
+`npm run dev:h5`
 
 
 ## 主要功能
