@@ -1,34 +1,15 @@
-<!--
- * @FileDescription: “我的”页面
- * @Author: thornboo
- * @Date: 
- * @LastEditors: thornboo
- * @LastEditTime: 2023-5-10
--->
-<template>
-	<view class="context">
-		<view>
-			<user-message />
-		</view>
+<route lang="json5" type="page">
+{
+	style: {
+		navigationBarTitleText: '我的',
+	},
+}
+</route>
 
-		<tabbar :current="3"></tabbar>
-	</view>
+<template>
+	<view>我的</view>
 </template>
 
-<script>
-	import UserMessage from "./components/user-message.vue"
-	export default {
-		name: "mine",
-		components: {
-			'user-message': UserMessage
-		},
-		data() {
-			return {
+<script lang="ts" setup></script>
 
-			}
-		},
-		onLoad() {
-			uni.hideTabBar()
-		},
-	}
-</script>
+<style lang="scss" scoped></style>

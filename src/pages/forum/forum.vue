@@ -1,57 +1,31 @@
+<route lang="json5" type="page">
+{
+	style: {
+		navigationBarTitleText: '校园墙',
+	},
+}
+</route>
+
 <template>
-    <view class="context">
-        <view class="search-bar">
-            <search/>
-        </view>
-        <view>
-        </view>
-        <view>
-            <!-- 测试数据缓存 -->
-            <CardWrap/>
-            <CardWrap/>
-            <CardWrap/>
-            <CardWrap/>
-            <CardWrap/>
-            <CardWrap/>
-        </view>
-        <tabbar :current="1"></tabbar>
-    </view>
+	<view
+		:style="{ marginTop: safeAreaInsets?.top + 'px' }"
+		class="bg-white overflow-hidden pt-2 px-4"
+	>
+		<view class="text-center text-3xl mt-8">
+			鸽友们好，我是
+			<text class="text-red-500">菲鸽</text>
+		</view>
+	</view>
 </template>
 
-<script>
-import CardWrap from './components/CardWrap.vue';
-
-export default {
-    name: 'forum',
-    components: {
-        CardWrap
-    },
-    data() {
-        return {};
-    },
-    onLoad() {
-        uni.hideTabBar();
-    }
-};
+<script lang="ts" setup>
+// 获取屏幕边界到安全区域距离
+const { safeAreaInsets } = uni.getSystemInfoSync()
 </script>
 
-<style lang="scss">
-// 全局样式
-page {
-    background-color: #F1F2F1;
-    font-family: 'PingFang SC';
-}
-
-@font-face {
-    font-family: 'PingFang';
-    src: url('~@/static/font/PingFang Bold.ttf') format('truetype');
-}
-
-.context {
-    font-family: PingFang;
-}
-
-.search-bar {
-    margin: 10rpx;
+<style lang="scss" scoped>
+.test-css {
+	// mt-4=>1rem=>16px;
+	margin-top: 16px;
 }
 </style>
