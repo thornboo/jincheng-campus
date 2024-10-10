@@ -3,12 +3,12 @@ import { createPersistedState } from 'pinia-plugin-persistedstate' // 数据持�
 
 const store = createPinia()
 store.use(
-  createPersistedState({
-    storage: {
-      getItem: uni.getStorageSync,
-      setItem: uni.setStorageSync,
-    },
-  }),
+	createPersistedState({
+		storage: {
+			getItem: uni.getStorageSync,
+			setItem: uni.setStorageSync,
+		},
+	}),
 )
 
 export default store
