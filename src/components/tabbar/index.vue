@@ -46,7 +46,7 @@
 </template>
 
 <script lang="ts" setup>
-const tabbar = ref(1)
+	const tabbar = ref(1)
 </script>
 
 <style lang="scss" scoped></style>
