@@ -25,30 +25,66 @@
     "list": [
       {
         "iconPath": "static/tabbar/home.png",
+        "selectedColor": "#c32a2a",
         "selectedIconPath": "static/tabbar/homeHL.png",
         "pagePath": "pages/home/home",
         "text": "首页"
       },
       {
-        "iconPath": "static/tabbar/example.png",
-        "selectedIconPath": "static/tabbar/exampleHL.png",
+        "iconPath": "static/tabbar/forum.png",
+        "selectedIconPath": "static/tabbar/forumHL.png",
         "pagePath": "pages/forum/forum",
         "text": "校园墙"
       },
       {
-        "iconPath": "static/tabbar/example.png",
-        "selectedIconPath": "static/tabbar/exampleHL.png",
+        "iconPath": "static/tabbar/message.png",
+        "selectedIconPath": "static/tabbar/messageHL.png",
         "pagePath": "pages/message/message",
         "text": "消息"
       },
       {
-        "iconPath": "static/tabbar/example.png",
-        "selectedIconPath": "static/tabbar/exampleHL.png",
+        "iconPath": "static/tabbar/mine.png",
+        "selectedIconPath": "static/tabbar/mineHL.png",
         "pagePath": "pages/mine/mine",
         "text": "我的"
       }
     ]
   },
+  "subPackages": [
+    {
+      "root": "pages-sub",
+      "pages": [
+        {
+          "path": "campus-canteen/campus-canteen",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "校园食堂"
+          }
+        },
+        {
+          "path": "find-part-time/find-part-time",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "寻找兼职"
+          }
+        },
+        {
+          "path": "idle-trade/idle-trade",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "闲置交易"
+          }
+        },
+        {
+          "path": "lost-found/lost-found",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "失物招领"
+          }
+        }
+      ]
+    }
+  ],
   "pages": [
     {
       "path": "pages/index/index",
@@ -69,8 +105,8 @@
       "path": "pages/home/home",
       "type": "page",
       "style": {
-        "navigationStyle": "custom",
-        "navigationBarTitleText": "首页"
+        "navigationBarTitleText": "金橙校园",
+        "enablePullDownRefresh": true
       }
     },
     {
@@ -87,6 +123,5 @@
         "navigationBarTitleText": "我的"
       }
     }
-  ],
-  "subPackages": []
+  ]
 }

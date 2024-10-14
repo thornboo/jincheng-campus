@@ -1,7 +1,7 @@
 <template>
 	<view>
-		<wd-tabbar v-model="tabbar">
-			<wd-tabbar-item icon="home" title="首页">
+		<wd-tabbar v-model="tabBar" :fixed="true" @change="switchTab(tabBar)">
+			<wd-tabbar-item icon="home" name="home" title="首页">
 				<template #icon>
 					<wd-img
 						height="40rpx"
@@ -11,7 +11,7 @@
 					></wd-img>
 				</template>
 			</wd-tabbar-item>
-			<wd-tabbar-item icon="forum" title="校园墙">
+			<wd-tabbar-item icon="forum" name="forum" title="校园墙">
 				<template #icon>
 					<wd-img
 						height="40rpx"
@@ -21,7 +21,7 @@
 					></wd-img>
 				</template>
 			</wd-tabbar-item>
-			<wd-tabbar-item icon="message" title="消息">
+			<wd-tabbar-item icon="message" name="message" title="消息">
 				<template #icon>
 					<wd-img
 						height="40rpx"
@@ -31,12 +31,12 @@
 					></wd-img>
 				</template>
 			</wd-tabbar-item>
-			<wd-tabbar-item icon="mine" title="我的">
+			<wd-tabbar-item icon="mine" name="mine" title="我的">
 				<template #icon>
 					<wd-img
 						height="40rpx"
 						round
-						src="../../static/tabbar/mine.png"
+						src="../src/static/tabbar/mine.png"
 						width="40rpx"
 					></wd-img>
 				</template>
@@ -46,7 +46,31 @@
 </template>
 
 <script lang="ts" setup>
-	const tabbar = ref(1)
+	import { tabBarStore } from '@/store/tabBar'
+
+	const currentTab = tabBarStore()
+
+	const tabBar = currentTab.path
+
+	function switchTab(index: string) {
+		const pageMap = {
+			home: '/pages/home/home',
+			forum: '/pages/forum/forum',
+			message: '/pages/message/message',
+			mine: '/pages/mine/mine',
+		}
+		const path = pageMap[index]
+		if (path) {
+			uni.switchTab({
+				url: path,
+				success: () => {
+					currentTab.changePath(index)
+				},
+			})
+		} else {
+			console.error('跳转页面失败：' + index)
+		}
+	}
 </script>
 
 <style lang="scss" scoped></style>

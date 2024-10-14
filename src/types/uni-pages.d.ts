@@ -8,7 +8,11 @@ interface NavigateToOptions {
        "/pages/forum/forum" |
        "/pages/home/home" |
        "/pages/message/message" |
-       "/pages/mine/mine";
+       "/pages/mine/mine" |
+       "/pages-sub/campus-canteen/campus-canteen" |
+       "/pages-sub/find-part-time/find-part-time" |
+       "/pages-sub/idle-trade/idle-trade" |
+       "/pages-sub/lost-found/lost-found";
 }
 interface RedirectToOptions extends NavigateToOptions {}
 

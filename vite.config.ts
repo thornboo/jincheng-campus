@@ -57,6 +57,7 @@ export default ({ command, mode }) => {
 				// pages 目录为 src/pages，分包目录不能配置在pages目录下
 				// subPackages: ['src/pages-sub'], // 是个数组，可以配置多个，但是不能为pages里面的目录
 				dts: 'src/types/uni-pages.d.ts',
+				subPackages: ['src/pages-sub'],
 			}),
 			UniLayouts(),
 			UniPlatform(),

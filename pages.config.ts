@@ -28,28 +28,39 @@ export default defineUniPages({
 		list: [
 			{
 				iconPath: 'static/tabbar/home.png',
+				selectedColor: '#c32a2a',
 				selectedIconPath: 'static/tabbar/homeHL.png',
 				pagePath: 'pages/home/home',
 				text: '首页',
 			},
 			{
-				iconPath: 'static/tabbar/example.png',
-				selectedIconPath: 'static/tabbar/exampleHL.png',
+				iconPath: 'static/tabbar/forum.png',
+				selectedIconPath: 'static/tabbar/forumHL.png',
 				pagePath: 'pages/forum/forum',
 				text: '校园墙',
 			},
 			{
-				iconPath: 'static/tabbar/example.png',
-				selectedIconPath: 'static/tabbar/exampleHL.png',
+				iconPath: 'static/tabbar/message.png',
+				selectedIconPath: 'static/tabbar/messageHL.png',
 				pagePath: 'pages/message/message',
 				text: '消息',
 			},
 			{
-				iconPath: 'static/tabbar/example.png',
-				selectedIconPath: 'static/tabbar/exampleHL.png',
+				iconPath: 'static/tabbar/mine.png',
+				selectedIconPath: 'static/tabbar/mineHL.png',
 				pagePath: 'pages/mine/mine',
 				text: '我的',
 			},
 		],
 	},
+	subPackages: [
+		{
+			root: 'pages-sub', // 分包的相对根路径
+			pages: [
+				{
+					path: 'pages-sub/lost-found/lost-found',
+				},
+			],
+		},
+	],
 })

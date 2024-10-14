@@ -12,7 +12,7 @@ route-block 代码块则可以配置页面相关信息，这些信息会自动�
 </route>
 <template>
 	<view class="container">
-		<wd-img class="back-image" src="../../static/images/index.png" />
+		<image class="back-image" src="@img/index.png" />
 	</view>
 </template>
 <script lang="ts" setup>
@@ -20,7 +20,7 @@ route-block 代码块则可以配置页面相关信息，这些信息会自动�
 		uni.reLaunch({
 			url: '/pages/home/home',
 		})
-	}, 2000)
+	}, 500) // TODO: 生产环境设置为3或者5秒
 </script>
 <style lang="scss" scoped>
 	page {
@@ -29,13 +29,12 @@ route-block 代码块则可以配置页面相关信息，这些信息会自动�
 
 	.container {
 		display: flex;
-		width: 100%;
 		height: 100%;
-		background-color: #98f1a6;
+		width: 100%;
 	}
 
 	.back-image {
-		width: 100%;
 		height: 100vh; // vh表示视口高度的百分比
+		width: 100%;
 	}
 </style>
