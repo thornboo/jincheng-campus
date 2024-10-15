@@ -13,6 +13,7 @@
 				v-model:current="current"
 				:list="swiperList"
 				autoplay
+				height="200rpx"
 				@change="onChange"
 				@click="handleClick"
 			/>
@@ -46,11 +47,10 @@
 	const current = ref<number>(0)
 
 	const swiperList = ref([
-		'https://registry.npmmirror.com/wot-design-uni-assets/*/files/redpanda.jpg',
-		'https://registry.npmmirror.com/wot-design-uni-assets/*/files/capybara.jpg',
-		'https://registry.npmmirror.com/wot-design-uni-assets/*/files/panda.jpg',
-		'https://registry.npmmirror.com/wot-design-uni-assets/*/files/moon.jpg',
-		'https://registry.npmmirror.com/wot-design-uni-assets/*/files/meng.jpg',
+		'@img/swiper-list/beveragePromotionMilkTea.png',
+		'@img/swiper-list/chineseFastFoodClayPotRice.png',
+		'@img/swiper-list/chineseFastFoodStirFryTakeoutSet.png',
+		'@img/swiper-list/cuisineSichuanStirFryTakeoutSet.png',
 	])
 
 	const gridAreaData = [
@@ -82,6 +82,15 @@
 			icon: '/static/images/find-part-time.svg',
 		},
 		{
+			text: '校园跑腿',
+			url: '/pages-sub/campus-errand-runner/campus-errand-runner',
+			dot: false,
+			type: 'danger',
+			value: 33,
+			max: 99,
+			icon: '/static/images/campus-errand-runner.svg',
+		},
+		{
 			text: '校园食堂',
 			url: '/pages-sub/campus-canteen/campus-canteen',
 			dot: false,
@@ -90,20 +99,49 @@
 			max: 99,
 			icon: '/static/images/campus-canteen.svg',
 		},
+		{
+			text: '校园超市',
+			url: '/pages-sub/campus-supermarket/campus-supermarket',
+			dot: false,
+			type: 'danger',
+			value: 33,
+			max: 99,
+			icon: '/static/images/campus-supermarket.svg',
+		},
 	]
 
-	function gridClick(value) {
+	// 防止多次点击导航跳转请求
+	let isNavigating: boolean = false
+
+	function gridClick(params: object) {
 		uni.navigateTo({
-			url: value.url,
+			url: params.url,
+			success: () => {
+				isNavigating = false
+			},
+			fail: () => {
+				isNavigating = false
+			},
 		})
 	}
 
-	function handleClick(e) {
-		console.log(e)
+	// 轮播图点击事件
+	function handleClick(params) {
+		uni.navigateTo({
+			url: '/pages-sub/swiper-details/swiper-details?image=' + params.item,
+			success: () => {
+				console.log('success')
+			},
+			fail: () => {
+				console.log('error')
+			},
+		})
+		console.log(params)
 	}
 
-	function onChange(e) {
-		console.log(e)
+	// 轮播图切换事件
+	function onChange(params) {
+		console.log('swiperData:' + params)
 	}
 </script>
 

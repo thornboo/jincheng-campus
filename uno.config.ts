@@ -59,7 +59,7 @@ export default defineConfig({
 		// 启用 () 分组功能
 		// 支持css class组合，eg: `<div class="hover:(bg-gray-400 font-medium) font-(light mono)">测试 unocss</div>`
 		transformerVariantGroup(),
-		// Don't change the following order
+		// 请勿更改以下顺序
 		transformerAttributify({
 			// 解决与第三方框架样式冲突问题
 			prefixedOnly: true,

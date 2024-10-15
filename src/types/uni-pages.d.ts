@@ -10,9 +10,12 @@ interface NavigateToOptions {
        "/pages/message/message" |
        "/pages/mine/mine" |
        "/pages-sub/campus-canteen/campus-canteen" |
+       "/pages-sub/campus-errand-runner/campus-errand-runner" |
+       "/pages-sub/campus-supermarket/campus-supermarket" |
        "/pages-sub/find-part-time/find-part-time" |
        "/pages-sub/idle-trade/idle-trade" |
-       "/pages-sub/lost-found/lost-found";
+       "/pages-sub/lost-found/lost-found" |
+       "/pages-sub/swiper-details/swiper-details";
 }
 interface RedirectToOptions extends NavigateToOptions {}
 

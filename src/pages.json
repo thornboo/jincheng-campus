@@ -62,6 +62,20 @@
           }
         },
         {
+          "path": "campus-errand-runner/campus-errand-runner",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "闲置交易"
+          }
+        },
+        {
+          "path": "campus-supermarket/campus-supermarket",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "校园超市"
+          }
+        },
+        {
           "path": "find-part-time/find-part-time",
           "type": "page",
           "style": {
@@ -80,6 +94,13 @@
           "type": "page",
           "style": {
             "navigationBarTitleText": "失物招领"
+          }
+        },
+        {
+          "path": "swiper-details/swiper-details",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "轮播图详情页面"
           }
         }
       ]

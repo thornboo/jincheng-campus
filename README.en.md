@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/thornboo/jincheng-campus">
-    <img width="500" src="./src/static/logo.png" alt="icon">
+    <img width="500" src="src/static/app/logo.png" alt="icon">
   </a>
 </p>
 

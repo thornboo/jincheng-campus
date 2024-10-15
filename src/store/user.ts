@@ -30,6 +30,7 @@ export const useUserStore = defineStore(
 		}
 	},
 	{
+		// 是否开启数据持久化
 		persist: true,
 	},
 )

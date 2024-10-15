@@ -48,7 +48,6 @@ export default ({ command, mode }) => {
 
 	return defineConfig({
 		envDir: './env', // 自定义env目录
-
 		plugins: [
 			UniPages({
 				exclude: ['**/components/**/**.*'],
@@ -84,7 +83,6 @@ export default ({ command, mode }) => {
 				eslintrc: { enabled: true },
 				vueTemplate: true, // default false
 			}),
-
 			ViteRestart({
 				// 通过这个插件，在修改vite.config.js文件则不需要重新运行也生效配置
 				restart: ['vite.config.js'],
@@ -120,7 +118,6 @@ export default ({ command, mode }) => {
 				],
 			},
 		},
-
 		resolve: {
 			alias: {
 				'@': path.join(process.cwd(), './src'),
