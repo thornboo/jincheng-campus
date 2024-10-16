@@ -6,13 +6,13 @@
 
 <template>
 	<view>我是失物招领</view>
-	<ReleaseBtn />
+	<ReleaseBtn :titleList="titleList" />
 </template>
 
 <script lang="ts" setup>
 	import ReleaseBtn from '@/components/release-btn/release-btn.vue'
 
-	const titleList = ref(['失物登记', '招领登记'])
+	const titleList = ['失物登记', '招领登记']
 </script>
 
 <style lang="scss" scoped></style>
