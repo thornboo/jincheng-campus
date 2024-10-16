@@ -6,16 +6,18 @@
 
 <template>
 	<view class="p-2">
-		<image class="w-[100%] rounded-[10rpx] h-[300rpx]" :src="propsData.image" />
+		<image :src="propsData.images" class="w-[100%] rounded-[10rpx] h-[300rpx]" />
 	</view>
 </template>
 
 <script lang="ts" setup>
-	let propsData: object = {}
+	const propsData: object = ref({
+		images: String,
+	})
 
 	onLoad((option) => {
-		propsData = {
-			...option,
+		propsData.value = {
+			images: import(option.images),
 		}
 	})
 </script>

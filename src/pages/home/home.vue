@@ -44,16 +44,19 @@
 </template>
 
 <script lang="ts" setup>
-	const current = ref<number>(0)
+	import img1 from '@img/swiper-list/beveragePromotionMilkTea.png'
 
-	const swiperList = ref([
-		'@img/swiper-list/beveragePromotionMilkTea.png',
-		'@img/swiper-list/chineseFastFoodClayPotRice.png',
-		'@img/swiper-list/chineseFastFoodStirFryTakeoutSet.png',
-		'@img/swiper-list/cuisineSichuanStirFryTakeoutSet.png',
-	])
+	const current: number = ref(0)
 
-	const gridAreaData = [
+	// TODO: 此处的 @img 小程序无法识别，后续接口请求的数据处理需注意
+	const swiperList: Array<string | object> = [
+		img1,
+		'/static/images/swiper-list/chineseFastFoodClayPotRice.png',
+		'/static/images/swiper-list/chineseFastFoodStirFryTakeoutSet.png',
+		'/static/images/swiper-list/cuisineSichuanStirFryTakeoutSet.png',
+	]
+
+	const gridAreaData: Array<object> = [
 		{
 			text: '失物招领',
 			url: '/pages-sub/lost-found/lost-found', // 点击跳转页面地址
@@ -128,7 +131,7 @@
 	// 轮播图点击事件
 	function handleClick(params) {
 		uni.navigateTo({
-			url: '/pages-sub/swiper-details/swiper-details?image=' + params.item,
+			url: '/pages-sub/swiper-details/swiper-details?images=' + params.item,
 			success: () => {
 				console.log('success')
 			},
@@ -136,12 +139,11 @@
 				console.log('error')
 			},
 		})
-		console.log(params)
 	}
 
 	// 轮播图切换事件
 	function onChange(params) {
-		console.log('swiperData:' + params)
+		console.log(params)
 	}
 </script>
 

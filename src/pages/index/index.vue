@@ -20,7 +20,7 @@ route-block 代码块则可以配置页面相关信息，这些信息会自动�
 		uni.reLaunch({
 			url: '/pages/home/home',
 		})
-	}, 500) // TODO: 生产环境设置为3或者5秒
+	}, 100) // TODO: 生产环境设置为3或者5秒
 </script>
 <style lang="scss" scoped>
 	page {
