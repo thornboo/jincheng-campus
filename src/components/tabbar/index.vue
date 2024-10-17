@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<wd-tabbar v-model="tabBar" :fixed="true" @change="switchTab(tabBar)">
+		<wd-tabbar v-model="currentTab" :fixed="true" @change="switchTab(currentTab)">
 			<wd-tabbar-item icon="home" name="home" title="首页">
 				<template #icon>
 					<wd-img
@@ -46,11 +46,7 @@
 </template>
 
 <script lang="ts" setup>
-	import { tabBarStore } from '@/store/tabBar'
-
-	const currentTab = tabBarStore()
-
-	const tabBar = currentTab.path
+	const currentTab = ref<string>('home')
 
 	function switchTab(index: string) {
 		const pageMap = {
@@ -64,7 +60,7 @@
 			uni.switchTab({
 				url: path,
 				success: () => {
-					currentTab.changePath(index)
+					currentTab.value.changePath(index)
 				},
 			})
 		} else {
