@@ -4,9 +4,9 @@ import store from './store'
 import { routeInterceptor, requestInterceptor, prototypeInterceptor } from './interceptors'
 import 'virtual:uno.css'
 import '@/style/index.scss'
-// import VConsole from 'vconsole'
+import VConsole from 'vconsole'
 
-// const vConsole = new VConsole({ theme: 'dark' })
+const vConsole = new VConsole({ theme: 'dark' })
 
 // 结束调试后，可移除掉vConsole
 // vConsole.destroy()
