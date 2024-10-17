@@ -117,6 +117,10 @@
 			title: 'QQ好友',
 		},
 		{
+			iconUrl: '/static/app/share/wechatMoments.png',
+			title: '朋友圈',
+		},
+		{
 			iconUrl: '/static/app/share/link.png',
 			title: '复制链接',
 		},

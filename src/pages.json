@@ -97,6 +97,13 @@
           }
         },
         {
+          "path": "lost-found/lost-found-detail",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "失物招领详情页"
+          }
+        },
+        {
           "path": "lost-found/lost-found",
           "type": "page",
           "style": {
