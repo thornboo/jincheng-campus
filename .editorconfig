@@ -1,3 +1,4 @@
+# 告诉EditorConfig插件，这是根文件，不用继续往上查找
 root = true
 
 # 表示所有文件适用
