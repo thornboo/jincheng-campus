@@ -85,6 +85,13 @@
 			</wd-cell-group>
 			<view class="footer">
 				<wd-button block size="large" type="primary" @click="handleSubmit">提交</wd-button>
+				<wd-button
+					class="mt-4 items-center justify-center"
+					type="primary"
+					@click="getLocation"
+				>
+					IP定位:
+				</wd-button>
 			</view>
 		</wd-form>
 	</view>
@@ -103,6 +110,7 @@
 		value4: string
 		value5: string
 		value6: string
+		value7: string
 		fileList: Record<string, string>[]
 	}>({
 		value1: '',
@@ -111,6 +119,7 @@
 		value4: '',
 		value5: '',
 		value6: '',
+		value7: '',
 		fileList: [],
 	})
 
@@ -120,6 +129,20 @@
 
 	function handleFileChange({ fileList }) {
 		model.fileList = fileList
+	}
+
+	// 获取当前位置
+	function getLocation() {
+		uni.getLocation({
+			type: 'wgs84',
+			success: function (res) {
+				console.log('当前位置的经度：' + res.longitude)
+				console.log('当前位置的纬度：' + res.latitude)
+			},
+			fail: () => {
+				console.log('获取位置信息失败')
+			},
+		})
 	}
 
 	// 表单提交事件
