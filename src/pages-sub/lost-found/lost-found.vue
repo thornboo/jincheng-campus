@@ -22,16 +22,18 @@
 						<span>
 							<image
 								:src="item.userAvatar"
-								class="w-[60rpx] h-[60rpx] rounded-full align-middle"
+								class="w-[60rpx] h-[60rpx] align-middle"
 								@click="handleClickUserInfo(item.id)"
 							/>
-							<wd-text
-								:text="item.userName"
-								class="ml-1 align-middle"
-								color="#000000FF"
-								size="28rpx"
-								@click="handleClickUserInfo(item.id)"
-							/>
+							<span class="ml-1">
+								<wd-text
+									:text="item.userName"
+									class="align-middle"
+									color="#000000FF"
+									size="28rpx"
+									@click="handleClickUserInfo(item.id)"
+								/>
+							</span>
 							<wd-tag
 								bg-color="#CACACAFF"
 								class="ml-1 align-middle"
@@ -105,6 +107,8 @@
 <script lang="ts" setup>
 	import { useToast } from 'wot-design-uni'
 	import ReleaseBtn from '@/components/release-btn/release-btn.vue'
+	import qq from '@/static/app/share/qq.png'
+	import wechat from '@/static/app/share/wechat.png'
 
 	// 传给悬浮按钮的标题列表
 	const titleList = ['失物登记', '招领登记']
@@ -119,11 +123,11 @@
 	// 更多选项列表
 	const panels = ref([
 		{
-			iconUrl: '/static/app/share/wechat.png',
+			iconUrl: wechat,
 			title: '微信好友',
 		},
 		{
-			iconUrl: '/static/app/share/qq.png',
+			iconUrl: qq,
 			title: 'QQ好友',
 		},
 		{
@@ -139,6 +143,7 @@
 			title: '举报',
 		},
 	])
+	console.log(panels.value)
 
 	// TODO: 前期先用假数据填充开发
 	// 失物招领数据
