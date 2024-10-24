@@ -38,6 +38,7 @@ _若是在使用中有什么建议，欢迎在小程序提出反馈。_
 - pnpm>=7.30
 - Vue Official<=2.1.6
 - TypeScript<=5.5.4
+- vue-official=2.0.20(此版本不会提示template标签错误)
 
 ## 快速开始
 

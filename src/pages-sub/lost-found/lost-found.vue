@@ -109,6 +109,9 @@
 	import ReleaseBtn from '@/components/release-btn/release-btn.vue'
 	import qq from '@/static/app/share/qq.png'
 	import wechat from '@/static/app/share/wechat.png'
+	import wechatMoments from '@/static/app/share/wechatMoments.png'
+	import link from '@/static/app/share/link.png'
+	import report from '@/static/app/share/report.png'
 
 	// 传给悬浮按钮的标题列表
 	const titleList = ['失物登记', '招领登记']
@@ -120,30 +123,22 @@
 	const show = ref<boolean>(false)
 	const toast = useToast()
 
-	// 更多选项列表
-	const panels = ref([
-		{
-			iconUrl: wechat,
-			title: '微信好友',
-		},
-		{
-			iconUrl: qq,
-			title: 'QQ好友',
-		},
-		{
-			iconUrl: '/static/app/share/wechatMoments.png',
-			title: '朋友圈',
-		},
-		{
-			iconUrl: '/static/app/share/link.png',
-			title: '复制链接',
-		},
-		{
-			iconUrl: '/static/app/share/report.png',
-			title: '举报',
-		},
-	])
-	console.log(panels.value)
+	// 定义面板数据
+	const panelData = [
+		{ icon: wechat, title: '微信好友' },
+		{ icon: qq, title: 'QQ好友' },
+		{ icon: wechatMoments, title: '朋友圈' },
+		{ icon: link, title: '复制链接' },
+		{ icon: report, title: '举报' },
+	]
+
+	// 使用 map 创建 panels
+	const panels = ref(
+		panelData.map(({ icon, title }) => ({
+			iconUrl: icon,
+			title,
+		})),
+	)
 
 	// TODO: 前期先用假数据填充开发
 	// 失物招领数据
