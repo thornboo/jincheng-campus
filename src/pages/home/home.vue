@@ -7,8 +7,8 @@
 }
 </route>
 <template>
-	<view class="bg-[#e3e3e3ff] h-screen px-2">
-		<view class="pt-2">
+	<view class="container-page h-screen">
+		<view class="pt-1">
 			<wd-swiper
 				v-model:current="current"
 				:list="swiperList"
@@ -46,7 +46,7 @@
 <script lang="ts" setup>
 	import img1 from '@img/swiper-list/beveragePromotionMilkTea.png'
 
-	const current: number = ref(0)
+	const current = ref<number>(0)
 
 	// TODO: 此处的 @img 小程序无法识别，后续接口请求的数据处理需注意
 	const swiperList: Array<string | object> = [
@@ -148,12 +148,18 @@
 </script>
 
 <style lang="scss" scoped>
+	.container-page {
+		background-color: $uni-bg-color;
+		padding-left: $uni-padding-xn;
+		padding-right: $uni-padding-xn;
+	}
+
 	.grid-img {
 		height: 100rpx;
 		width: 100rpx;
 	}
 
 	:deep(.custom-item) {
-		border-radius: 10px;
+		border-radius: 10rpx;
 	}
 </style>
