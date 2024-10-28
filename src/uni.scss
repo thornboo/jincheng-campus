@@ -14,7 +14,7 @@ $uni-text-color-placeholder: #808080;
 $uni-text-color-disable: #c0c0c0;
 
 /* 背景颜色 */
-$uni-bg-color: #f2f2f7;
+$uni-bg-color: #f2f2f7; // 基本背景色
 $uni-bg-color-grey: #f8f8f8;
 $uni-bg-color-hover: #f1f1f1; // 点击状态颜色
 $uni-bg-color-mask: rgb(0 0 0 / 40%); // 遮罩颜色
@@ -23,7 +23,8 @@ $uni-bg-color-mask: rgb(0 0 0 / 40%); // 遮罩颜色
 $uni-border-color: #c8c7cc;
 
 /* 尺寸变量 */
-$uni-padding-xn: 20rpx;
+$uni-margin-base: 10rpx;
+$uni-padding-base: 20rpx;
 
 /* 文字尺寸 */
 $uni-font-size-sm: 12px;

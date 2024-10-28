@@ -7,7 +7,7 @@
 }
 </route>
 <template>
-	<view class="container-page h-screen">
+	<view class="container-page">
 		<view class="pt-1">
 			<wd-swiper
 				v-model:current="current"
@@ -149,9 +149,10 @@
 
 <style lang="scss" scoped>
 	.container-page {
+		height: 100vh;
 		background-color: $uni-bg-color;
-		padding-left: $uni-padding-xn;
-		padding-right: $uni-padding-xn;
+		padding-left: $uni-padding-base;
+		padding-right: $uni-padding-base;
 	}
 
 	.grid-img {

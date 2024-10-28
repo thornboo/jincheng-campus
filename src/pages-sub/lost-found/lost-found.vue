@@ -5,8 +5,8 @@
 </route>
 
 <template>
-	<view class="bg-[#e3e3e3ff] h-screen">
-		<view class="px-2 py-2">
+	<view class="container-page">
+		<view class="py-2">
 			<wd-segmented
 				v-model:value="currentSegmenter"
 				:options="segmenterList"
@@ -15,35 +15,32 @@
 				@change="handleSegmented"
 			></wd-segmented>
 		</view>
-		<view v-for="item in lostFoundData" :key="item.id" class="px-2 relative">
+		<view v-for="item in lostFoundData" :key="item.id" class="relative">
 			<wd-card class="mx-0" custom-class="custom-card-style">
 				<template #title>
 					<view class="py-2 flex justify-between items-center w-full">
-						<span>
+						<span class="flex items-center">
 							<image
 								:src="item.userAvatar"
-								class="w-[60rpx] h-[60rpx] align-middle"
+								class="w-[60rpx] h-[60rpx]"
 								@click="handleClickUserInfo(item.id)"
 							/>
-							<span class="ml-1">
-								<wd-text
-									:text="item.userName"
-									class="align-middle"
-									color="#000000FF"
-									size="28rpx"
-									@click="handleClickUserInfo(item.id)"
-								/>
-							</span>
+							<wd-text
+								custom-class="title-left-element"
+								:text="item.userName"
+								color="#000000FF"
+								size="28rpx"
+								@click="handleClickUserInfo(item.id)"
+							/>
 							<wd-tag
-								bg-color="#CACACAFF"
-								class="ml-1 align-middle"
-								color="#FAA507FF"
-								plain
+								custom-class="title-left-element"
+								bg-color="#ffd22e"
+								color="#fff"
 							>
 								Lv.{{ item.userLevel }}
 							</wd-tag>
 						</span>
-						<span>
+						<span class="mr-[-20rpx]">
 							<wd-button icon="more" type="icon" @click="showActions" />
 							<wd-action-sheet
 								v-model="show"
@@ -53,11 +50,11 @@
 							/>
 						</span>
 					</view>
-					<view class="pb-2">
-						<wd-text :lines="2" :text="item.lostTitle" color="#000000FF" size="30rpx" />
-					</view>
 				</template>
-				<view class="relative" @click="handleClickCardContent(item)">
+				<view class="pb-2">
+					<wd-text :lines="2" :text="item.lostTitle" color="#000000FF" size="28rpx" />
+				</view>
+				<view @click="handleClickCardContent(item)">
 					<wd-text
 						:lines="2"
 						:text="item.content"
@@ -65,32 +62,36 @@
 						lineHeight="36rpx"
 						size="28rpx"
 					/>
-					<image
-						v-for="(img, index) in item.imgUrl"
-						v-show="index < 3"
-						:key="index"
-						:src="img"
-						class="w-[150rpx] h-[150rpx] pt-1 pr-1"
-						mode="aspectFill"
-					/>
-					<view
-						v-show="item.imgUrl.length > 3"
-						class="flex w-[150rpx] h-[150rpx] mt-1 mr-1 absolute bg-[rgba(100,100,100,0.4)] float-right bottom-0 right-[190rpx] items-start justify-items-end justify-end text-white"
-					>
-						<view class="text-[20rpx] bg-black">+{{ item.imgUrl.length - 3 }}张</view>
+					<view class="relative w-fit flex gap-x-1">
+						<template v-for="(img, index) in item.imgUrl" :key="index">
+							<image
+								v-if="index < 3"
+								:src="img"
+								class="w-[150rpx] h-[150rpx] pt-1"
+								mode="aspectFill"
+							/>
+						</template>
+						<view
+							v-show="item.imgUrl.length > 3"
+							class="flex w-[150rpx] h-[150rpx] absolute right-[0] bottom-0 bg-[rgba(100,100,100,0.5)] items-start justify-items-end justify-end text-white"
+						>
+							<view class="text-[20rpx] bg-black">
+								+{{ item.imgUrl.length - 3 }}张
+							</view>
+						</view>
 					</view>
 				</view>
 				<template #footer>
 					<view class="flex justify-between items-center w-full">
 						<wd-tag color="#000" bg-color="#FFF" size="small" type="primary">
-							{{ item.createTime }}
+							{{ formatDate(item.createTime) }}
 						</wd-tag>
 						<view class="ml-auto">
 							<wd-tag size="small" color="#000" bg-color="#FFF" class="mr-2">
-								{{ item.viewCount }}次浏览
+								{{ item.viewCount > 99 ? '99+' : item.viewCount }}次浏览
 							</wd-tag>
 							<wd-tag size="small" color="#000" bg-color="#FFF" class="mr-2">
-								{{ item.commentCount }}条评论
+								{{ item.commentCount > 99 ? '99+' : item.commentCount }}条评论
 							</wd-tag>
 							<wd-button plain size="small" @click="handleClickContact(item.userId)">
 								立刻联系
@@ -107,11 +108,18 @@
 <script lang="ts" setup>
 	import { useToast } from 'wot-design-uni'
 	import ReleaseBtn from '@/components/release-btn/release-btn.vue'
+	import dayjs from 'dayjs'
+	import 'dayjs/locale/zh-cn'
+	import relativeTime from 'dayjs/plugin/relativeTime'
 	import qq from '@/static/app/share/qq.png'
 	import wechat from '@/static/app/share/wechat.png'
 	import wechatMoments from '@/static/app/share/wechatMoments.png'
 	import link from '@/static/app/share/link.png'
 	import report from '@/static/app/share/report.png'
+
+	// 扩展插件和设置语言
+	dayjs.extend(relativeTime)
+	dayjs.locale('zh-cn')
 
 	// 传给悬浮按钮的标题列表
 	const titleList = ['失物登记', '招领登记']
@@ -140,6 +148,11 @@
 		})),
 	)
 
+	// 格式化时间
+	function formatDate(dateString: string) {
+		return dayjs(dateString).fromNow()
+	}
+
 	// TODO: 前期先用假数据填充开发
 	// 失物招领数据
 	const lostFoundData = ref([
@@ -166,8 +179,8 @@
 			],
 			location: 'A1教学楼502教室',
 			category: '钱包',
-			createTime: '2023-03-01 12:00:00',
-			updateTime: '2023-03-01 11:00:00',
+			createTime: '2024-10-21 12:00:00',
+			updateTime: '2024-10-21 12:00:00',
 		},
 		{
 			id: 97981297169328,
@@ -189,8 +202,8 @@
 
 			location: '北区三食堂二楼',
 			category: '钱包',
-			createTime: '2023-05-11 12:00:00',
-			updateTime: '2023-05-11 12:00:00',
+			createTime: '2024-10-28 16:02:12',
+			updateTime: '2024-10-28 16:02:12',
 		},
 	])
 
@@ -247,6 +260,17 @@
 </script>
 
 <style lang="scss" scoped>
+	.container-page {
+		height: 100vh;
+		background-color: $uni-bg-color;
+		padding-left: $uni-padding-base;
+		padding-right: $uni-padding-base;
+	}
+
+	:deep(.title-left-element) {
+		margin-left: $uni-margin-base;
+	}
+
 	// 分段器自定义样式覆盖
 	:deep(.custom-segmented) {
 		background-color: #cdcdcd;
@@ -263,9 +287,10 @@
 	}
 
 	// card组件样式
-	.custom-card-style {
+	:deep(.custom-card-style) {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
+		margin-bottom: $uni-margin-base !important;
 		padding-top: 0 !important;
 	}
 
