@@ -5,81 +5,128 @@
 </route>
 
 <template>
-	<view>
-		<wd-cell-group>
-			<wd-cell>
-				<template #title>
-					<image :src="lostFoundDetail.userAvatar" class="w-8 h-8 pr-2" />
-					<wd-text size="26rpx" :text="lostFoundDetail.userName" />
-					<wd-tag bg-color="#CACACAFF" class="ml-1 align-middle" color="#FAA507FF" plain>
-						Lv.{{ lostFoundDetail.userLevel }}
-					</wd-tag>
-				</template>
-				<wd-button size="small">
-					{{ lostFoundDetail.isFollow ? '取消关注' : '+ 关注' }}
-				</wd-button>
-			</wd-cell>
-			<view class="px-[15px] color-[#000000FF]">
-				<wd-text bold :text="lostFoundDetail.lostTitle" color="#000000FF" size="28rpx" />
-			</view>
-			<view class="px-[15px] color-[#000000FF] py-[10rpx]">
-				{{ lostFoundDetail.content }}
-			</view>
-		</wd-cell-group>
-		<view class="mx-[30rpx]">
-			<image
-				v-for="(img, index) in lostFoundDetail.imgUrl"
-				:key="index"
-				:src="img"
-				mode="widthFix"
-				class="w-[100%] h-auto py-[5rpx]"
-				@click="previewImage(img)"
-				@longpress="onLongPress(img)"
-			/>
-			<view class="py-[5rpx]">
-				<wd-text
-					class="color-[#000000]"
-					size="24rpx"
-					:text="formatDate(lostFoundDetail.updateTime)"
+	<view class="container-page">
+		<view class="bg-white">
+			<wd-cell-group>
+				<wd-cell custom-class="custom-cell-1">
+					<template #title>
+						<view class="flex items-center">
+							<image :src="lostFoundDetail.userAvatar" class="w-[60rpx] h-[60rpx]" />
+							<wd-text
+								:text="lostFoundDetail.userName"
+								color="#000000FF"
+								custom-class="title-left-element"
+								size="28rpx"
+							/>
+							<wd-tag
+								bg-color="#ffd22e"
+								color="#fff"
+								custom-class="title-left-element"
+							>
+								Lv.{{ lostFoundDetail.userLevel }}
+							</wd-tag>
+						</view>
+					</template>
+					<wd-button custom-class="custom-style-btn" size="small">
+						{{ lostFoundDetail.isFollow ? '取消关注' : '+ 关注' }}
+					</wd-button>
+				</wd-cell>
+				<view class="px-[20rpx]">
+					<wd-text
+						:text="lostFoundDetail.lostTitle"
+						bold
+						color="#000000FF"
+						size="28rpx"
+					/>
+				</view>
+				<view class="px-[20rpx] py-[10rpx]">
+					<wd-text
+						:text="lostFoundDetail.content"
+						color="#000"
+						lineHeight="40rpx"
+						size="28rpx"
+					/>
+				</view>
+			</wd-cell-group>
+			<view class="mx-[20rpx]">
+				<image
+					v-for="(img, index) in lostFoundDetail.imgUrl"
+					:key="index"
+					:src="img"
+					class="w-[100%] h-auto py-[5rpx]"
+					mode="widthFix"
+					@click="previewImage(img)"
+					@longpress="onLongPress(img)"
 				/>
+				<view class="py-[20rpx]">
+					<wd-tag bg-color="#FFF" color="#000" size="small" type="primary">
+						{{ formatDate(lostFoundDetail.updateTime) }} ·
+					</wd-tag>
+					<wd-tag bg-color="#FFF" color="#000" size="small" type="primary">
+						{{ lostFoundDetail.location || '未知IP' }}
+					</wd-tag>
+				</view>
 			</view>
 		</view>
-		<wd-cell-group>
-			<wd-cell>
-				<template #title>
-					<wd-text size="26rpx" text="评论 " color="#000000FF" />
-					<wd-text size="26rpx" :text="lostFoundDetail.commentCount" color="#000000FF" />
-				</template>
-			</wd-cell>
-		</wd-cell-group>
 
-		<!-- <wd-cell-group v-for="(item, index) in commentList" :key="index">
-			<wd-cell>
-				<template #title>
-					<image :src="item.userAvatar" class="w-8 h-8 pr-2" />
-					<wd-text size="26rpx" :text="item.userName" />
-					<wd-tag bg-color="#CACACAFF" class="ml-1 align-middle" color="#FAA507FF" plain>
-						Lv.{{ item.userLevel }}
-					</wd-tag>
-				</template>
-				<wd-text size="22rpx" :text="formatDate(item.updateTime)" />
-			</wd-cell>
-			<view class="px-[15px]">
-				<wd-text size="28rpx" :text="item.content" />
-			</view>
-		</wd-cell-group> -->
-
-		<view v-for="(item, index) in commentList" :key="index" class="mx-[30rpx]">
-			<view>
-				<image :src="item.userAvatar" class="w-8 h-8 pr-2" />
-				<wd-text size="26rpx" :text="item.userName" />
-				<wd-tag bg-color="#CACACAFF" class="ml-1 align-middle" color="#FAA507FF" plain>
-					Lv.{{ item.userLevel }}
-				</wd-tag>
-				<wd-text :text="item.location || '未知IP'"></wd-text>
-			</view>
-			<view>
-				<wd-text :text="item.content"></wd-text>
+		<view class="bg-white mt-1">
+			<wd-cell-group border>
+				<wd-cell custom-class="custom-cell-2">
+					<template #title>
+						<span class="pl-[20rpx]">
+							<wd-text color="#000000FF" size="26rpx" text="评论 " />
+							<wd-text
+								:text="lostFoundDetail.commentCount"
+								color="#000000FF"
+								size="28rpx"
+							/>
+						</span>
+					</template>
+				</wd-cell>
+				<wd-cell custom-class="custom-cell-2" />
+			</wd-cell-group>
+			<view v-for="(item, index) in commentList" :key="index">
+				<view class="mx-[20rpx]">
+					<view class="flex items-center">
+						<image :src="item.userAvatar" class="w-[60rpx] h-[60rpx]" />
+						<view class="flex flex-col gap-[1rpx]">
+							<span>
+								<wd-text
+									:text="item.userName"
+									color="#000000FF"
+									custom-class="title-left-element"
+									size="28rpx"
+								/>
+								<wd-tag
+									bg-color="#ffd22e"
+									class="ml-1 align-middle"
+									color="#fff"
+									custom-class="title-left-element"
+								>
+									Lv.{{ item.userLevel }}
+								</wd-tag>
+							</span>
+							<wd-text
+								:text="
+									formatDate(item.updateTime) +
+									' · ' +
+									(item.location ? item.location : '未知IP')
+								"
+								custom-class="title-left-element"
+								size="22rpx"
+							></wd-text>
+						</view>
+					</view>
+					<view>
+						<wd-text
+							:text="item.content"
+							color="#6A6A6AFF"
+							lineHeight="40rpx"
+							size="28rpx"
+						></wd-text>
+					</view>
+				</view>
+				<view class="h-[0.1px] w-[100%] bg-[#dedede]"></view>
 			</view>
 		</view>
 	</view>
@@ -217,4 +264,34 @@
 	}
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+	.container-page {
+		background-color: $uni-bg-color;
+	}
+
+	:deep(.title-left-element) {
+		margin-left: $uni-margin-base;
+	}
+
+	:deep(.custom-cell-1) {
+		padding-left: 20rpx !important;
+		padding-right: 0 !important;
+	}
+
+	:deep(.custom-cell-2) {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	:deep(.custom-class-t) {
+		padding-left: 0 !important;
+	}
+
+	:deep(.custom-style-btn) {
+		border-radius: 10rpx !important;
+	}
+
+	:deep(.custom-class-divider) {
+		color: red;
+	}
+</style>

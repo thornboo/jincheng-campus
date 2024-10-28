@@ -26,16 +26,16 @@
 								@click="handleClickUserInfo(item.id)"
 							/>
 							<wd-text
-								custom-class="title-left-element"
 								:text="item.userName"
 								color="#000000FF"
+								custom-class="title-left-element"
 								size="28rpx"
 								@click="handleClickUserInfo(item.id)"
 							/>
 							<wd-tag
-								custom-class="title-left-element"
 								bg-color="#ffd22e"
 								color="#fff"
+								custom-class="title-left-element"
 							>
 								Lv.{{ item.userLevel }}
 							</wd-tag>
@@ -51,15 +51,15 @@
 						</span>
 					</view>
 				</template>
-				<view class="pb-2">
-					<wd-text :lines="2" :text="item.lostTitle" color="#000000FF" size="28rpx" />
-				</view>
 				<view @click="handleClickCardContent(item)">
+					<view class="pb-1">
+						<wd-text :lines="2" :text="item.lostTitle" color="#000000FF" size="28rpx" />
+					</view>
 					<wd-text
 						:lines="2"
 						:text="item.content"
 						color="#6A6A6AFF"
-						lineHeight="36rpx"
+						lineHeight="40rpx"
 						size="28rpx"
 					/>
 					<view class="relative w-fit flex gap-x-1">
@@ -83,14 +83,14 @@
 				</view>
 				<template #footer>
 					<view class="flex justify-between items-center w-full">
-						<wd-tag color="#000" bg-color="#FFF" size="small" type="primary">
+						<wd-tag bg-color="#FFF" color="#000" size="small" type="primary">
 							{{ formatDate(item.createTime) }}
 						</wd-tag>
 						<view class="ml-auto">
-							<wd-tag size="small" color="#000" bg-color="#FFF" class="mr-2">
+							<wd-tag bg-color="#FFF" class="mr-2" color="#000" size="small">
 								{{ item.viewCount > 99 ? '99+' : item.viewCount }}次浏览
 							</wd-tag>
-							<wd-tag size="small" color="#000" bg-color="#FFF" class="mr-2">
+							<wd-tag bg-color="#FFF" class="mr-2" color="#000" size="small">
 								{{ item.commentCount > 99 ? '99+' : item.commentCount }}条评论
 							</wd-tag>
 							<wd-button plain size="small" @click="handleClickContact(item.userId)">
@@ -177,7 +177,7 @@
 				'https://tc.alcy.cc/i/2024/04/21/6624167d53a59.webp',
 				'https://tc.alcy.cc/i/2024/04/21/6624164ee4641.webp',
 			],
-			location: 'A1教学楼502教室',
+			location: '四川',
 			category: '钱包',
 			createTime: '2024-10-21 12:00:00',
 			updateTime: '2024-10-21 12:00:00',
@@ -200,7 +200,7 @@
 				'https://tc.alcy.cc/i/2024/04/21/662413f7beee3.webp',
 			],
 
-			location: '北区三食堂二楼',
+			location: '',
 			category: '钱包',
 			createTime: '2024-10-28 16:02:12',
 			updateTime: '2024-10-28 16:02:12',
@@ -261,8 +261,8 @@
 
 <style lang="scss" scoped>
 	.container-page {
-		height: 100vh;
 		background-color: $uni-bg-color;
+		height: 100vh;
 		padding-left: $uni-padding-base;
 		padding-right: $uni-padding-base;
 	}
@@ -288,9 +288,9 @@
 
 	// card组件样式
 	:deep(.custom-card-style) {
+		margin-bottom: $uni-margin-base !important;
 		margin-left: 0 !important;
 		margin-right: 0 !important;
-		margin-bottom: $uni-margin-base !important;
 		padding-top: 0 !important;
 	}
 
