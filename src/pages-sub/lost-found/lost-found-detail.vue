@@ -58,32 +58,46 @@
 					@click="previewImage(img)"
 					@longpress="onLongPress(img)"
 				/>
-				<view class="py-[20rpx]">
-					<wd-tag bg-color="#FFF" color="#000" size="small" type="primary">
-						{{ formatDate(lostFoundDetail.updateTime) }} ·
-					</wd-tag>
-					<wd-tag bg-color="#FFF" color="#000" size="small" type="primary">
-						{{ lostFoundDetail.location || '未知IP' }}
-					</wd-tag>
+				<view class="py-[20rpx] flex justify-between">
+					<span>
+						<wd-tag bg-color="#FFF" color="#000" size="small" type="primary">
+							{{ formatDate(lostFoundDetail.updateTime) }} ·
+						</wd-tag>
+						<wd-tag bg-color="#FFF" color="#000" size="small" type="primary">
+							{{ lostFoundDetail.location || '未知IP' }}
+						</wd-tag>
+					</span>
+					<span>
+						<wd-tag bg-color="#FFF" color="#000" size="small" type="primary">
+							{{ lostFoundDetail.viewCount }}人看过
+						</wd-tag>
+					</span>
 				</view>
 			</view>
 		</view>
-
-		<view class="bg-white mt-1">
-			<wd-cell-group border>
-				<wd-cell custom-class="custom-cell-2">
+		<wd-gap custom-class="custom-wd-gap"></wd-gap>
+		<!--评论-->
+		<view class="bg-white">
+			<wd-cell-group border custom-class="custom-cell-group-1">
+				<wd-cell>
 					<template #title>
-						<span class="pl-[20rpx]">
+						<view>
 							<wd-text color="#000000FF" size="26rpx" text="评论 " />
 							<wd-text
 								:text="lostFoundDetail.commentCount"
 								color="#000000FF"
 								size="28rpx"
 							/>
-						</span>
+						</view>
 					</template>
+					<wd-text
+						:text="commentSorting"
+						prefix="↓ "
+						size="26rpx"
+						@click="switchBtnText"
+					></wd-text>
 				</wd-cell>
-				<wd-cell custom-class="custom-cell-2" />
+				<view class="h-[0.1px] w-[100%] bg-[#dedede] my-1"></view>
 			</wd-cell-group>
 			<view v-for="(item, index) in commentList" :key="index">
 				<view class="mx-[20rpx]">
@@ -117,7 +131,7 @@
 							></wd-text>
 						</view>
 					</view>
-					<view>
+					<view class="pl-[70rpx]">
 						<wd-text
 							:text="item.content"
 							color="#6A6A6AFF"
@@ -126,7 +140,7 @@
 						></wd-text>
 					</view>
 				</view>
-				<view class="h-[0.1px] w-[100%] bg-[#dedede]"></view>
+				<view class="h-[0.1px] w-[100%] bg-[#dedede] my-1"></view>
 			</view>
 		</view>
 	</view>
@@ -151,6 +165,12 @@
 	// 格式化时间
 	function formatDate(dateString: string) {
 		return dayjs(dateString).fromNow()
+	}
+
+	const commentSorting = ref('最热')
+
+	const switchBtnText = () => {
+		commentSorting.value = commentSorting.value === '最热' ? '最新' : '最热'
 	}
 
 	// 失物招领详细信息
@@ -273,18 +293,19 @@
 		margin-left: $uni-margin-base;
 	}
 
+	:deep(.custom-wd-gap) {
+		background-color: $uni-bg-color !important;
+		height: 10rpx !important;
+	}
+
 	:deep(.custom-cell-1) {
 		padding-left: 20rpx !important;
 		padding-right: 0 !important;
 	}
 
-	:deep(.custom-cell-2) {
-		padding-left: 0 !important;
-		padding-right: 0 !important;
-	}
-
-	:deep(.custom-class-t) {
-		padding-left: 0 !important;
+	:deep(.custom-cell-group-1) {
+		padding-bottom: 10rpx !important;
+		padding-top: 10rpx !important;
 	}
 
 	:deep(.custom-style-btn) {
