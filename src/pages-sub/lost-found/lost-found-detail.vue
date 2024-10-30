@@ -5,7 +5,13 @@
 </route>
 
 <template>
-	<view class="container-page">
+	<view
+		class="container-page"
+		:style="{
+			overflow: bottom === 0 ? 'none' : 'hidden',
+			height: bottom === 0 ? 'fit-content' : '100vh',
+		}"
+	>
 		<view class="bg-white">
 			<wd-cell-group>
 				<wd-cell custom-class="custom-cell-1">
@@ -79,7 +85,7 @@
 		<!--评论-->
 		<view class="bg-white">
 			<wd-cell-group border custom-class="custom-cell-group-1">
-				<wd-cell>
+				<wd-cell custom-class="custom-title-class-1">
 					<template #title>
 						<view>
 							<wd-text color="#000000FF" size="26rpx" text="评论 " />
@@ -143,6 +149,58 @@
 				<view class="h-[0.1px] w-[100%] bg-[#dedede] my-1"></view>
 			</view>
 		</view>
+		<!--评论输入框-->
+		<view
+			class="flex flex-row items-end justify-center gap-col-[24rpx] bg-[#b3b3b3ff] fixed left-0 right-0 p-[10rpx] pb-[40rpx]"
+			:style="{ bottom: `${bottom}px` }"
+		>
+			<!--<wd-textarea-->
+			<!--	v-model="commentInput"-->
+			<!--	:maxlength="500"-->
+			<!--	auto-height-->
+			<!--	custom-class="custom-textarea"-->
+			<!--	custom-textarea-class="custom-textarea-external"-->
+			<!--	custom-textarea-container-class="custom-textarea-container"-->
+			<!--	placeholderStyle="line-height: 48px;min-height: 24px;"-->
+			<!--	disable-default-padding-->
+			<!--	no-border-->
+			<!--	placeholder="参与评论"-->
+			<!--	@change="textareaChange"-->
+			<!--	@linechange="lineChange"-->
+			<!--/>-->
+			<view
+				style="
+					min-height: 72rpx;
+					background-color: #fff;
+					border-radius: 10rpx;
+					width: 75%;
+					overflow: hidden;
+					box-sizing: border-box;
+					max-height: 180rpx;
+					overflow-y: auto;
+				"
+			>
+				<textarea
+					v-model="commentInput"
+					:auto-height="true"
+					:maxlength="1000"
+					:fixed="true"
+					:adjust-position="false"
+					placeholder="参与评论"
+					style="
+						width: 100%;
+						min-height: 36rpx;
+						height: fit-content;
+						font-size: 14px;
+					"
+					@input="handleCommentChange"
+					@keyboardheightchange="handleKeyboardheightchange"
+				></textarea>
+			</view>
+			<wd-button custom-class="custom-comment-btn" @click="handleCommentChange">
+				发送
+			</wd-button>
+		</view>
 	</view>
 </template>
 
@@ -154,6 +212,8 @@
 	// 扩展插件和设置语言
 	dayjs.extend(relativeTime)
 	dayjs.locale('zh-cn')
+
+	const bottom = ref(0)
 
 	const propsRef = defineProps({
 		detail: {
@@ -167,10 +227,31 @@
 		return dayjs(dateString).fromNow()
 	}
 
+	// 评论排序
 	const commentSorting = ref('最热')
-
 	const switchBtnText = () => {
 		commentSorting.value = commentSorting.value === '最热' ? '最新' : '最热'
+	}
+
+	// 监听评论输入框的高度
+	function lineChange() {
+		console.log('监听输入框行数变化')
+	}
+
+	function textareaChange() {
+		console.log('监听输入框修改事件')
+	}
+
+	// 评论输入框相关
+	const commentInput = ref<string>('')
+
+	function handleCommentChange() {
+		console.log('评论了：' + commentInput.value)
+	}
+
+	function handleKeyboardheightchange(e) {
+		console.log(e)
+		bottom.value = e.detail.height
 	}
 
 	// 失物招领详细信息
@@ -312,7 +393,32 @@
 		border-radius: 10rpx !important;
 	}
 
-	:deep(.custom-class-divider) {
-		color: red;
+	:deep(.custom-textarea) {
+		border-radius: 10rpx !important;
+		margin: 10rpx !important;
+		width: 100% !important;
+	}
+
+	:deep(.custom-textarea-container) {
+	}
+
+	:deep(.custom-textarea-external) {
+	}
+
+	:deep(.custom-comment-btn) {
+		background-color: #00d68e !important;
+		border-radius: 10rpx !important;
+		min-width: 140rpx !important;
+		height: 36px !important;
+	}
+
+	:deep(.custom-title-class-1) {
+		height: fit-content;
+		padding-left: 20rpx !important;
+
+		.wd-cell__wrapper {
+			padding: 0 !important;
+			padding-right: 20rpx !important;
+		}
 	}
 </style>
