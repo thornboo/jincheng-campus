@@ -6,201 +6,286 @@
 
 <template>
 	<view
-		class="container-page"
 		:style="{
 			overflow: bottom === 0 ? 'none' : 'hidden',
 			height: bottom === 0 ? 'fit-content' : '100vh',
 		}"
+		class="container-page"
 	>
-		<view class="bg-white">
-			<wd-cell-group>
-				<wd-cell custom-class="custom-cell-1">
-					<template #title>
-						<view class="flex items-center">
-							<image :src="lostFoundDetail.userAvatar" class="w-[60rpx] h-[60rpx]" />
+		<wd-tabs
+			v-model="tab"
+			:animated="true"
+			:duration="500"
+			:lineWidth="24"
+			:sticky="true"
+			:swipeable="true"
+			color="#000"
+			custom-class="custom-tabs"
+		>
+			<wd-tab name="lostFoundText" title="正文">
+				<view aria-label="长下划线" class="h-[0.1px] w-[100%] bg-[#dedede] my-1"></view>
+				<view class="bg-white">
+					<wd-cell-group>
+						<wd-cell custom-class="custom-cell-1">
+							<template #title>
+								<view class="flex items-center">
+									<image
+										:src="lostFoundDetail.userAvatar"
+										class="w-[60rpx] h-[60rpx]"
+									/>
+									<wd-text
+										:text="lostFoundDetail.userName"
+										color="#000000FF"
+										custom-class="title-left-element"
+										size="28rpx"
+									/>
+									<wd-tag
+										bg-color="#ffd22e"
+										color="#fff"
+										custom-class="title-left-element"
+									>
+										Lv.{{ lostFoundDetail.userLevel }}
+									</wd-tag>
+								</view>
+							</template>
+							<wd-button custom-class="custom-style-btn" size="small">
+								{{ lostFoundDetail.isFollow ? '取消关注' : '+ 关注' }}
+							</wd-button>
+						</wd-cell>
+						<view class="px-[20rpx]">
 							<wd-text
-								:text="lostFoundDetail.userName"
-								color="#000000FF"
-								custom-class="title-left-element"
-								size="28rpx"
-							/>
-							<wd-tag
-								bg-color="#ffd22e"
-								color="#fff"
-								custom-class="title-left-element"
-							>
-								Lv.{{ lostFoundDetail.userLevel }}
-							</wd-tag>
-						</view>
-					</template>
-					<wd-button custom-class="custom-style-btn" size="small">
-						{{ lostFoundDetail.isFollow ? '取消关注' : '+ 关注' }}
-					</wd-button>
-				</wd-cell>
-				<view class="px-[20rpx]">
-					<wd-text
-						:text="lostFoundDetail.lostTitle"
-						bold
-						color="#000000FF"
-						size="28rpx"
-					/>
-				</view>
-				<view class="px-[20rpx] py-[10rpx]">
-					<wd-text
-						:text="lostFoundDetail.content"
-						color="#000"
-						lineHeight="40rpx"
-						size="28rpx"
-					/>
-				</view>
-			</wd-cell-group>
-			<view class="mx-[20rpx]">
-				<image
-					v-for="(img, index) in lostFoundDetail.imgUrl"
-					:key="index"
-					:src="img"
-					class="w-[100%] h-auto py-[5rpx]"
-					mode="widthFix"
-					@click="previewImage(img)"
-					@longpress="onLongPress(img)"
-				/>
-				<view class="py-[20rpx] flex justify-between">
-					<span>
-						<wd-tag bg-color="#FFF" color="#000" size="small" type="primary">
-							{{ formatDate(lostFoundDetail.updateTime) }} ·
-						</wd-tag>
-						<wd-tag bg-color="#FFF" color="#000" size="small" type="primary">
-							{{ lostFoundDetail.location || '未知IP' }}
-						</wd-tag>
-					</span>
-					<span>
-						<wd-tag bg-color="#FFF" color="#000" size="small" type="primary">
-							{{ lostFoundDetail.viewCount }}人看过
-						</wd-tag>
-					</span>
-				</view>
-			</view>
-		</view>
-		<wd-gap custom-class="custom-wd-gap"></wd-gap>
-		<!--评论-->
-		<view class="bg-white">
-			<wd-cell-group border custom-class="custom-cell-group-1">
-				<wd-cell custom-class="custom-title-class-1">
-					<template #title>
-						<view>
-							<wd-text color="#000000FF" size="26rpx" text="评论 " />
-							<wd-text
-								:text="lostFoundDetail.commentCount"
+								:text="lostFoundDetail.lostTitle"
+								bold
 								color="#000000FF"
 								size="28rpx"
 							/>
 						</view>
-					</template>
-					<wd-text
-						:text="commentSorting"
-						prefix="↓ "
-						size="26rpx"
-						@click="switchBtnText"
-					></wd-text>
-				</wd-cell>
-				<view class="h-[0.1px] w-[100%] bg-[#dedede] my-1"></view>
-			</wd-cell-group>
-			<view v-for="(item, index) in commentList" :key="index">
-				<view class="mx-[20rpx]">
-					<view class="flex items-center">
-						<image :src="item.userAvatar" class="w-[60rpx] h-[60rpx]" />
-						<view class="flex flex-col gap-[1rpx]">
+						<view class="px-[20rpx] py-[10rpx]">
+							<wd-text
+								:text="lostFoundDetail.content"
+								color="#000"
+								lineHeight="40rpx"
+								size="28rpx"
+							/>
+						</view>
+					</wd-cell-group>
+					<view class="mx-[20rpx]">
+						<image
+							v-for="(img, index) in lostFoundDetail.imgUrl"
+							:key="index"
+							:src="img"
+							class="w-[100%] h-auto py-[5rpx]"
+							mode="widthFix"
+							@click="previewImage(img)"
+							@longpress="onLongPress(img)"
+						/>
+						<view class="py-[20rpx] flex justify-between">
 							<span>
-								<wd-text
-									:text="item.userName"
-									color="#000000FF"
-									custom-class="title-left-element"
-									size="28rpx"
-								/>
-								<wd-tag
-									bg-color="#ffd22e"
-									class="ml-1 align-middle"
-									color="#fff"
-									custom-class="title-left-element"
-								>
-									Lv.{{ item.userLevel }}
+								<wd-tag bg-color="#FFF" color="#000" size="small" type="primary">
+									{{ formatDate(lostFoundDetail.updateTime) }} ·
+								</wd-tag>
+								<wd-tag bg-color="#FFF" color="#000" size="small" type="primary">
+									{{ lostFoundDetail.location || '未知IP' }}
 								</wd-tag>
 							</span>
-							<wd-text
-								:text="
-									formatDate(item.updateTime) +
-									' · ' +
-									(item.location ? item.location : '未知IP')
-								"
-								custom-class="title-left-element"
-								size="22rpx"
-							></wd-text>
+							<span>
+								<wd-tag bg-color="#FFF" color="#000" size="small" type="primary">
+									{{ lostFoundDetail.viewCount }}人看过
+								</wd-tag>
+							</span>
 						</view>
 					</view>
-					<view class="pl-[70rpx]">
-						<wd-text
-							:text="item.content"
-							color="#6A6A6AFF"
-							lineHeight="40rpx"
-							size="28rpx"
-						></wd-text>
+				</view>
+				<wd-gap custom-class="custom-wd-gap"></wd-gap>
+				<view class="bg-white">
+					<wd-cell-group border custom-class="custom-cell-group-1">
+						<wd-cell custom-class="custom-title-class-1">
+							<template #title>
+								<view>
+									<wd-text color="#000000FF" size="26rpx" text="评论 " />
+									<wd-text
+										:text="lostFoundDetail.commentCount"
+										color="#000000FF"
+										size="28rpx"
+									/>
+								</view>
+							</template>
+							<wd-text
+								:text="commentSorting"
+								prefix="↓ "
+								size="26rpx"
+								@click="switchBtnText"
+							></wd-text>
+						</wd-cell>
+						<view class="h-[0.1px] w-[100%] bg-[#dedede] my-1"></view>
+					</wd-cell-group>
+					<view v-for="(item, index) in commentList" :key="index">
+						<view class="mx-[20rpx]">
+							<view class="flex items-center">
+								<image :src="item.userAvatar" class="w-[60rpx] h-[60rpx]" />
+								<view class="flex flex-col gap-[1rpx]">
+									<span>
+										<wd-text
+											:text="item.userName"
+											color="#000000FF"
+											custom-class="title-left-element"
+											size="28rpx"
+										/>
+										<wd-tag
+											bg-color="#ffd22e"
+											class="ml-1 align-middle"
+											color="#fff"
+											custom-class="title-left-element"
+										>
+											Lv.{{ item.userLevel }}
+										</wd-tag>
+									</span>
+									<wd-text
+										:text="
+											formatDate(item.updateTime) +
+											' · ' +
+											(item.location ? item.location : '未知IP')
+										"
+										custom-class="title-left-element"
+										size="22rpx"
+									></wd-text>
+								</view>
+							</view>
+							<view class="pl-[70rpx]">
+								<wd-text
+									:text="item.content"
+									color="#6A6A6AFF"
+									lineHeight="40rpx"
+									size="28rpx"
+								></wd-text>
+							</view>
+						</view>
+						<view class="h-[0.1px] w-[100%] bg-[#dedede] my-1"></view>
 					</view>
 				</view>
-				<view class="h-[0.1px] w-[100%] bg-[#dedede] my-1"></view>
-			</view>
-		</view>
+			</wd-tab>
+			<wd-tab name="lostFoundComment" title="评论">
+				<wd-gap custom-class="custom-wd-gap"></wd-gap>
+				<view class="bg-white">
+					<wd-cell-group border custom-class="custom-cell-group-1">
+						<wd-cell custom-class="custom-title-class-1">
+							<template #title>
+								<view>
+									<wd-text color="#000000FF" size="26rpx" text="评论 " />
+									<wd-text
+										:text="lostFoundDetail.commentCount"
+										color="#000000FF"
+										size="28rpx"
+									/>
+								</view>
+							</template>
+							<wd-text
+								:text="commentSorting"
+								prefix="↓ "
+								size="26rpx"
+								@click="switchBtnText"
+							></wd-text>
+						</wd-cell>
+						<view
+							aria-label="长下划线"
+							class="h-[0.1px] w-[100%] bg-[#dedede] my-1"
+						></view>
+					</wd-cell-group>
+					<view v-for="(item, index) in commentList" :key="index">
+						<view class="mx-[20rpx]">
+							<view class="flex items-center">
+								<image :src="item.userAvatar" class="w-[60rpx] h-[60rpx]" />
+								<view class="flex flex-col gap-[1rpx]">
+									<span>
+										<wd-text
+											:text="item.userName"
+											color="#000000FF"
+											custom-class="title-left-element"
+											size="28rpx"
+										/>
+										<wd-tag
+											bg-color="#ffd22e"
+											class="ml-1 align-middle"
+											color="#fff"
+											custom-class="title-left-element"
+										>
+											Lv.{{ item.userLevel }}
+										</wd-tag>
+									</span>
+									<wd-text
+										:text="
+											formatDate(item.updateTime) +
+											' · ' +
+											(item.location ? item.location : '未知IP')
+										"
+										custom-class="title-left-element"
+										size="22rpx"
+									></wd-text>
+								</view>
+							</view>
+							<view class="pl-[70rpx]">
+								<wd-text
+									:text="item.content"
+									color="#6A6A6AFF"
+									lineHeight="40rpx"
+									size="28rpx"
+								></wd-text>
+							</view>
+						</view>
+						<view class="h-[0.1px] w-[100%] bg-[#dedede] my-1"></view>
+					</view>
+				</view>
+			</wd-tab>
+		</wd-tabs>
+
 		<!--评论输入框-->
-		<view
-			class="flex flex-row items-end justify-center gap-col-[24rpx] bg-[#b3b3b3ff] fixed left-0 right-0 p-[10rpx] pb-[40rpx]"
-			:style="{ bottom: `${bottom}px` }"
-		>
-			<!--<wd-textarea-->
-			<!--	v-model="commentInput"-->
-			<!--	:maxlength="500"-->
-			<!--	auto-height-->
-			<!--	custom-class="custom-textarea"-->
-			<!--	custom-textarea-class="custom-textarea-external"-->
-			<!--	custom-textarea-container-class="custom-textarea-container"-->
-			<!--	placeholderStyle="line-height: 48px;min-height: 24px;"-->
-			<!--	disable-default-padding-->
-			<!--	no-border-->
-			<!--	placeholder="参与评论"-->
-			<!--	@change="textareaChange"-->
-			<!--	@linechange="lineChange"-->
-			<!--/>-->
-			<view
-				style="
-					min-height: 72rpx;
-					background-color: #fff;
-					border-radius: 10rpx;
-					width: 75%;
-					overflow: hidden;
-					box-sizing: border-box;
-					max-height: 180rpx;
-					overflow-y: auto;
-				"
-			>
-				<textarea
-					v-model="commentInput"
-					:auto-height="true"
-					:maxlength="1000"
-					:fixed="true"
-					:adjust-position="false"
-					placeholder="参与评论"
-					style="
-						width: 100%;
-						min-height: 36rpx;
-						height: fit-content;
-						font-size: 14px;
-					"
-					@input="handleCommentChange"
-					@keyboardheightchange="handleKeyboardheightchange"
-				></textarea>
-			</view>
-			<wd-button custom-class="custom-comment-btn" @click="handleCommentChange">
-				发送
-			</wd-button>
-		</view>
+		<!--<view-->
+		<!--	class="flex flex-row items-end justify-center gap-col-[24rpx] bg-[#b3b3b3ff] fixed left-0 right-0 p-[10rpx] pb-[40rpx]"-->
+		<!--	:style="{ bottom: `${bottom}px` }"-->
+		<!--&gt;-->
+		<!--	<view-->
+		<!--		style="-->
+		<!--			min-height: 72rpx;-->
+		<!--			background-color: #fff;-->
+		<!--			border-radius: 10rpx;-->
+		<!--			width: 75%;-->
+		<!--			overflow: hidden;-->
+		<!--			box-sizing: border-box;-->
+		<!--			max-height: 180rpx;-->
+		<!--			overflow-y: auto;-->
+		<!--		"-->
+		<!--	>-->
+		<!--		<textarea-->
+		<!--			v-model="commentInput"-->
+		<!--			:auto-height="true"-->
+		<!--			:maxlength="1000"-->
+		<!--			:fixed="true"-->
+		<!--			:adjust-position="false"-->
+		<!--			placeholder="参与评论"-->
+		<!--			style="width: 100%; min-height: 36rpx; height: fit-content; font-size: 14px"-->
+		<!--			@input="handleCommentChange"-->
+		<!--			@keyboardheightchange="handleKeyboardheightchange"-->
+		<!--		></textarea>-->
+		<!--	</view>-->
+		<!--	<wd-button custom-class="custom-comment-btn" @click="handleCommentChange">-->
+		<!--		发送-->
+		<!--	</wd-button>-->
+		<!--</view>-->
+		<!--聊天评论输入框：第二种写法-->
+		<!--<wd-textarea-->
+		<!--	v-model="commentInput"-->
+		<!--	:maxlength="500"-->
+		<!--	auto-height-->
+		<!--	custom-class="custom-textarea"-->
+		<!--	custom-textarea-class="custom-textarea-external"-->
+		<!--	custom-textarea-container-class="custom-textarea-container"-->
+		<!--	disable-default-padding-->
+		<!--	no-border-->
+		<!--	placeholder="参与评论"-->
+		<!--	placeholderStyle="line-height: 48px;min-height: 24px;"-->
+		<!--	@change="textareaChange"-->
+		<!--	@linechange="lineChange"-->
+		<!--/>-->
 	</view>
 </template>
 
@@ -221,6 +306,8 @@
 			default: () => {},
 		},
 	})
+
+	const tab = ref<number>(0)
 
 	// 格式化时间
 	function formatDate(dateString: string) {
@@ -370,6 +457,19 @@
 		background-color: $uni-bg-color;
 	}
 
+	:deep(.custom-tabs) {
+	}
+
+	// 直接作用在tabs的内置样式上面来修改间距
+	:deep(.wd-tabs__nav--wrap) {
+		margin-left: 200rpx;
+		margin-right: 200rpx;
+	}
+
+	:deep(.wd-tabs__line) {
+		background-color: #000000 !important;
+	}
+
 	:deep(.title-left-element) {
 		margin-left: $uni-margin-base;
 	}
@@ -408,8 +508,8 @@
 	:deep(.custom-comment-btn) {
 		background-color: #00d68e !important;
 		border-radius: 10rpx !important;
-		min-width: 140rpx !important;
 		height: 36px !important;
+		min-width: 140rpx !important;
 	}
 
 	:deep(.custom-title-class-1) {
