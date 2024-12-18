@@ -134,17 +134,16 @@ export const getEvnBaseUrl = () => {
 
 		switch (envVersion) {
 			case 'develop':
-				baseUrl = 'https://ukw0y1.laf.run'
+				baseUrl = 'http://127.0.0.1:4523/m1/3007884-2682778-default'
 				break
 			case 'trial':
-				baseUrl = 'https://ukw0y1.laf.run'
+				baseUrl = 'http://127.0.0.1:4523/m1/3007884-2682778-default'
 				break
 			case 'release':
-				baseUrl = 'https://ukw0y1.laf.run'
+				baseUrl = 'http://127.0.0.1:4523/m1/3007884-2682778-default'
 				break
 		}
 	}
-
 	return baseUrl
 }
 
@@ -173,6 +172,5 @@ export const getEvnBaseUploadUrl = () => {
 				break
 		}
 	}
-
 	return baseUploadUrl
 }

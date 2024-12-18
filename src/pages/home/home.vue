@@ -45,6 +45,18 @@
 
 <script lang="ts" setup>
 	import img1 from '@img/swiper-list/beveragePromotionMilkTea.png'
+	import { onLoad } from '@dcloudio/uni-app'
+	import { getUserInfo } from '@/service/auth/authApi'
+
+	onLoad(() => {
+		getUserInfo({})
+			.then((res) => {
+				console.log(res)
+			})
+			.catch((error) => {
+				console.log(error)
+			})
+	})
 
 	const current = ref<number>(0)
 
