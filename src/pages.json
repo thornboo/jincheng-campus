@@ -90,32 +90,15 @@
           }
         },
         {
-          "path": "lost-found/lost-form",
-          "type": "page",
-          "style": {
-            "navigationBarTitleText": "失物招领发布"
-          }
-        },
-        {
-          "path": "lost-found/lost-found-detail",
-          "type": "page",
-          "style": {
-            "navigationBarTitleText": "失物招领详情页"
-          }
-        },
-        {
-          "path": "lost-found/lost-found",
-          "type": "page",
-          "style": {
-            "navigationBarTitleText": "失物招领"
-          }
-        },
-        {
           "path": "swiper-details/swiper-details",
           "type": "page",
           "style": {
             "navigationBarTitleText": "轮播图详情页面"
           }
+        },
+        {
+          "path": "lost-found/lost-found",
+          "style": {}
         }
       ]
     }

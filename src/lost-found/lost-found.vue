@@ -230,7 +230,7 @@
 	// 点击帖子内容跳转详情
 	function handleClickCardContent(params: object) {
 		uni.navigateTo({
-			url: `/pages-sub/lost-found/lost-found-detail?detail=${encodeURIComponent(JSON.stringify(params))}`,
+			url: `/lost-found/lost-found-detail?detail=${encodeURIComponent(JSON.stringify(params))}`,
 			success(success) {
 				console.log(success)
 			},
