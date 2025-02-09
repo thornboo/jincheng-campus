@@ -49,6 +49,7 @@
 	import { getUserInfo } from '@/service/auth/authApi'
 
 	onLoad(() => {
+		// 测试获取用户信息接口是否正常
 		getUserInfo({})
 			.then((res) => {
 				console.log(res)
@@ -71,7 +72,7 @@
 	const gridAreaData: Array<object> = [
 		{
 			text: '失物招领',
-			url: '/pages-sub/lost-found/lost-found', // 点击跳转页面地址
+			url: '/lost-found/lost-found', // 点击跳转页面地址
 			dot: false, // 右上角小红点
 			type: 'danger', // 右上角颜色类型
 			value: 13, // 右上角数值

@@ -5,6 +5,6 @@ export interface User {
 	name: string
 }
 
-export const getUserInfo = (data: string) => {
+export const getUserInfo = (data: object) => {
 	return http.get<User>('/auth/userInfo', { data })
 }

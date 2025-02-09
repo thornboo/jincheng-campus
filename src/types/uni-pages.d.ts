@@ -14,10 +14,8 @@ interface NavigateToOptions {
        "/pages-sub/campus-supermarket/campus-supermarket" |
        "/pages-sub/find-part-time/find-part-time" |
        "/pages-sub/idle-trade/idle-trade" |
-       "/pages-sub/lost-found/lost-form" |
-       "/pages-sub/lost-found/lost-found-detail" |
-       "/pages-sub/lost-found/lost-found" |
-       "/pages-sub/swiper-details/swiper-details";
+       "/pages-sub/swiper-details/swiper-details" |
+       "/pages-sub/lost-found/lost-found";
 }
 interface RedirectToOptions extends NavigateToOptions {}
 
