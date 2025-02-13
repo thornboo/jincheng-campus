@@ -1,3 +1,11 @@
+/**
+ * 在这里进行页面配置，如页面标题、页面路径、页面组件名等。
+ * 不需要手动去修改 pages.json文件，因为会自动生成。如果进行过改动，请删除修改部分重新编译运行即可。
+ * 核心依赖 vite-plugin-uni-pages：在 Vite 驱动的 uni-app 上使用基于文件的路由系统。
+ * @see https://github.com/uni-helper/vite-plugin-uni-pages
+ * @see https://github.com/hannoeru/vite-plugin-pages
+ */
+
 import { defineUniPages } from '@uni-helper/vite-plugin-uni-pages'
 
 export default defineUniPages({
@@ -58,7 +66,34 @@ export default defineUniPages({
 			root: 'pages-sub', // 分包的相对根路径
 			pages: [
 				{
-					path: 'pages-sub/lost-found/lost-found',
+					// todo: 此处临时用‘轮播图’模块先对path赋值，后续需要修改
+					path: 'pages-sub/swiper-details/swiper-details',
+				},
+			],
+		},
+		{
+			root: 'lost-found',
+			pages: [
+				{
+					path: 'lost-found',
+					type: 'page',
+					style: {
+						navigationBarTitleText: '失物招领',
+					},
+				},
+				{
+					path: 'lost-found-detail',
+					type: 'page',
+					style: {
+						navigationBarTitleText: '失物招领详情',
+					},
+				},
+				{
+					path: 'lost-form',
+					type: 'page',
+					style: {
+						navigationBarTitleText: '失物招领发布',
+					},
 				},
 			],
 		},

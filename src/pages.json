@@ -97,33 +97,33 @@
           }
         }
       ]
-	},
-	  {
-		  "root": "lost-found",
-		  "pages": [
-			  {
-				  "path": "lost-found",
-				  "type": "page",
-				  "style": {
-					  "navigationBarTitleText": "失物招领"
-				  }
-			  },
-			  {
-				  "path": "lost-form",
-				  "type": "page",
-				  "style": {
-					  "navigationBarTitleText": "失物招领发布"
-				  }
-			  },
-			  {
-				  "path": "lost-found-detail",
-				  "type": "page",
-				  "style": {
-					  "navigationBarTitleText": "失物招领详情"
-				  }
-			  }
-		  ]
-	  }
+    },
+    {
+      "root": "lost-found",
+      "pages": [
+        {
+          "path": "lost-found",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "失物招领"
+          }
+        },
+        {
+          "path": "lost-found-detail",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "失物招领详情"
+          }
+        },
+        {
+          "path": "lost-form",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "失物招领发布"
+          }
+        }
+      ]
+    }
   ],
   "pages": [
     {

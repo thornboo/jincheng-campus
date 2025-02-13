@@ -15,7 +15,9 @@ interface NavigateToOptions {
        "/pages-sub/find-part-time/find-part-time" |
        "/pages-sub/idle-trade/idle-trade" |
        "/pages-sub/swiper-details/swiper-details" |
-       "/pages-sub/lost-found/lost-found";
+       "/lost-found/lost-found" |
+       "/lost-found/lost-found-detail" |
+       "/lost-found/lost-form";
 }
 interface RedirectToOptions extends NavigateToOptions {}
 
