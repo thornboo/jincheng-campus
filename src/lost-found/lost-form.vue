@@ -3,7 +3,6 @@
 	style: { navigationBarTitleText: '失物招领发布' },
 }
 </route>
-
 <template>
 	<view>
 		<wd-form ref="form" :model="model">

@@ -3,7 +3,6 @@
 	style: { navigationBarTitleText: '失物招领' },
 }
 </route>
-
 <template>
 	<view class="container-page">
 		<view class="py-2">
@@ -102,7 +101,7 @@
 			</wd-card>
 		</view>
 	</view>
-	<ReleaseBtn :titleList="titleList" />
+	<ReleaseBtn :fabListData="fabListData" />
 </template>
 
 <script lang="ts" setup>
@@ -122,7 +121,16 @@
 	dayjs.locale('zh-cn')
 
 	// 传给悬浮按钮的标题列表
-	const titleList = ['失物登记', '招领登记']
+	const fabListData = [
+		{
+			name: '失物登记',
+			icon: 'copy',
+		},
+		{
+			name: '招领登记',
+			icon: 'star',
+		},
+	]
 
 	// 顶部分段器数据
 	const segmenterList = ref<string[]>(['失物大厅', '招领大厅'])
