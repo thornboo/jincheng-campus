@@ -55,11 +55,7 @@
 					prop="value4"
 				/>
 				<wd-cell prop="fileList" title="物品图片" title-width="100px">
-					<wd-upload
-						:action="imagesUpload"
-						:file-list="model.fileList"
-						@change="handleFileChange"
-					></wd-upload>
+					<wd-upload :action="imagesUpload" :file-list="model.fileList" @change="handleFileChange"></wd-upload>
 				</wd-cell>
 			</wd-cell-group>
 			<wd-cell-group border title="丢失时间地点">
@@ -84,13 +80,7 @@
 			</wd-cell-group>
 			<view class="footer">
 				<wd-button block size="large" type="primary" @click="handleSubmit">提交</wd-button>
-				<wd-button
-					class="mt-4 items-center justify-center"
-					type="primary"
-					@click="getLocation"
-				>
-					IP定位:
-				</wd-button>
+				<wd-button class="mt-4 items-center justify-center" type="primary" @click="getLocation">IP定位:</wd-button>
 			</view>
 		</wd-form>
 	</view>
@@ -149,6 +139,7 @@
 		form.value
 			.validate()
 			.then(({ valid }) => {
+				console.log('valid', valid)
 				if (valid) {
 					showSuccess({
 						msg: '发布成功！',

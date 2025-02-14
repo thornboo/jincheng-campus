@@ -31,11 +31,7 @@
 								size="28rpx"
 								@click="handleClickUserInfo(item.id)"
 							/>
-							<wd-tag
-								bg-color="#ffd22e"
-								color="#fff"
-								custom-class="title-left-element"
-							>
+							<wd-tag bg-color="#ffd22e" color="#fff" custom-class="title-left-element">
 								Lv.{{ item.userLevel }}
 							</wd-tag>
 						</span>
@@ -74,9 +70,7 @@
 							v-show="item.imgUrl.length > 3"
 							class="flex w-[150rpx] h-[150rpx] absolute right-[0] bottom-0 bg-[rgba(100,100,100,0.5)] items-start justify-items-end justify-end text-white"
 						>
-							<view class="text-[20rpx] bg-black">
-								+{{ item.imgUrl.length - 3 }}张
-							</view>
+							<view class="text-[20rpx] bg-black">+{{ item.imgUrl.length - 3 }}张</view>
 						</view>
 					</view>
 				</view>
@@ -101,12 +95,17 @@
 			</wd-card>
 		</view>
 	</view>
-	<ReleaseBtn :fabListData="fabListData" />
+	<view class="tabbar" style="position: fixed; bottom: 20px; width: 100%">
+		<wd-tabbar v-model="tabbar" shape="round" @change="handleChangeTabbar">
+			<wd-tabbar-item icon="home" title="首页"></wd-tabbar-item>
+			<wd-tabbar-item icon="add"></wd-tabbar-item>
+			<wd-tabbar-item icon="user" title="我的"></wd-tabbar-item>
+		</wd-tabbar>
+	</view>
 </template>
 
 <script lang="ts" setup>
 	import { useToast } from 'wot-design-uni'
-	import ReleaseBtn from '@/components/release-btn/release-btn.vue'
 	import dayjs from 'dayjs'
 	import 'dayjs/locale/zh-cn'
 	import relativeTime from 'dayjs/plugin/relativeTime'
@@ -120,17 +119,7 @@
 	dayjs.extend(relativeTime)
 	dayjs.locale('zh-cn')
 
-	// 传给悬浮按钮的标题列表
-	const fabListData = [
-		{
-			name: '失物登记',
-			icon: 'copy',
-		},
-		{
-			name: '招领登记',
-			icon: 'star',
-		},
-	]
+	const tabbar = ref<number>(0)
 
 	// 顶部分段器数据
 	const segmenterList = ref<string[]>(['失物大厅', '招领大厅'])
@@ -153,7 +142,7 @@
 		panelData.map(({ icon, title }) => ({
 			iconUrl: icon,
 			title,
-		})),
+		}))
 	)
 
 	// 格式化时间
@@ -189,6 +178,29 @@
 			category: '钱包',
 			createTime: '2024-10-21 12:00:00',
 			updateTime: '2024-10-21 12:00:00',
+		},
+		{
+			id: 97981297169328,
+			userId: 98712387,
+			userName: '李四',
+			userAvatar: 'https://tc.alcy.cc/i/2024/04/21/662416fd652ad.webp',
+			userLevel: '22',
+			viewCount: 666,
+			commentCount: 444,
+			personalitySignature: '相信自己，未来会更美好',
+			phone: '10987654321',
+			lostTitle: '哪位好心人捡到了Airpods耳机',
+			content:
+				'2023年5月11日在北区三食堂二楼中午吃饭的遗失了一个耳机，白色Airpods二代，有一个粉色的海绵宝宝外壳，如果有人捡到请尽快联系我，请喝奶茶。',
+			imgUrl: [
+				'https://tc.alcy.cc/i/2024/04/21/662413fb1172b.webp',
+				'https://tc.alcy.cc/i/2024/04/21/662413f7beee3.webp',
+			],
+
+			location: '',
+			category: '钱包',
+			createTime: '2024-10-28 16:02:12',
+			updateTime: '2024-10-28 16:02:12',
 		},
 		{
 			id: 97981297169328,
@@ -265,6 +277,21 @@
 			},
 		})
 	}
+
+	// 跳转发布
+	function handleChangeTabbar({ value }: { value: any }) {
+		if (value === 1) {
+			uni.navigateTo({
+				url: `/lost-found/lost-form?type=${value}`,
+				success: (success: any) => {
+					console.log(success)
+				},
+				fail: (error: any) => {
+					console.log(error)
+				},
+			})
+		}
+	}
 </script>
 
 <style lang="scss" scoped>
@@ -273,6 +300,7 @@
 		height: 100vh;
 		padding-left: $uni-padding-base;
 		padding-right: $uni-padding-base;
+		position: relative;
 	}
 
 	:deep(.title-left-element) {
@@ -305,5 +333,11 @@
 	// 覆盖更多选项组件原有的遮罩层样式
 	:deep(.wd-overlay) {
 		background: rgba(78, 78, 78, 0.4) !important;
+	}
+
+	:deep(.custom-tabbar) {
+		bottom: 40rpx !important;
+		position: fixed !important;
+		width: 100% !important;
 	}
 </style>
