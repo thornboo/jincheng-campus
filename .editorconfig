@@ -1,14 +1,14 @@
-# 告诉EditorConfig插件，这是根文件，不用继续往上查找
+# 告诉 EditorConfig 插件，这是根文件，不用继续往上查找
 root = true
 
-# 表示所有文件适用
+# 所有文件适用
 [*]
-# 设置文件字符集为 utf-8
+# 设置文件字符集（utf-8）
 charset = utf-8
 # 缩进风格（tab | space）
 indent_style = tab
 # 缩进大小
-indent_size = 4
+indent_size = 2
 # 控制换行类型(lf | cr | crlf)
 end_of_line = lf
 # 去除行首的任意空白字符
@@ -16,7 +16,7 @@ trim_trailing_whitespace = true
 # 始终在文件末尾插入一个新行
 insert_final_newline = true
 
-# 表示仅 md 文件适用以下规则
+# 仅 md 文件适用以下规则
 [*.md]
 # 关闭最大行长度限制
 max_line_length = off
