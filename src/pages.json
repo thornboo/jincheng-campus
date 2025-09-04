@@ -135,6 +135,13 @@
       }
     },
     {
+      "path": "pages/forum/compose",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "发布话题"
+      }
+    },
+    {
       "path": "pages/forum/forum",
       "type": "page",
       "style": {

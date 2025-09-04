@@ -5,6 +5,7 @@
 
 interface NavigateToOptions {
   url: "/pages/index/index" |
+       "/pages/forum/compose" |
        "/pages/forum/forum" |
        "/pages/home/home" |
        "/pages/message/message" |
