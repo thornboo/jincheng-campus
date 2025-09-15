@@ -7,7 +7,7 @@
 				<view class="meta">{{ timeText }} · {{ categoryText }}</view>
 			</view>
 		</view>
-		<view class="card-content">{{ item.content }}</view>
+		<view class="card-content" @tap="goDetail">{{ item.content }}</view>
 		<view v-if="item.images?.length" class="images">
 			<image
 				v-for="(src, idx) in item.images"
@@ -26,14 +26,15 @@
 				<text>❤</text>
 				<text class="num">{{ item.likes }}</text>
 			</button>
-			<button class="action"><text>💬</text><text>{{ item.comments }}</text></button>
-			<button class="action"><text>🔗</text><text>{{ item.shares }}</text></button>
+			<button class="action" @tap="goDetail"><text>💬</text><text>{{ item.comments }}</text></button>
+			<button class="action" @tap="onShare"><text>🔗</text><text>{{ item.shares }}</text></button>
 		</view>
 	</view>
 </template>
 
 <script lang="ts" setup>
 import type { ForumPostItem } from '@/service/forum/forumApi'
+import { shareForumPost } from '@/service/forum/forumApi'
 
 const props = defineProps<{ item: ForumPostItem }>()
 const emits = defineEmits<{
@@ -75,6 +76,18 @@ function onPreview(idx: number) {
 
 function emitLike() {
 	emits('like', props.item.id)
+}
+
+function goDetail() {
+	uni.navigateTo({ url: `/pages/forum/detail?id=${props.item.id}` })
+}
+
+async function onShare() {
+	try {
+		await shareForumPost(props.item.id)
+		uni.showShareImageMenu?.({})
+		uni.showToast({ icon: 'none', title: '已分享' })
+	} catch (e) {}
 }
 </script>
 

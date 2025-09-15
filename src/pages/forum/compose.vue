@@ -15,11 +15,17 @@
 		<textarea
 			class="input"
 			v-model="content"
-			maxlength="280"
+			:maxlength="280"
 			placeholder="分享你的校园瞬间… (最多 280 字)"
 		/>
+		<view v-if="images.length" class="images">
+			<view v-for="(img, idx) in images" :key="idx" class="img-wrap">
+				<image class="img" :src="img" mode="aspectFill" @tap="previewImage(idx)" />
+				<text class="remove" @tap="removeImage(idx)">×</text>
+			</view>
+		</view>
 		<view class="actions">
-			<button class="secondary" disabled>添加图片</button>
+			<button class="secondary" @tap="onAddImage">添加图片</button>
 			<text class="muted">{{ content.length }} / 280</text>
 		</view>
 		<button class="primary" :disabled="!canPublish" @tap="onPublish">发布</button>
@@ -38,6 +44,7 @@
 	]
 	const categoryIndex = ref(0)
 	const content = ref('')
+	const images = ref<string[]>([])
 	const canPublish = computed(() => content.value.trim().length > 0)
 
 	onLoad((query) => {
@@ -53,11 +60,82 @@
 		categoryIndex.value = Number(e.detail.value)
 	}
 
+	function onAddImage() {
+		const remain = Math.max(0, 9 - images.value.length)
+		if (remain <= 0) return
+		uni.chooseImage({
+			count: remain,
+			success: async (res) => {
+				try {
+					// 优先使用多文件上传接口
+					const paths = Array.isArray(res.tempFilePaths)
+						? res.tempFilePaths
+						: [res.tempFilePaths as any]
+					if (paths.length > 1) {
+						const files = paths.map((p) => ({ name: 'files', uri: p }))
+						await uploadMultiple(files)
+					} else if (paths.length === 1) {
+						await uploadSingle(paths[0])
+					}
+				} catch (e) {}
+			},
+		})
+	}
+
+	function uploadSingle(filePath: string) {
+		return new Promise<void>((resolve, reject) => {
+			uni.uploadFile({
+				url: '/api/v1/upload/single',
+				name: 'file',
+				filePath,
+				success: (r) => {
+					try {
+						const resp = JSON.parse(r.data || '{}')
+						if (resp.code === 0 && resp.data?.url) {
+							images.value.push(resp.data.url)
+							return resolve()
+						}
+					} catch (_) {}
+					reject(r)
+				},
+				fail: reject,
+			})
+		})
+	}
+
+	function uploadMultiple(files: { name: string; uri: string }[]) {
+		return new Promise<void>((resolve, reject) => {
+			uni.uploadFile({
+				url: '/api/v1/upload/multiple',
+				files,
+				success: (r) => {
+					try {
+						const resp = JSON.parse(r.data || '{}')
+						if (resp.code === 0 && Array.isArray(resp.data?.urls)) {
+							images.value.push(...resp.data.urls)
+							return resolve()
+						}
+					} catch (_) {}
+					reject(r)
+				},
+				fail: reject,
+			})
+		})
+	}
+
+	function removeImage(idx: number) {
+		images.value.splice(idx, 1)
+	}
+
+	function previewImage(idx: number) {
+		uni.previewImage({ current: idx, urls: images.value })
+	}
+
 	async function onPublish() {
 		if (!canPublish.value) return
 		const cat = categoryOptions[categoryIndex.value].value as any
 		try {
-			await createForumPost({ content: content.value.trim(), category: cat })
+			await createForumPost({ content: content.value.trim(), category: cat, images: images.value })
 			uni.showToast({ icon: 'success', title: '已发布' })
 			setTimeout(() => {
 				// 返回列表并提示刷新
@@ -92,6 +170,29 @@
 		border: 1px solid #e5e7eb;
 		border-radius: 10px;
 		padding: 10px;
+	}
+	.images {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 6px;
+		margin-top: 8px;
+	}
+	.img-wrap {
+		position: relative;
+	}
+	.img {
+		width: 100%;
+		height: 94px;
+		border-radius: 10px;
+	}
+	.remove {
+		position: absolute;
+		top: 2px;
+		right: 6px;
+		background: rgba(0, 0, 0, 0.55);
+		color: #fff;
+		border-radius: 10px;
+		padding: 0 6px;
 	}
 	.actions {
 		display: flex;

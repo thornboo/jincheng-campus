@@ -48,4 +48,33 @@ export interface CreateForumPostBody {
 export const createForumPost = (data: CreateForumPostBody) =>
   httpPost<{ id: string }>('/api/v1/forum/create', data)
 
+export const getForumDetail = (id: string) =>
+  httpGet<ForumPostItem>(`/api/v1/forum/${id}`)
+
+export interface ForumCommentItem {
+  id: string
+  author: string
+  avatar?: string
+  content: string
+  likes: number
+  createdAt: number
+  replies?: ForumCommentItem[]
+}
+
+export interface ForumCommentListResp {
+  list: ForumCommentItem[]
+  total: number
+  page: number
+  pageSize: number
+}
+
+export const getForumComments = (postId: string, params: { page?: number; pageSize?: number }) =>
+  httpGet<ForumCommentListResp>(`/api/v1/forum/${postId}/comments`, params)
+
+export const createForumComment = (postId: string, data: { content: string; parentId?: string }) =>
+  httpPost<{ id: string }>(`/api/v1/forum/${postId}/comments`, data)
+
+export const shareForumPost = (postId: string) =>
+  httpPost<{ shares: number }>(`/api/v1/forum/${postId}/share`)
+
 
